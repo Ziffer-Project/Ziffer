@@ -12,6 +12,8 @@
     <link rel="stylesheet" type="text/css" href="Semantic-UI-1.11.6/dist/components/form.min.css">
     <link rel="stylesheet" type="text/css" href="Semantic-UI-1.11.6/dist/semantic.css">
     <link rel="stylesheet" type="text/css" href="Semantic-UI-1.11.6/dist/components/button.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="angular.min.js"></script>
     <link rel="stylesheet" type="text/css"href="Semantic-UI-1.11.6/dist/semantic.min.css">
     <title>Ziffer</title>
 </head>
@@ -51,25 +53,29 @@
     <div class="row info-content">
         <div class="col-1-5"><!-- Side panel --></div>
         <div class="ui content segment center-form">
-            <div class="ui form">
+            <div class="ui form" ng-app="">
                 <div class="field">
                     <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" placeholder="Nombre">
+                    <input type="checkbox" ng-model="showNombre">
+                    <input type="text" id="nombre" placeholder="Nombre" ng-show="showNombre">
                 </div>
 
                 <div class="field">
                     <label for="direccion">Direccion: </label>
-                    <input type="text" id="text" placeholder="">
+                    <input type="checkbox" ng-model="showDireccion">
+                    <input type="text" id="text" placeholder="" ng-show="showDireccion">
                 </div>
 
                 <div class="field">
                     <label for="telefono">Telefono: </label>
-                    <input type="text" name="telefono" placeholder="">
+                    <input type="checkbox" ng-model="showPhone">
+                    <input type="text" name="telefono" placeholder="" ng-show="showPhone">
                 </div>
 
                 <div class="field">
                     <label for="fechaNacimiento">Fecha de nacimiento: </label>
-                    <input type="text" id="fechaNacimiento" placeholder="">
+                    <input type="checkbox" ng-model="showDate">
+                    <input type="text" id="fechaNacimiento" placeholder="" ng-show="showDate">
                 </div>
 
                 <div class="field">
@@ -118,20 +124,23 @@
 
                 <div class="field">
                     <label for="password">Password: </label>
-                    <input type="password" name="password" placeholder="password">
+                    <input type="checkbox" ng-model="showPass">
+                    <input type="password" name="password" placeholder="password" ng-show="showPass">
                 </div>
 
-                <div class="field">
-                    <label for="confirm">Confirmar password: </label>
-                    <input type="password" name="confirm">
+                <div class="field" ng-show="showPass">
+                    <label for="confirm" ng-show="showPass">Confirmar password: </label>
+                    <input type="password" name="confirm" ng-show="showPass">
                 </div>
 
                 <div class="ui basic button">
                     Guradar cambios
                 </div>
+                <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
             </div>
         </div>
     </div>
 </div>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 </body>
 </html>
