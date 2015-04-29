@@ -9,11 +9,11 @@ class Question {
     static belongsTo = [ user : User ]
 
     static constraints = {
+        createdDate = new Date()
         title( nullable: false, blank: false )
         description( nullable: false, blank: false )
         category( nullable: false, blank: false )
-        createdDate( nullable: false)
-        dueDate( validator: {if (dueDate.time <  Calendar.getInstance().getTime().time) return false else return true }, nullable: true )
+        dueDate( validator: { return dueDate.time >= Calendar.getInstance().getTime().time}, nullable: true )
         user( nullable: false )
     }
 }
