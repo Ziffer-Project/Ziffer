@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dashApp">
+	<head>
+		<!-- Standard Meta -->
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+		<!-- Site Properities -->
+		<!-- Change title according to section -->
+		<title>Ziffer</title>
+
+		<link rel="stylesheet" type="text/css" href="../dist/semantic.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/dashboard.css">
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="../dist/semantic.min.js"></script>
+		<script src="../dist/angular/angular.min.js"></script>
+		<script src="../dist/angular-route/angular-route.min.js"></script>
+		<script src="../dist/angular-resource/angular-resource.min.js"></script>
+		<script src="../js/app.js"></script>
+		<script src="../js/dash-controllers.js"></script>
+		<script src="../js/dash-directives.js"></script>
+
+	</head>
+	<body id="dash-body">
+		<!-- Header -->
+		<div class="ui inverted borderless fixed top-bar menu">
+			<a class="item" href="#">Ziffer</a>
+			<div class="right menu">
+				<a class="item" href="#">Sign up</a>
+				<a class="item" href="#">Sign in</a>
+			</div>
+		</div>
+		<!-- Main body -->
+		<div ng-view></div>
+
+		<!-- Footer -->
+		<div class="ui basic segment"></div>
+	</body>
+
+</html>

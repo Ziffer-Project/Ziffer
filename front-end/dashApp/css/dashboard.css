@@ -8,13 +8,13 @@ html {
 }
 
 
-#dash .banner {
+#dash-body .banner {
 	background-image: url(images/bg.jpg);
 	margin-top: 35px;
 	min-height: 400px;
 }
 
-#dash .segment.stackable.grid {
+#dash-body .segment.stackable.grid {
 	position: relative;
 }
 
@@ -27,7 +27,8 @@ html {
 }
 
 #change-cat-dropdown .menu .item,
-#change-cat-dropdown .default.text {
+#change-cat-dropdown .default.text,
+#change-cat-dropdown .text {
 	color: #fff;
 }
 

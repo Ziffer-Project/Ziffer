@@ -1,0 +1,102 @@
+<script src="../js/dash-semantic.js"></script>
+<div class="ui vertical inverted banner segment">
+	<div class="ui centered page grid">
+		<div class="fourteen wide column">
+			<div class="ui grid">
+				<div class="twelve wide column hidden transition category-info">
+					<!-- Fecth info accordingly add controller -->
+					<h1 class="ui inverted header">Category X</h1>
+					<p>Quote</p>
+				</div>
+				<div class="four wide column">
+					<div class="ui form">
+						<div class="field">
+							<div class="ui selection dropdown" id="change-cat-dropdown">
+								<!-- Set default value on input -->
+								<!-- Fetch options accordingly add controller -->
+								<input id="change-category" name="cat-change" type="hidden">
+								<div class="default text">Change category</div>
+								<i class="ui inverted dropdown icon"></i>
+								<div class="menu">
+									<div class="item" data-value="op1">Geometry</div>
+									<div class="item" data-value="op2">Algebra</div>
+									<div class="item" data-value="op3">Calculus</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Main section -->
+<div class="ui basic segment">
+	<div class="ui centered page grid">
+		<div class="fourteen wide column">
+			<div class="ui segment">
+				<div class="ui stackable grid">
+					<div class="five wide column">
+						<div class="column">
+							<div class="ui segment">
+								<div class="ui form">
+									<!-- Change search filters and add controller -->
+									<div class="field">
+										<label>Filters 1</label>
+										<div class="ui fitted divider"></div>
+										<div class="ui checkbox">
+											<input id="f1" type="checkbox">
+											<label for="f1">Filter 1</label>
+										</div>
+									</div>
+									<div class="field">
+										<div class="ui checkbox">
+											<input id="f2" type="checkbox">
+											<label for="f2">Filter 2</label>
+										</div>
+									</div>
+									<div class="field">
+										<div class="ui checkbox">
+											<input id="f3" type="checkbox">
+											<label for="f3">Filter 3</label>
+										</div>
+									</div>
+									<div class="field">
+										<div class="ui checkbox">
+											<input id="f4" type="checkbox">
+											<label for="f4">Filter 4</label>
+										</div>
+									</div>
+									<div class="field">
+										<label>Filters 2</label>
+										<div class="ui fitted divider"></div>
+										<div class="ui selection dropdown">
+											<input id="f5" name="Filters2" type="hidden">
+											<div class="default text">Placeholder</div>
+											<i class="dropdown icon"></i>
+											<div class="menu">
+												<div class="item" data-value="op1">Option 1</div>
+												<div class="item" data-value="op2">Option 2</div>
+												<div class="item" data-value="op3">Option 3</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="eleven wide column">
+						<div class="row">
+							<div class="ui fluid icon input">
+							  <!-- Add controller and model -->
+								<input placeholder="Search..." type="text" id="search-field">
+								<i class="search icon"></i>
+							</div>
+						</div>
+						<div class="row"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
