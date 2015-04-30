@@ -8,7 +8,7 @@ var dashApp = angular.module('dashApp', [
 dashApp.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.
 	when('/dashboard', {
-		templateUrl: 'partials/dash-view.html',
+		templateUrl: 'dashboard-view/partials/dash-view.html',
 		controller: 'DashViewCtrl'
 	}).
 	otherwise({
