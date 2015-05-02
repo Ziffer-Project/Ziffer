@@ -14,4 +14,13 @@ app.config(['$routeProvider', function($routeProvider) {
 	otherwise({
 		redirectTo: '/dashboard'
 	});
+    $routeProvider.
+        when('/signup', {
+            templateUrl: 'profile-view/partials/createUser.html',
+            controller: 'UserViewCtrl'
+        }).
+        otherwise({
+            redirectTo: '/signup'
+        });
+
 }]);
