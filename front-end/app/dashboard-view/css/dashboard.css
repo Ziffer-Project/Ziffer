@@ -4,7 +4,7 @@
 #dash-body .banner {
 	background-image: url(images/bg.jpg);
 	margin-top: 35px;
-	min-height: 400px;
+	min-height: 250px;
 }
 
 #dash-body .segment.stackable.grid {

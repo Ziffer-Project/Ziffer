@@ -1,29 +1,29 @@
 <link rel="stylesheet" type="text/css" href="dashboard-view/css/dashboard.css">
 <script src="dashboard-view/js/dash-semantic.js"></script>
+<!-- Category banner -->
 <div class="ui vertical inverted banner segment">
 	<div class="ui centered page grid">
 		<div class="fourteen wide column">
 			<div class="ui grid">
 				<div class="twelve wide column hidden transition category-info">
 					<!-- Fecth info accordingly add controller -->
-					<h1 class="ui inverted header">Category X</h1>
+					<h1 class="ui inverted header">{{selectedCategory.name || "Welcome"}}</h1>
 					<p>Quote</p>
 				</div>
 				<div class="four wide column">
 					<div class="ui form">
 						<div class="field">
-							<div class="ui selection dropdown" id="change-cat-dropdown">
-								<!-- Set default value on input -->
-								<!-- Fetch options accordingly add controller -->
+							<!-- <div class="ui selection dropdown" id="change-cat-dropdown">
 								<input id="change-category" name="cat-change" type="hidden">
 								<div class="default text">Change category</div>
-								<i class="ui inverted dropdown icon"></i>
+								<i class="inverted dropdown icon"></i>
 								<div class="menu">
-									<div class="item" data-value="op1">Geometry</div>
-									<div class="item" data-value="op2">Algebra</div>
-									<div class="item" data-value="op3">Calculus</div>
+									<div class="item" ng-repeat="category in categories | orderBy: orderProp" data-value="{{category.id}}" ng-click="console.log('works')">{{category.name}}</div>
 								</div>
-							</div>
+							</div> -->
+							<dropdown element="" ng-model="selectedCategory" open="false" id="change-cat-dropdown">
+								<dropdown-group element="category" ng-repeat="category in categories | orderBy: orderProp">{{category.name}}</dropdown-group>
+							</dropdown>
 						</div>
 					</div>
 				</div>
@@ -34,67 +34,81 @@
 <!-- Main section -->
 <div class="ui basic segment">
 	<div class="ui centered page grid">
+		<!-- Buttons section -->
+		<div class="ten wide column">
+			<div class="ui basic segment">
+				<div class="ui centered grid">
+					<div class="2 fluid ui buttons">
+						<div class="ui orange button">
+							<i class="help icon"></i>
+							Ask doubt
+						</div>
+						<div class="ui purple button">
+							<i class="book icon"></i>
+							Solve doubt
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="fourteen wide column">
 			<div class="ui segment">
-				<div class="ui stackable grid">
-					<div class="five wide column">
-						<div class="column">
-							<div class="ui segment">
-								<div class="ui form">
-									<!-- Change search filters and add controller -->
-									<div class="field">
-										<label>Filters 1</label>
-										<div class="ui fitted divider"></div>
-										<div class="ui checkbox">
-											<input id="f1" type="checkbox">
-											<label for="f1">Filter 1</label>
+				<div class="column">
+					<div class="row">
+						<div class="ui fluid left action icon input">
+							<!-- Add controller and model -->
+							<div class="ui floating dropdown icon button">
+								<i class="filter icon"></i>
+								<div class="menu">
+									<div class="header">Filter by</div>
+									<div class="header">
+										<div class="ui form">
+											<div class="field">
+												<div class="ui radio checkbox">
+												<input name="filters" type="radio" ng-model="sel" value="1" id="filter-rb-1">
+												<label for="filter-rb-1">F1</label>
+												</div>
+											</div>
+											<div class="field">
+												<div class="ui radio checkbox">
+													<input name="filters" type="radio" ng-model="sel" value="2" id="filter-rb-2">
+													<label for="filter-rb-2">F2</label>
+												</div>
+											</div>
+											<div class="field">
+												<div class="ui radio checkbox">
+													<input name="filters" type="radio" ng-model="sel" value="3" id="filter-rb-3">
+													<label for="filter-rb-3">F3</label>
+												</div>
+											</div>
+											<div class="field">
+												<div class="ui radio checkbox">
+													<input name="filters" type="radio" ng-model="sel" value="4" id="filter-rb-4">
+													<label for="filter-rb-4">F4</label>
+												</div>
+											</div>
 										</div>
 									</div>
-									<div class="field">
-										<div class="ui checkbox">
-											<input id="f2" type="checkbox">
-											<label for="f2">Filter 2</label>
-										</div>
-									</div>
-									<div class="field">
-										<div class="ui checkbox">
-											<input id="f3" type="checkbox">
-											<label for="f3">Filter 3</label>
-										</div>
-									</div>
-									<div class="field">
-										<div class="ui checkbox">
-											<input id="f4" type="checkbox">
-											<label for="f4">Filter 4</label>
-										</div>
-									</div>
-									<div class="field">
-										<label>Filters 2</label>
-										<div class="ui fitted divider"></div>
-										<div class="ui selection dropdown">
-											<input id="f5" name="Filters2" type="hidden">
-											<div class="default text">Placeholder</div>
-											<i class="dropdown icon"></i>
-											<div class="menu">
-												<div class="item" data-value="op1">Option 1</div>
-												<div class="item" data-value="op2">Option 2</div>
-												<div class="item" data-value="op3">Option 3</div>
+									<div class="item">
+										<div class="ui form">
+											<div class="field">
+												<div class="ui checkbox">
+													<input type="checkbox" ng-model="userBox" id="username-filter-cb">
+													<label for="username-filter-cb">Username</label>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
+							<input placeholder="Search..." type="text" id="search-field" ng-model="searchTerm">
+							<!-- Add ng-show attribute to search icon -->
+							<i class="search icon"></i>
 						</div>
 					</div>
-					<div class="eleven wide column">
-						<div class="row">
-							<div class="ui fluid icon input">
-							  <!-- Add controller and model -->
-								<input placeholder="Search..." type="text" id="search-field">
-								<i class="search icon"></i>
-							</div>
-						</div>
-						<div class="row"></div>
+					<div class="row">
+						<p>selection = {{sel}}, userBox = {{userBox}}, term = {{searchTerm}}, category = {{selectedCategory}}</p>
+						<br>
 					</div>
 				</div>
 			</div>

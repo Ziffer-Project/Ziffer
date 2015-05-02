@@ -1,11 +1,11 @@
 'use strict';
 
-var dashApp = angular.module('dashApp', [
-	'ngRoute', 'dashDirectives', 'dashControllers'
+var app = angular.module('app', [
+	'ngRoute', 'dashControllers'
 	]
 );
 
-dashApp.config(['$routeProvider', function($routeProvider) {
+app.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.
 	when('/dashboard', {
 		templateUrl: 'dashboard-view/partials/dash-view.html',

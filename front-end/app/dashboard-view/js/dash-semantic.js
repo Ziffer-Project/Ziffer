@@ -1,14 +1,20 @@
 $(document).ready(function() {
 
 	function animation() {
-		$('.category-info').transition('fade');
-
 		$('.dropdown').dropdown({
 			on: 'hover',
 			transition: 'scale'
 		});
+
+		//$( ".ui.checkbox" ).checkbox();
 	}
 
-	setTimeout(animation, 300);
+	animation();
+
+	function categoryAnimation() {
+		$('.category-info').transition('fade');
+	}
+
+	setTimeout(categoryAnimation, 1000);
 
 });
