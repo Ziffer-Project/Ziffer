@@ -15,6 +15,6 @@ $(document).ready(function() {
 		$('.category-info').transition('fade');
 	}
 
-	setTimeout(categoryAnimation, 1000);
+	setTimeout(categoryAnimation, 500);
 
 });

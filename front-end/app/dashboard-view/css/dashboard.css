@@ -28,3 +28,7 @@
 #search-field {
 	width: 100%;
 }
+
+.score {
+	color: rgba(0, 0, 0, 0.4);
+}

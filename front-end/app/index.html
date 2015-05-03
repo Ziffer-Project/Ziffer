@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app" style="background-color: #d8d8d8; font-size: 14px;">
+<html lang="en" ng-app="app" style="background-color: #d8d8d8; font-size: 15px;">
 	<head>
 		<!-- Standard Meta -->
 		<meta charset="utf-8" />
@@ -16,16 +16,16 @@
 
 		<!-- Agregar a modules -->
 		<script src="dist/semantic.min.js"></script>
-		<script src="dist/angular/angular.js"></script>
+		<script src="dist/angular/angular.min.js"></script>
 		<script src="dist/angular-route/angular-route.min.js"></script>
 		<script src="dist/angular-resource/angular-resource.min.js"></script>
 		<script src="js/app.js"></script>
 		<script src="dashboard-view/js/dash-controllers.js"></script>
 		<script src="dashboard-view/js/dropdown.js"></script>
 	</head>
-	<body id="dash-body">
+	<body style="background-color: #d8d8d8">
 		<!-- Header -->
-		<div class="ui inverted borderless fixed top-bar menu">
+		<div class="ui inverted borderless top-bar menu fixed">
 			<a class="item" href="#">Ziffer</a>
 			<div class="right menu">
 				<a class="item" href="#">Sign up</a>
@@ -33,7 +33,7 @@
 			</div>
 		</div>
 		<!-- Main body -->
-		<div ng-view></div>
+		<div ng-view id="dash-body"></div>
 
 		<!-- Footer -->
 		<div class="ui basic segment"></div>
