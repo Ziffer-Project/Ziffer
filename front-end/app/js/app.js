@@ -1,7 +1,7 @@
 'use strict';
 
 var app = angular.module('app', [
-	'ngRoute', 'dashControllers'
+	'ngRoute', 'dashControllers', 'dashServices'
 	]
 );
 

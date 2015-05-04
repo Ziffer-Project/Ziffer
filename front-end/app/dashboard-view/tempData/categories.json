@@ -1,0 +1,22 @@
+[
+	{
+		"name": "Algebra",
+		"id": 1
+	},
+	{
+		"name": "Geometry",
+		"id": 2
+	},
+	{
+		"name": "Calculus",
+		"id": 3
+	},
+	{
+		"name": "My doubts",
+		"id": -3
+	},
+	{
+		"name": "Contributions",
+		"id": -2
+	}
+]
