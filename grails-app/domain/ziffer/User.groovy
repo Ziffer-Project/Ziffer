@@ -13,10 +13,6 @@ class User {
     static hasMany = [ questions : Question ]
 
     static constraints = {
-        ban = true
-        zifferCoins = 5
-        questionScore = 0
-        answerScore = 0
         name( nullable: false, blank: false )
         username( unique: true, nullable: false, blank: false )
         password( nullable: false, blank: false )

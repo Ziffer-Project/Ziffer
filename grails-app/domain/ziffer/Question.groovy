@@ -9,7 +9,6 @@ class Question {
     static belongsTo = [ user : User ]
 
     static constraints = {
-        createdDate = new Date()
         title( nullable: false, blank: false )
         description( nullable: false, blank: false )
         category( nullable: false, blank: false )
