@@ -25,6 +25,10 @@
 	color: #fff;
 }
 
+#ask-container {
+	margin-top: 6rem;
+}
+
 #search-field {
 	width: 100%;
 }

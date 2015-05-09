@@ -1,6 +1,6 @@
 'use strict';
 
-var dashControllers = angular.module('dashControllers', ['angularify.semantic.dropdown'])
+var dashControllers = angular.module('dashControllers', [])
 
 .controller('DashViewCtrl', ['$scope', 'CategoryRequest', 'DoubtRequest',
 	function($scope, CategoryRequest, DoubtRequest) {

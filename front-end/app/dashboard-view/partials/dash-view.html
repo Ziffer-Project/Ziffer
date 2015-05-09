@@ -12,10 +12,28 @@
 				<div class="four wide column">
 					<div class="ui form">
 						<div class="field">
-							<dropdown element="" ng-model="selectedCategory" open="false" id="change-cat-dropdown">
-								<dropdown-group element="category" ng-cloak ng-repeat="category in categories | orderBy: orderCategory">{{category.name}}</dropdown-group>
-							</dropdown>
+							<div class="ui selection dropdown" id="change-cat-dropdown">
+								<input name="cat-dropdown" type="hidden">
+								<div class="default text">Change category</div>
+								<i class="dropdown inverted icon"></i>
+								<div class="menu">
+									<div class="item" ng-cloak ng-repeat="category in categories | orderBy: orderCategory" data-value="{{category}}" ng-click="$parent.selectedCategory=category">{{category.name}}</div>
+								</div>
+							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Ask button -->
+	<div class="ui centered page grid" id="ask-container">
+		<div class="fourteen wide column">
+			<div class="grid">
+				<div class="left floated five wide column">
+					<div class="ui animated inverted fluid orange button">
+						<div class="hidden content">Ask</div>
+						<div class="visible content"><i class="help icon"></i></div>
 					</div>
 				</div>
 			</div>
@@ -25,23 +43,6 @@
 <!-- Main section -->
 <div class="ui basic segment">
 	<div class="ui centered page grid">
-		<!-- Buttons section -->
-		<div class="ten wide column">
-			<div class="ui basic segment">
-				<div class="ui centered grid">
-					<div class="2 fluid ui buttons">
-						<div class="ui orange button">
-							<i class="help icon"></i>
-							Ask doubt
-						</div>
-						<div class="ui purple button">
-							<i class="book icon"></i>
-							Solve doubt
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 		<!-- Search bar and doubts section -->
 		<div class="fourteen wide column">
 			<div class="ui segment">
