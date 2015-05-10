@@ -17,7 +17,6 @@ var dashControllers = angular.module('dashControllers', [])
 			return false;
 		}
 
-
 		//Category banner controller
 		$scope.categories = CategoryRequest.query();
 		$scope.orderCategory = "id";
@@ -50,6 +49,13 @@ var dashControllers = angular.module('dashControllers', [])
 			if (desiredTags.length === 0) { return true; }
 			if (intersect(item.tags, desiredTags)) { return true; }
 			return false;
+		};
+
+		$scope.extDoubt = {};
+
+		//Fix submit offer
+		$scope.submitOffer = function() {
+			console.log($scope.extDoubt.offerAmount);
 		};
 	}
 ]);

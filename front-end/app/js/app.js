@@ -1,7 +1,8 @@
 'use strict';
 
 var app = angular.module('app', [
-	'ngRoute', 'dashControllers', 'dashServices'
+	'ngRoute',
+	'dashControllers', 'dashDirectives', 'dashServices', 'dashAnimations'
 	]
 );
 
