@@ -7,10 +7,8 @@
             "math",
             "arithmetic"
         ],
-        "user": {
-            "username": "user1",
-            "score": 0
-        }
+        "username": "user1",
+        "userScore": 0
     },
     {
         "title": "How much is 3+3?",
@@ -19,10 +17,8 @@
         "tags": [
             "math"
         ],
-        "user": {
-            "username": "user2",
-            "score": 2
-        }
+        "username": "user2",
+        "userScore": 2
     },
     {
         "title": "How much is 4+4?",
@@ -31,10 +27,8 @@
         "tags": [
             "adding"
         ],
-        "user": {
-            "username": "user3",
-            "score": 5
-        }
+        "username": "user3",
+        "userScore": 5
     },
     {
         "title": "How much is 6+10?",
@@ -44,10 +38,8 @@
             "substraction",
             "operation"
         ],
-        "user": {
-            "username": "user2",
-            "score": 1000
-        }
+        "username": "user2",
+        "userScore": 1000
     },
     {
         "title": "How much is 2+2?",
@@ -56,10 +48,8 @@
         "tags": [
             "just asking"
         ],
-        "user": {
-            "username": "user5",
-            "score": 351
-        }
+        "username": "user5",
+        "userScore": 351
     },
     {
         "title": "How much is 2+2?",
@@ -68,9 +58,7 @@
         "tags": [
             "politics"
         ],
-        "user": {
-            "username": "user6",
-            "score": 96
-        }
+        "username": "user6",
+        "userScore": 96
     }
 ]
