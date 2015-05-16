@@ -52,9 +52,14 @@ var dashControllers = angular.module('dashControllers', [])
 		};
 
 		$scope.extDoubt = {};
+		$scope.extDoubt.offerAmount = 0;
 
 		//Fix submit offer
 		$scope.submitOffer = function() {
+			var amount = $scope.extDoubt.offerAmount;
+			if (typeof amount === 'undefined') {
+
+			};
 			console.log($scope.extDoubt.offerAmount);
 		};
 	}

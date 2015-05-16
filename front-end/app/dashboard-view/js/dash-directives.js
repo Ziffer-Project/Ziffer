@@ -51,4 +51,17 @@ var dashDirectives = angular.module('dashDirectives', [])
 			});
 		}
 	};
-}]);
+}])
+
+.directive('offerInput', function() {
+	return {
+		restrict: 'C',
+		link: function(scope, elem, attrs) {
+			scope.$watch('extDoubt.offerAmount', function(val) {
+				if (typeof val !== 'undefined' && val.length > 0) {
+					console.log(val.match(/^\d{0,9}$/));
+				}
+			});
+		}
+	};
+});
