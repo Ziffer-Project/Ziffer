@@ -1,3 +1,3 @@
 'use strict';
 
-var dashAnimations = angular.module('dashAnimations', ['ngAnimate']).
+var dashAnimations = angular.module('dashAnimations', ['ngAnimate']);

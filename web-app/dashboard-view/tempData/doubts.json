@@ -1,5 +1,6 @@
 [
     {
+        "questionId": 11,
         "title": "How much is 2+2?",
         "dateCreated": "20150215",
         "closeDate": "20150615",
@@ -7,36 +8,33 @@
             "math",
             "arithmetic"
         ],
-        "user": {
-            "username": "user1",
-            "score": 0
-        }
+        "username": "user1",
+        "userScore": 0
     },
     {
+        "questionId": 12,
         "title": "How much is 3+3?",
         "dateCreated": "20150115",
         "closeDate": "20150515",
         "tags": [
             "math"
         ],
-        "user": {
-            "username": "user2",
-            "score": 2
-        }
+        "username": "user2",
+        "userScore": 2
     },
     {
+        "questionId": 13,
         "title": "How much is 4+4?",
         "dateCreated": "20140215",
         "closeDate": "20170615",
         "tags": [
             "adding"
         ],
-        "user": {
-            "username": "user3",
-            "score": 5
-        }
+        "username": "user3",
+        "userScore": 5
     },
     {
+        "questionId": 14,
         "title": "How much is 6+10?",
         "dateCreated": "20150926",
         "closeDate": "20151115",
@@ -44,33 +42,29 @@
             "substraction",
             "operation"
         ],
-        "user": {
-            "username": "user2",
-            "score": 1000
-        }
+        "username": "user2",
+        "userScore": 1000
     },
     {
+        "questionId": 15,
         "title": "How much is 2+2?",
         "dateCreated": "20130115",
         "closeDate": "20140605",
         "tags": [
             "just asking"
         ],
-        "user": {
-            "username": "user5",
-            "score": 351
-        }
+        "username": "user5",
+        "userScore": 351
     },
     {
+        "questionId": 16,
         "title": "How much is 2+2?",
         "dateCreated": "20150201",
         "closeDate": "20150601",
         "tags": [
             "politics"
         ],
-        "user": {
-            "username": "user6",
-            "score": 96
-        }
+        "username": "user6",
+        "userScore": 96
     }
 ]

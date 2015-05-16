@@ -5,6 +5,7 @@
 	background-image: url(images/bg.jpg);
 	margin-top: 35px;
 	min-height: 250px;
+	border-radius: 0px;
 }
 
 #dash-body .segment.stackable.grid {
@@ -25,10 +26,30 @@
 	color: #fff;
 }
 
+#ask-container {
+	margin-top: 6rem;
+}
+
 #search-field {
 	width: 100%;
 }
 
+#doubt-list > .doubt-items {
+	margin-top: 0.3rem;
+	margin-bottom: 0.5rem;
+	border: 3px solid rgba(39, 41, 43, 0.15);
+	border-radius: 0.2857rem;
+}
+
+#doubt-list > p {
+	font-size: 1.2rem;
+	text-align: center;
+}
+
 .score {
 	color: rgba(0, 0, 0, 0.4);
+}
+
+.ui.modal .header > .meta {
+	font-size: 1rem;
 }
