@@ -1,0 +1,33 @@
+.doubt-items.ng-enter,
+.doubt-items.ng-leave,
+.doubt-items.ng-move,
+.doubt-items + p {
+	-webkit-transition: 0.25s linear all;
+	-moz-transition: 0.25s linear all;
+	-o-transition: 0.25s linear all;
+	transition: 0.25s linear all;
+}
+
+.doubt-items.ng-enter,
+.doubt-items.ng-move,
+.doubt-items + p {
+	opacity: 0;
+	overflow: hidden;
+}
+
+.doubt-items.ng-move.ng-move-active,
+.doubt-items.ng-enter.ng-enter-active,
+.doubt-items + p {
+	opacity: 1;
+}
+
+.doubt-items.ng-leave,
+.doubt-items + p {
+	opacity: 1;
+	overflow: hidden;
+}
+
+.doubt-items.ng-leave.ng-leave-active,
+.doubt-items + p {
+	opacity: 0;
+}

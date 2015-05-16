@@ -1,0 +1,55 @@
+/** {
+	border: 1px solid red !important;
+}*/
+#dash-body .banner {
+	background-image: url(images/bg.jpg);
+	margin-top: 35px;
+	min-height: 250px;
+	border-radius: 0px;
+}
+
+#dash-body .segment.stackable.grid {
+	position: relative;
+}
+
+#change-cat-dropdown {
+	background-color: rgba(0,0,0,0);
+}
+
+#change-cat-dropdown .menu {
+	background-color: rgba(0,0,0,0);
+}
+
+#change-cat-dropdown .menu .item,
+#change-cat-dropdown .default.text,
+#change-cat-dropdown .text {
+	color: #fff;
+}
+
+#ask-container {
+	margin-top: 6rem;
+}
+
+#search-field {
+	width: 100%;
+}
+
+#doubt-list > .doubt-items {
+	margin-top: 0.3rem;
+	margin-bottom: 0.3rem;
+	border: 1px solid rgba(39, 41, 43, 0.15);
+	border-radius: 0.2857rem;
+}
+
+#doubt-list > p {
+	font-size: 1.2rem;
+	text-align: center;
+}
+
+.score {
+	color: rgba(0, 0, 0, 0.4);
+}
+
+.ui.modal .header > .meta {
+	font-size: 1rem;
+}

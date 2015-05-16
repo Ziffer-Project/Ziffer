@@ -1,0 +1,15 @@
+{
+  "version": "0.0.0",
+  "private": true,
+  "name": "angular-phonecat",
+  "description": "Ziffer front-end",
+  "repository": "https://github.com/Ziffer-Project/Ziffer/tree/front-end",
+  "devDependencies": {
+    "http-server": "^0.6.1",
+    "tmp": "0.0.23"
+  },
+  "scripts": {
+    "prestart": "npm install",
+    "start": "http-server -a 0.0.0.0 -p 8000"
+  }
+}
