@@ -1,7 +1,7 @@
 class UrlMappings {
 
 	static mappings = {
-        "/dashboard/categories.json" {
+        "/dashboard/fetchData/categories/categories.json" {
             controller = "Category"
         }
 

@@ -4,7 +4,7 @@ var dashServices = angular.module('dashServices', ['ngResource'])
 
     .factory('CategoryRequest', ['$resource',
         function ($resource) {
-            return $resource('dashboard-view/tempData/categories/:categoryId.json', {}, {
+            return $resource('dashboard/fetchData/categories/:categoryId.json', {}, {
                 query: {method: 'GET', params: {categoryId: 'categories'}, isArray: true}
             });
         }])
