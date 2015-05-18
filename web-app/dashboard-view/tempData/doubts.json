@@ -2,8 +2,8 @@
     {
         "questionId": 11,
         "title": "How much is 2+2?",
-        "dateCreated": "20150215",
-        "closeDate": "20150615",
+        "creationDate": "20150215",
+        "dueDate": "20150615",
         "tags": [
             "math",
             "arithmetic"
@@ -14,8 +14,8 @@
     {
         "questionId": 12,
         "title": "How much is 3+3?",
-        "dateCreated": "20150115",
-        "closeDate": "20150515",
+        "creationDate": "20150115",
+        "dueDate": "20150515",
         "tags": [
             "math"
         ],
@@ -25,8 +25,8 @@
     {
         "questionId": 13,
         "title": "How much is 4+4?",
-        "dateCreated": "20140215",
-        "closeDate": "20170615",
+        "creationDate": "20140215",
+        "dueDate": "20170615",
         "tags": [
             "adding"
         ],
@@ -36,8 +36,8 @@
     {
         "questionId": 14,
         "title": "How much is 6+10?",
-        "dateCreated": "20150926",
-        "closeDate": "20151115",
+        "creationDate": "20150926",
+        "dueDate": "20151115",
         "tags": [
             "substraction",
             "operation"
@@ -48,8 +48,8 @@
     {
         "questionId": 15,
         "title": "How much is 2+2?",
-        "dateCreated": "20130115",
-        "closeDate": "20140605",
+        "creationDate": "20130115",
+        "dueDate": "20140605",
         "tags": [
             "just asking"
         ],
@@ -59,8 +59,8 @@
     {
         "questionId": 16,
         "title": "How much is 2+2?",
-        "dateCreated": "20150201",
-        "closeDate": "20150601",
+        "creationDate": "20150201",
+        "dueDate": "20150601",
         "tags": [
             "politics"
         ],

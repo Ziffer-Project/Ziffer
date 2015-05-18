@@ -31,18 +31,47 @@ var dashDirectives = angular.module('dashDirectives', [])
             restrict: 'C',
             link: function(scope, elem, attrs) {
                 $(elem).modal();
+                $(elem).modal("setting", {
+                    onApprove: function () {
+                        /*if (typeof val !== 'undefined' && val.length > 0) {
+                            return scope.extDoubt.offerAmount.match(/^\d{0,9}$/);
+                        } else {
+                            return false;
+                        }*/ return false;
+                    }
+                });
+                scope.$watch('extDoubt.offerAmount', function(val) {
+                    if (typeof val !== 'undefined' && val.length > 0) {
+                        console.log(val.match(/^\d{0,9}$/));
+                    }
+                });
             }
         };
     })
 
-    .directive('peek', ['$timeout', 'CategoryRequest', function($timeout, CategoryRequest) {
+    .directive('submitOfferBtn', function () {
+        return {
+            restrict: 'C',
+            link: function (scope, elem) {
+                $(elem).click(function () {
+                    var val = scope.extDoubt.offerAmount;
+                    if (typeof val !== 'undefined' && val.length > 0 && val.match(/^\d{0,9}$/)) {
+                        $('.modal').modal('toggle');
+                    }
+                });
+            }
+        };
+    })
+
+    .directive('peek', ['$timeout', 'DoubtRequest', function($timeout, DoubtRequest) {
         return {
             restrict: 'C',
             link: function(scope, elem, attrs) {
                 $(elem).click(function() {
                     scope.$parent.extDoubt = scope.doubt;
                     var desiredId = scope.doubt.questionId;
-                    var el = CategoryRequest.get({categoryId:desiredId}, function(el) {
+                    var catId = scope.doubt.categoryId;
+                    var el = DoubtRequest.get({categoryId: catId, doubtId: desiredId}, function(el) {
                         scope.$parent.extDoubt.description = el.description;
                     });
                     $timeout(function() {
@@ -52,17 +81,4 @@ var dashDirectives = angular.module('dashDirectives', [])
             }
         };
     }])
-
-    .directive('offerInput', function() {
-        return {
-            restrict: 'C',
-            link: function(scope, elem, attrs) {
-                scope.$watch('extDoubt.offerAmount', function(val) {
-                    if (typeof val !== 'undefined' && val.length > 0) {
-                        console.log(val.match(/^\d{0,9}$/));
-                    }
-                });
-            }
-        };
-    }
-);
+    ;

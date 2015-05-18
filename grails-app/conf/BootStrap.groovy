@@ -22,13 +22,7 @@ class BootStrap {
         category = new Category(name: "Calculus", id: 3)
         assert category.save(failOnError: true, flush: true, insert: true)
 
-        category = new Category(name: "My doubts", id: -2)
-        assert category.save(failOnError: true, flush: true, insert: true)
-
-        category = new Category(name: "Contributions", id: -1)
-        assert category.save(failOnError: true, flush: true, insert: true)
-
-        assert Category.count == 5
+        assert Category.count == 3
     }
 
     private void createRdmUsers( def number ){
