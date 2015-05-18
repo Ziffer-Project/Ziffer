@@ -45,6 +45,7 @@ class BootStrap {
             user = new User( answerScore: ansScore, name: name, ban: ban, email: email, password: password, phone: phone, questionScore: qstScore, username: name, zifferCoins: zifferCoins )
             createRdmQuestion(r.nextInt(5),user)
             user.save( failOnError: true, flush: true, insert: true )
+            println "${user.username} ${user.password}"
         }
     }
 

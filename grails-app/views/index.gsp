@@ -24,7 +24,7 @@
     <a class="item" href="#">Ziffer</a>
     <div class="right menu">
         <a class="item" href="#">Sign up</a>
-        <a class="item" href="#">Sign in</a>
+        <a class="item" href="login/login">Sign in</a>
     </div>
 </div>
 <!-- Main body -->
