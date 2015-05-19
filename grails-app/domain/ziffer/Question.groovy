@@ -26,7 +26,7 @@ class Question {
 	answer nullable: true
 	offers nullable: true
 	//¿10 Mb estará bien?
-	attachedFile maxSize: 10*1024*1024 
+	attachedFile maxSize: 10*1024*1024, nullable: true
 
     }
 

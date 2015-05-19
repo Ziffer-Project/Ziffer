@@ -13,7 +13,8 @@ class Category {
         name blank: false
 	description blank: false
 	//Asumo que la imagen que aparecerá en el dashboard proviene de aquí
-	banner maxSize: 10*1024*1024
+	banner maxSize: 10*1024*1024, nullable: true
+	questions nullable: true
 	
     }
 }

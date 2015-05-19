@@ -11,7 +11,7 @@ class Profile {
     int questionScore
     int zifferCoins
 
-    static belongsTo  = [ profile : Profile ]
+    static belongsTo  = [ profile : User ]
 
     static constraints = {
 

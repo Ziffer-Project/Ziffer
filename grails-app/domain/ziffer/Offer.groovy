@@ -6,6 +6,6 @@ class Offer {
     Date offerDate
     boolean accepted
 
-    static belongsTo = [ question: Question, offerer: Offer ]
+    static belongsTo = [ question: Question, offerer: User ]
 
 }
