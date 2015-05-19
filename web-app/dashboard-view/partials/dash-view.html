@@ -1,0 +1,191 @@
+<link rel="stylesheet" type="text/css" href="dashboard-view/css/dashboard.css">
+<link rel="stylesheet" type="text/css" href="dashboard-view/css/animations.css">
+<!-- Category banner -->
+<div class="ui vertical inverted banner segment">
+    <div class="ui centered page grid">
+        <div class="fourteen wide column">
+            <div class="ui grid">
+                <div class="twelve wide column hidden transition category-info">
+                    <h1 class="ui inverted header" ng-cloak>{{selectedCategory.name || "Welcome"}}</h1>
+                </div>
+                <div class="four wide column">
+                    <div class="ui form">
+                        <div class="field">
+                            <div class="ui selection dropdown" id="change-cat-dropdown">
+                                <input name="cat-dropdown" type="hidden">
+                                <div class="default text">Change category</div>
+                                <i class="dropdown inverted icon"></i>
+                                <div class="menu">
+                                    <div class="item" ng-cloak ng-repeat="category in categories | orderBy: orderCategory" data-value="{{category}}" ng-click="$parent.selectedCategory=category">{{category.name}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ask button -->
+    <div class="ui centered page grid" id="ask-container">
+        <div class="fourteen wide column">
+            <div class="grid">
+                <div class="left floated five wide column">
+                    <div class="ui animated inverted fluid white button">
+                        <div class="hidden content">Ask</div>
+                        <div class="visible content"><i class="help icon"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Main section -->
+<div class="ui basic segment">
+    <div class="ui centered page grid">
+        <!-- Search bar and doubts section -->
+        <div class="fourteen wide column">
+            <div class="ui segment">
+                <div class="column">
+                    <div class="row">
+                        <div class="ui fluid left action icon input">
+                            <div class="ui floating dropdown icon button">
+                                <i class="filter icon"></i>
+                                <div class="menu">
+                                    <div class="header"><i class="list icon"></i>Order by</div>
+                                    <div class="item">
+                                        <div class="ui form">
+                                            <div class="field">
+                                                <div class="ui radio checkbox">
+                                                    <input name="orders" type="radio" ng-model="selectedOrder" data-ng-value="0" id="order-rb-1">
+                                                    <label for="order-rb-1"><i class="sort content ascending icon"></i>Ascending</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="ui form">
+                                            <div class="field">
+                                                <div class="ui radio checkbox">
+                                                    <input name="orders" type="radio" ng-model="selectedOrder" data-ng-value="1" id="order-rb-2">
+                                                    <label for="order-rb-2"><i class="sort content descending icon"></i>Descending</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="divider"></div>
+                                    <div class="item">
+                                        <div class="ui form">
+                                            <div class="field">
+                                                <div class="ui radio checkbox">
+                                                    <input name="criteria" type="radio" ng-model="selectedCriteria" value="title" id="criteria-rb-1">
+                                                    <label for="criteria-rb-1"><i class="text height icon"></i>Title</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="ui form">
+                                            <div class="field">
+                                                <div class="ui radio checkbox">
+                                                    <input name="criteria" type="radio" ng-model="selectedCriteria" value="dueDate" id="criteria-rb-2">
+                                                    <label for="criteria-rb-2"><i class="calendar icon"></i>Due date</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="ui form">
+                                            <div class="field">
+                                                <div class="ui radio checkbox">
+                                                    <input name="criteria" type="radio" ng-model="selectedCriteria" value="creationDate" id="criteria-rb-3">
+                                                    <label for="criteria-rb-3"><i class="calendar outline icon"></i>Creation date</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="ui form">
+                                            <div class="field">
+                                                <div class="ui radio checkbox">
+                                                    <input name="criteria" type="radio" ng-model="selectedCriteria" value="userScore" id="criteria-rb-4">
+                                                    <label for="criteria-rb-4"><i class="star icon"></i>Score</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="divider"></div>
+                                    <div class="header"><i class="user icon"></i>Filter by user</div>
+                                    <div class="header">
+                                        <input placeholder="Type username..." type="text" ng-model="searchTerm.username" id="username-search-field">
+                                    </div>
+                                    <div class="header"><i class="tags icon"></i>Filter by tags</div>
+                                    <div class="header">
+                                        <input placeholder="Type tags..." type="text" ng-model="enteredTags" id="tags-search-field">
+                                    </div>
+                                </div>
+                            </div>
+                            <input placeholder="Search..." type="text" id="search-field" ng-model="searchTerm.$">
+                            <!-- Add ng-show attribute to search icon -->
+                            <i class="search icon"></i>
+                        </div>
+                    </div>
+                    <div class="ui hidden divider"></div>
+                    <div class="row" ng-cloak>
+                        <div class="ui celled list" id="doubt-list">
+                            <div class="item doubt-items" ng-repeat="doubt in filteredList = (doubtList | filter:searchTerm | filter:tagFilter | orderBy:selectedCriteria:selectedOrder)">
+                                <!-- Add ng-click to button for modal -->
+                                <div class="right floated ui peek button">Peek</div>
+                                <div class="content">
+                                    <div class="header">{{doubt.title}}</div>
+                                    <div class="meta">
+                                        <a>{{doubt.username}}</a>
+                                        <span class="score"> / {{doubt.userScore}} points</span>
+                                    </div>
+                                    <div class="description">
+                                        <div class="ui horizontal link list">
+                                            <div class="item">Created on: {{doubt.creationDate}}</div>
+                                            <div class="item">Until: {{doubt.dueDate}}</div>
+                                        </div>
+                                    </div>
+                                    <div class="extra">
+                                        <div class="ui label" ng-repeat="tag in doubt.tags">{{tag}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p ng-show="!filteredList.length">Sorry, we couldn't find any matching question.</p>
+                        </div>
+                        <br>
+                        <p>order = {{selectedOrder}}, selection = {{selectedCriteria}}, term = {{searchTerm}}, category = {{selectedCategory}}, tag = {{enteredTags}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Doubt extended information modal -->
+<div class="ui modal" ng-cloak>
+    <i class="close icon"></i>
+    <div class="header">
+        {{extDoubt.title}}
+        <div class="meta">
+            <a>{{extDoubt.username}}</a>
+            <span class="score"> / {{extDoubt.userScore}} points</span>
+        </div>
+        <div class="ui label" ng-repeat="tag in extDoubt.tags">{{tag}}</div>
+    </div>
+    <div class="content">
+        <div class="description">
+            {{extDoubt.description}}
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui left action input submitOfferBtn">
+            <button class="ui positive labeled icon button" ng-click="submitOffer()">
+                <i class="dollar icon"></i>
+                Offer
+            </button>
+            <input class="offer-input" name="offer" placeholder="Amount..." type="text" ng-model="extDoubt.offerAmount">
+        </div>
+        <div class="ui negative button">Cancel</div>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+[
+    {
+        "questionId": 11,
+        "title": "How much is 2+2?",
+        "creationDate": "20150215",
+        "dueDate": "20150615",
+        "tags": [
+            "math",
+            "arithmetic"
+        ],
+        "username": "user1",
+        "userScore": 0
+    },
+    {
+        "questionId": 12,
+        "title": "How much is 3+3?",
+        "creationDate": "20150115",
+        "dueDate": "20150515",
+        "tags": [
+            "math"
+        ],
+        "username": "user2",
+        "userScore": 2
+    },
+    {
+        "questionId": 13,
+        "title": "How much is 4+4?",
+        "creationDate": "20140215",
+        "dueDate": "20170615",
+        "tags": [
+            "adding"
+        ],
+        "username": "user3",
+        "userScore": 5
+    },
+    {
+        "questionId": 14,
+        "title": "How much is 6+10?",
+        "creationDate": "20150926",
+        "dueDate": "20151115",
+        "tags": [
+            "substraction",
+            "operation"
+        ],
+        "username": "user2",
+        "userScore": 1000
+    },
+    {
+        "questionId": 15,
+        "title": "How much is 2+2?",
+        "creationDate": "20130115",
+        "dueDate": "20140605",
+        "tags": [
+            "just asking"
+        ],
+        "username": "user5",
+        "userScore": 351
+    },
+    {
+        "questionId": 16,
+        "title": "How much is 2+2?",
+        "creationDate": "20150201",
+        "dueDate": "20150601",
+        "tags": [
+            "politics"
+        ],
+        "username": "user6",
+        "userScore": 96
+    }
+]
