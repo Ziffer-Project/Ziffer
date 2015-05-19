@@ -1,0 +1,30 @@
+/** {
+	border: 1px solid red !important;
+}*/
+#dash-body .banner {
+	background-image: url(images/bg.jpg);
+	margin-top: 35px;
+	min-height: 400px;
+}
+
+#dash-body .segment.stackable.grid {
+	position: relative;
+}
+
+#change-cat-dropdown {
+	background-color: rgba(0,0,0,0);
+}
+
+#change-cat-dropdown .menu {
+	background-color: rgba(0,0,0,0);
+}
+
+#change-cat-dropdown .menu .item,
+#change-cat-dropdown .default.text,
+#change-cat-dropdown .text {
+	color: #fff;
+}
+
+#search-field {
+	width: 100%;
+}

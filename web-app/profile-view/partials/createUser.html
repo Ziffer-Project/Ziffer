@@ -1,0 +1,55 @@
+
+
+<div class="grid center-cont">
+<div class="ui two column centered grid">
+    <div class="row info-content">
+
+        <div class="column centered">
+        <div class="ui content segment center-form" style="padding-top: 100px">
+            <div class="ui form"  style="padding-top: 8px">
+                <div class="field">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" placeholder="Nombre" ng-model="nombre">
+                </div>
+
+
+
+                <div class="field">
+                    <label for="fechaNacimiento">Fecha de nacimiento: </label>
+                    <input type="text" id="fechaNacimiento" placeholder="" ng-model="date">
+                </div>
+                <div class="field">
+                    <label for="rol">Rol: </label>
+                    <select ng-model="rol">
+                        <option>Estudiante</option>
+                        <option>Administrador</option>
+                        <option>Tutor</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="Username">Username: </label>
+                    <input type="text" name="password" placeholder="username" ng-model="username">
+                </div>
+
+                <div class="field">
+                    <label for="password">Password: </label>
+                    <input type="password" name="password" placeholder="password" ng-model="password">
+                </div>
+
+                <div class="field">
+                    <label for="confirm">Confirmar password: </label>
+                    <input type="password" name="confirm" ng-model="confirm">
+                </div>
+
+                <div class="ui basic button" ng-click="newUser(nombre, date, rol, username, password)">
+                    Sign Up
+                </div>
+            </div>
+        </div>
+            </div>
+    </div>
+</div>
+</div>
+</body>
+</html><!---->

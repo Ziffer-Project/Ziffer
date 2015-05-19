@@ -1,0 +1,46 @@
+
+    <!-- InformaciÃ³n -->
+    <div class="row info-content">
+        <div class="ui two column centered grid"><!-- Side panel --></div>
+        <div class="ui content segment center-form">
+            <div class="ui form" ng-controller="editController">
+                <div class="field">
+                    <label for="nombre">Nombre</label>
+                    <input type="checkbox" ng-model="nombre">
+                    <input type="text" id="nombre" placeholder="Nombre" ng-show="nombre">
+                </div>
+
+
+                <!--div class="field">
+                    <label for="rol">Rol: </label>
+                    <select ng-model="rol">
+                        <option>Estudiante</option>
+                        <option>Administrador</option>
+                        <option>Tutor</option>
+                    </select>
+                </div-->
+
+                <div class="field">
+                    <label for="Username">Username: </label>
+                    <input type="text" name="password" placeholder="username" ng-model="username" vaue="{{users.username}}">
+                </div>
+
+                <div class="field">
+                    <label for="password">Password: </label>
+                    <input type="checkbox" ng-model="password">
+                    <input type="password" name="password" placeholder="password" ng-show="password" vaue="{{users.password}}">
+                </div>
+
+                <div class="field" ng-show="password">
+                    <label for="confirm" ng-show="showPass">Confirmar password: </label>
+                    <input type="password" name="confirm" ng-show="password" vaue="{{users.username}}">
+                </div>
+
+                <div class="ui basic button" ng-click="editUser(nombre, username, password)">
+                    Guardar cambios
+                </div>
+                <!--script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script-->
+            </div>
+        </div>
+    </div>
+</div>
