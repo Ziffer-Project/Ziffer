@@ -14,12 +14,18 @@ class LoginController {
         def user = User.findAllWhere([username: params.username, password: params.password])
         if( user ) {
             session.user = user
-            render true as JSON
+            def json = new Response( access: true ) as JSON
+            render json
             //redirect( url: '/#/dashboard')
         }
         else {
-            render false as JSON
+            def json = new Response( access: false ) as JSON
+            render json
             //redirect( controller: 'login' )
         }
     }
+}
+
+class Response {
+    Boolean access
 }

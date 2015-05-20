@@ -4,23 +4,27 @@
 		<div class="six wide column">
 			<form class="ui form">
 				<h2 class="ui dividing header">Sign in</h2>
+                <div class="ui error message login-error-message">
+                    <div class="header">Incorrect information</div>
+                    <p>You have entered an incorrect username or password.</p>
+                </div>
 				<div class="required field">
 					<label>Username</label>
 					<div class="ui icon input">
-						<input placeholder="Username" type="text" ng-model="signinUser.username">
+						<input placeholder="Username" type="text" ng-model="signinUser.username" class="inputLogin">
 						<i class="user icon"></i>
 					</div>
 				</div>
 				<div class="required field">
 					<label>Password</label>
 					<div class="ui icon input">
-						<input placeholder="Password" type="text" ng-model="signinUser.password">
+						<input placeholder="Password" type="password" ng-model="signinUser.password" class="inputLogin">
 						<i class="lock icon"></i>
 					</div>
 				</div>
 				<div class="row">
-						<div class="positive ui button signinBtn">Sign in</div>
-						<div class="negative ui button cancelSigninBtn" ng-click="goHome()">Go home</div>
+					<div class="positive ui button signin-btn">Sign in</div>
+					<div class="negative ui button cancelSigninBtn" ng-click="goHome()">Go home</div>
 				</div>
 			</form>
 		</div>

@@ -1,0 +1,34 @@
+#loggedMenu .menu {
+    background-color: #d8d8d8;
+    border-radius: 0;
+}
+#loggedMenu .menu .item,
+#loggedMenu .text {
+    color: #fff;
+}
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+}
+.slide.ng-enter,
+.slide.ng-leave {
+    -webkit-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.slide.ng-enter {
+    top: 100%;
+}
+.slide.ng-enter-active {
+    top: 0;
+}
+.slide.ng-leave {
+    top: 0;
+    opacity: .5;
+}
+.slide.ng-leave-active {
+    top: -100%;
+    opacity: .0;
+}

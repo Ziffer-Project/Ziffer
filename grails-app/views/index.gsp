@@ -20,15 +20,32 @@
 </head>
 <body style="background-color: #d8d8d8">
 <!-- Header -->
-<div class="ui inverted borderless top-bar menu fixed">
-    <a class="item" href="#/">Ziffer</a>
-    <div class="right menu">
-        <a class="item" href="#/signup">Sign up</a>
-        <a class="item" href="#/signin">Sign in</a>
+<div class="topBar">
+    <div class="ui inverted borderless topBarNotLogged menu fixed">
+        <a class="item" href="#/">Ziffer</a>
+        <div class="right menu">
+            <a class="item" href="#/signup">Sign up</a>
+            <a class="item" href="#/signin">Sign in</a>
+        </div>
+    </div>
+    <div class="ui inverted borderless topBarLogged menu fixed">
+        <a class="item" href="#/">Ziffer</a>
+        <div class="right menu">
+            <a class="item ui dropdown" id="loggedMenu">
+                Username
+                <div class="menu" ng-controller="IndexCtrl">
+                    <div class="item" ng-click="goDash()">Dashboard</div>
+                    <div class="item" ng-click="goEdit()">Edit Profile</div>
+                    <div class="item" ng-click="goMyQuestions()">My questions</div>
+                    <div class="item" ng-click="goMyContributions()">My contributions</div>
+                    <div class="item" ng-click="goSignout()">Sign out</div>
+                </div>
+            </a>
+        </div>
     </div>
 </div>
 <!-- Main body -->
-<div ng-view id="main-body"></div>
+<div ng-view id="main-body" class="slide"></div>
 <r:layoutResources/>
 <!-- Footer -->
 <div class="ui basic segment"></div>
