@@ -1,4 +1,5 @@
 import ziffer.*
+import grails.converters.JSON
 
 class BootStrap {
 
@@ -9,6 +10,14 @@ class BootStrap {
 	acceptOffers()
 	createAnswers()
 	createComments()
+	JSON.registerObjectMarshaller(Category){
+	    def json = [:]
+	    json['id'] = it.id
+	    json['name'] = it.name
+	    // Por si se necesita en el futuro
+	    //json['description'] = it.description
+	    return json
+	}
 
     }
 
@@ -106,8 +115,20 @@ class BootStrap {
             def dueDate = new Date()
             dueDate.setTime( Date.newInstance().time + 5*r.nextInt(1000000000) + 5*1000000000L )
 	    def lauDate = new Date()
+
+	    def tags = [] as Set
+	    def numTags = createRndNumber(0,5)
+	    (1..numTags).each{
+
+		/*No hay restricciones en Question sobre el contenido o la longitud de cada tag
+		* pero aquí supongo que, si existe al menos 1, debe ser mayor o igual a 1 carácter y menor o
+		* igual a 10 caracteres y no contener espacios, etc...
+		*/
+		tags.add(createRdmText(createRndNumber(1,10)))
+
+	    }
 	    lauDate.setTime( Date.newInstance().time + 5*r.nextInt(1000000000) + 5*1000000000L )
-            def q = new Question(title: title, description: description, dateCreated: iniDate, lastUpdated: lauDate, dueDate: dueDate, category: category, asker: user )
+            def q = new Question(title: title, description: description, dateCreated: iniDate, lastUpdated: lauDate, dueDate: dueDate, category: category, asker: user, tags: tags )
             user.addToQuestions(q)
         }
     }

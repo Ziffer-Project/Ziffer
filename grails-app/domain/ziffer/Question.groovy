@@ -10,13 +10,14 @@ class Question {
     int negScore
     int posScore
     byte[] attachedFile
-    //¿keywords?
+    
 
     static belongsTo = [ asker : User, category : Category ]
     
     static hasOne = [ answer : Answer ]
 
-    static hasMany = [ offers : Offer ]
+    //By default Grails use a Set, https://grails.github.io/grails-doc/latest/ref/Domain%20Classes/hasMany.html
+    static hasMany = [ offers : Offer, tags : String ]
 
     static constraints = {
 
@@ -25,6 +26,7 @@ class Question {
         dueDate validator: { return it.after(new Date()) }
 	answer nullable: true
 	offers nullable: true
+	tags nullable: true
 	//¿10 Mb estará bien?
 	attachedFile maxSize: 10*1024*1024, nullable: true
 
