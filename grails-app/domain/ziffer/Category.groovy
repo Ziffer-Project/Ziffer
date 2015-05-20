@@ -3,10 +3,18 @@ package ziffer
 class Category {
 
     String name
-    int id
-    static hasMany = [questions: Question]
+    String description
+    byte[] banner
+
+    static hasMany = [ questions: Question ]
 
     static constraints = {
-        questions( nullable: true )
+
+        name blank: false
+	description blank: false
+	//Asumo que la imagen que aparecerá en el dashboard proviene de aquí
+	banner maxSize: 10*1024*1024, nullable: true
+	questions nullable: true
+	
     }
 }
