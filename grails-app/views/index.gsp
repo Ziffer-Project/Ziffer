@@ -21,14 +21,14 @@
 <body style="background-color: #d8d8d8">
 <!-- Header -->
 <div class="ui inverted borderless top-bar menu fixed">
-    <a class="item" href="#">Ziffer</a>
+    <a class="item" href="#/">Ziffer</a>
     <div class="right menu">
-        <a class="item" href="#">Sign up</a>
-        <a class="item" href="login/login">Sign in</a>
+        <a class="item" href="#/signup">Sign up</a>
+        <a class="item" href="#/signin">Sign in</a>
     </div>
 </div>
 <!-- Main body -->
-<div ng-view id="dash-body"></div>
+<div ng-view id="main-body"></div>
 <r:layoutResources/>
 <!-- Footer -->
 <div class="ui basic segment"></div>

@@ -69,7 +69,7 @@ var dashDirectives = angular.module('dashDirectives', [])
             link: function(scope, elem, attrs) {
                 $(elem).click(function() {
                     scope.$parent.extDoubt = scope.doubt;
-                    var desiredId = scope.doubt.questionId;
+                    var desiredId = scope.doubt.id;
                     var catId = scope.doubt.categoryId;
                     var el = DoubtRequest.get({categoryId: catId, doubtId: desiredId}, function(el) {
                         scope.$parent.extDoubt.description = el.description;

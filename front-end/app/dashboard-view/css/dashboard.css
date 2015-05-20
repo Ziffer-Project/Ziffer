@@ -1,14 +1,14 @@
 /** {
 	border: 1px solid red !important;
 }*/
-#dash-body .banner {
+#main-body .banner {
 	background-image: url(images/bg.jpg);
 	margin-top: 35px;
 	min-height: 250px;
 	border-radius: 0px;
 }
 
-#dash-body .segment.stackable.grid {
+#main-body .segment.stackable.grid {
 	position: relative;
 }
 

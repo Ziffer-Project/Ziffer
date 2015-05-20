@@ -75,7 +75,7 @@ var dashControllers = angular.module('dashControllers', [])
                 var q = $scope.extDoubt;
                 if (typeof q.amount !== 'undefined' && q.amount.length > 0 && q.amount.match(/^\d{0,9}$/)) {
                     console.log($scope.extDoubt.offerAmount); // erase
-                    var info = {categoryId: q.categoryId, doubtId: q.questionId, amount: q.amount};
+                    var info = {categoryId: q.categoryId, doubtId: q.id, amount: q.amount};
                     SetOffer.setOffer(info, {});
                 } else {
                     console.log("invalid offer");
