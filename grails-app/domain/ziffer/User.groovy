@@ -15,11 +15,11 @@ class User {
     static constraints = {
 
         username blank: false, size: 6..20, unique: true
-        password blank: false, size: 6..20
-	answers nullable: true
-	questions nullable: true
-	offers nullable: true
-	comments nullable: true
+        password blank: false, size: 6..20, password: true
+        answers nullable: true
+        questions nullable: true
+        offers nullable: true
+        comments nullable: true
 
     }
 }

@@ -17,21 +17,21 @@ class Profile {
 
         name nullable: true, maxSize: 100
         email email: true, blank: false
-	aboutMe nullable: true, maxSize: 1000
-	//¿5 Mb es un buen tamaño máximo?
-	avatar nullable: true, maxSize: 5*1024*1024
+        aboutMe nullable: true, maxSize: 1000
+        //¿5 Mb es un buen tamaño máximo?
+        avatar nullable: true, maxSize: 5*1024*1024
         phone nullable: true
         answerScore nullable: true
-        questionScore: nullable: true
-	zifferCoins nullable: true
+        questionScore nullable: true
+	    zifferCoins nullable: true
 
     }
 
     static mapping = {
 
-	answerScore defaultValue: 0
+	    answerScore defaultValue: 0
         questionScore defaultValue: 0
-	zifferCoins defaultValue: 10
+	    zifferCoins defaultValue: 10
 
     }
 }

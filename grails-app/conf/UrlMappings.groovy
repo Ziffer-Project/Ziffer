@@ -61,7 +61,10 @@ class UrlMappings {
         }
 
 
-
+        "signin/mkData/signinRequest" {
+            controller = "Login"
+            action = 'doLogin'
+        }
 
 
         "/$controller/$action?/$id?(.$format)?"{
