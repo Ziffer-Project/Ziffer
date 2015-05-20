@@ -2,7 +2,7 @@
 
 var userControllers = angular.module('userControllers', [])
 
-.controller('UserViewCtrl', ['$scope', '$http', function($scope, $http) {
+.controller('UserViewCtrl', ['$scope', '$http', 'profileRequest', function($scope, $http) {
     /*$scope.create=function($scope){
         $scope.user= {
             params: {
@@ -25,7 +25,7 @@ var userControllers = angular.module('userControllers', [])
             }
         });
 
-        scope.user={}
+        $scope.user=profileRequest.queryUser();
 
         /**$scope.update=function($scope.username){
             //$scope.user=copy($scope.user);

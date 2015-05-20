@@ -60,7 +60,20 @@ class UrlMappings {
             action = "setOffer"
         }
 
+        "/signup/fetchData/edit" {
+            controller = "Category"
+            action = "edit"
+        }
 
+        "/signup/mkData/signUp" {
+            controller = "Category"
+            action = "signUp"
+        }
+
+        "/signup/mdData/edit" {
+            controller = "Category"
+            action = "edit"
+        }
 
 
 

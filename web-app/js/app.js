@@ -2,7 +2,7 @@
 
 var app = angular.module('app', [
 		'ngRoute',
-		'dashControllers', 'dashDirectives', 'dashServices', 'dashAnimations'
+		'dashControllers', 'dashDirectives', 'dashServices', 'dashAnimations', 'userControllers'
 	]
 );
 
@@ -13,7 +13,8 @@ app.config(['$routeProvider', function($routeProvider) {
 			controller: 'DashViewCtrl'
 		})
 		.when('/signup', {
-			templateUrl: '<p style="margin-top: 50px">YEAH</p>'
+			templateUrl: 'profile-view/partials/createUser.html',
+            controller: 'UserViewCtrl'
 		})
 		.otherwise({
 			redirectTo: '/'
