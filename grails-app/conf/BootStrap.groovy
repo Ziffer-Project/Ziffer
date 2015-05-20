@@ -1,4 +1,5 @@
 import ziffer.*
+import grails.converters.JSON
 
 class BootStrap {
 
@@ -9,6 +10,14 @@ class BootStrap {
 	acceptOffers()
 	createAnswers()
 	createComments()
+	JSON.registerObjectMarshaller(Category){
+	    def json = [:]
+	    json['id'] = it.id
+	    json['name'] = it.name
+	    // Por si se necesita en el futuro
+	    //json['description'] = it.description
+	    return json
+	}
 
     }
 
