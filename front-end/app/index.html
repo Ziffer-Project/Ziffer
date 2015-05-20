@@ -21,6 +21,7 @@
 		<script src="dist/angular-resource/angular-resource.min.js"></script>
 		<script src="dist/angular-animate/angular-animate.min.js"></script>
 		<script src="js/app.js"></script>
+		<script src="signin-view/js/signin-controllers.js"></script>
 		<script src="dashboard-view/js/dash-controllers.js"></script>
 		<script src="dashboard-view/js/dash-directives.js"></script>
 		<script src="dashboard-view/js/dash-services.js"></script>
@@ -29,17 +30,19 @@
 	<body style="background-color: #d8d8d8">
 		<!-- Header -->
 		<div class="ui inverted borderless top-bar menu fixed">
-			<a class="item" href="#">Ziffer</a>
+			<a class="item" href="#/">Ziffer</a>
 			<div class="right menu">
-				<a class="item" href="#">Sign up</a>
-				<a class="item" href="#">Sign in</a>
+				<a class="item" href="#/signup">Sign up</a>
+				<a class="item" href="#/signin">Sign in</a>
 			</div>
 		</div>
 		<!-- Main body -->
-		<div ng-view id="dash-body"></div>
+		<div ng-view id="main-body"></div>
 
 		<!-- Footer -->
-		<div class="ui basic segment"></div>
+		<div class="ui basic segment">
+			<p>&copy Ziffer. All rights reserved 2015.</p>
+		</div>
 	</body>
 
 </html>
