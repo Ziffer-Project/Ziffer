@@ -1,5 +1,7 @@
 package ziffer
 
+import grails.converters.JSON
+
 class LoginController {
 
     static defaultAction = "login"
@@ -11,10 +13,13 @@ class LoginController {
     def doLogin(){
         def user = User.findAllWhere([username: params.username, password: params.password])
         if( user ) {
-            redirect( url: '/#/dashboard')
+            session.user = user
+            render true as JSON
+            //redirect( url: '/#/dashboard')
         }
         else {
-            redirect( controller: 'login' )
+            render false as JSON
+            //redirect( controller: 'login' )
         }
     }
 }
