@@ -1,0 +1,34 @@
+[
+  {
+    "profileId":"1",
+    "name":"John",
+    "email":"john@gmail.com",
+    "aboutMe":"I'm a student and I lije sports",
+    "avatar":"",
+    "phone":"1234567"
+  },
+  {
+    "profileId":"2",
+    "name":"Leela",
+    "email":"leela@gmail.com",
+    "aboutMe":"I like dancing and surf",
+    "avatar":"",
+    "phone":"2223333"
+  },
+  {
+    "profileId":"3",
+    "name":"Kurt",
+    "email":"kurt@gmail.com",
+    "aboutMe":"I like music and food",
+    "avatar":"",
+    "phone":"4448888"
+  },
+  {
+    "profileId":"4",
+    "name":"Gina",
+    "email":"gina@gmail.com",
+    "aboutMe":"I like sleeping",
+    "avatar":"",
+    "phone":"9990001"
+  }
+]
