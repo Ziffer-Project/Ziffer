@@ -22,7 +22,7 @@ var userServices = angular.module('userServices', ['ngResource'])
 
     .factory('edit', ['$resource',
         function ($resource) {
-            return $resource('signup/mdData/edit', {}, {
+            return $resource('signup/mdData/save', {}, {
                 edit: { method: 'PUT' }
             });
         }

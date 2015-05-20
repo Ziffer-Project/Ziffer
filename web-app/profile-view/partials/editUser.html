@@ -5,20 +5,26 @@
         <div class="ui content segment center-form">
             <div class="ui form" ng-controller="editController">
                 <div class="field">
-                    <label for="nombre">Nombre</label>
+                    <label for="nombre">Name</label>
                     <input type="checkbox" ng-model="nombre">
-                    <input type="text" id="nombre" placeholder="Nombre" ng-show="nombre">
+                    <input type="text" id="name" placeholder="Nombre" ng-show="nombre">
                 </div>
 
+                <div class="field">
+                    <label for="email">Email: </label>
+                    <input type="text" id="email" placeholder="" value="{{profile.email}}" ng-model="email">
+                </div>
 
-                <!--div class="field">
-                    <label for="rol">Rol: </label>
-                    <select ng-model="rol">
-                        <option>Estudiante</option>
-                        <option>Administrador</option>
-                        <option>Tutor</option>
-                    </select>
-                </div-->
+                <div class="field">
+                    <label for="abouteMe">About Me: </label>
+                    <input type="textArea" id="aboutMe" placeholder="" value="{{profile.aboutMe}}" ng-model="email">
+                </div>
+
+                <div class="field">
+                    <label for="phone">Phone: </label>
+                    <input type="text" id="phone" placeholder="" value="{{profile.phone}}" ng-model="email">
+                </div>
+
 
                 <div class="field">
                     <label for="Username">Username: </label>
@@ -36,7 +42,7 @@
                     <input type="password" name="confirm" ng-show="password" vaue="{{users.username}}">
                 </div>
 
-                <div class="ui basic button" ng-click="editUser(nombre, username, password)">
+                <div class="ui basic button" ng-click="save()">
                     Guardar cambios
                 </div>
                 <!--script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script-->

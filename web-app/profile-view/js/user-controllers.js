@@ -2,7 +2,7 @@
 
 var userControllers = angular.module('userControllers', [])
 
-.controller('UserViewCtrl', ['$scope', '$http', 'profileRequest', function($scope, $http) {
+.controller('UserViewCtrl', ['$scope', '$http', 'profileRequest', function($scope, $http, profileRequest) {
     /*$scope.create=function($scope){
         $scope.user= {
             params: {

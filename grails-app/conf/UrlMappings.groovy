@@ -60,19 +60,19 @@ class UrlMappings {
             action = "setOffer"
         }
 
-        "/signup/fetchData/edit" {
-            controller = "Category"
+        "/signup/fetchData/users/${userId}/${profileId}?" {
+            controller = "User"
             action = "edit"
         }
 
         "/signup/mkData/signUp" {
-            controller = "Category"
+            controller = "User"
             action = "signUp"
         }
 
         "/signup/mdData/edit" {
-            controller = "Category"
-            action = "edit"
+            controller = "User"
+            action = "save"
         }
 
 
