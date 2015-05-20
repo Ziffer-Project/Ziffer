@@ -18,6 +18,22 @@ class BootStrap {
 	    //json['description'] = it.description
 	    return json
 	}
+	JSON.registerObjectMarshaller(Question){
+	    def json = [:]
+	    json['id'] = it.id
+	    json['title'] = it.title
+	    json['description'] = it.description
+	    json['dateCreated'] = it.dateCreated.format('dd/MM/yyyy')
+	    json['lastUpdated'] = it.lastUpdated.format('dd/MM/yyyy')
+	    json['dueDate'] = it.dueDate.format('dd/MM/yyyy')
+	    json['negScore'] = it.negScore
+	    json['posScore'] = it.posScore
+	    json['tags'] = it.tags
+	    json['username'] = it.getAsker().username
+	    json['categoryId'] = it.getCategory().id
+	    //json['userScore'] = ¿A cuál campo hace referencia? ¿Los coins? ¿El puntaje de aceptación?
+	    return json
+	}
 
     }
 

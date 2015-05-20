@@ -36,6 +36,7 @@ class Question {
 
 	negScore defaultValue: 0
 	posScore defaultValue: 0
+	sort dateCreated: "desc"
 
     }
 

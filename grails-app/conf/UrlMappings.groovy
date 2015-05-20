@@ -61,7 +61,7 @@ class UrlMappings {
         }
 
 
-        "signin/mkData/signinRequest" {
+        "/signin/mkData/signinRequest" {
             controller = "Login"
             action = 'doLogin'
         }
