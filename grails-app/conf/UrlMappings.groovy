@@ -59,10 +59,11 @@ class UrlMappings {
             controller = "Category"
             action = "setOffer"
         }
-
-
-
-
+				//Falta la dirección de creación de usuarios
+				"addressfromSignup" {
+            controller = "Signup"
+            action = "createUser"
+        }
 
         "/$controller/$action?/$id?(.$format)?"{
             constraints {
