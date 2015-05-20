@@ -12,6 +12,7 @@ modules = {
         resource url: 'dist/angular-resource/angular-resource.min.js'
         resource url: 'dist/angular-animate/angular-animate.min.js'
         resource url: 'js/app.js'
+        resource url: 'signin-view/js/signin-controllers.js'
         resource url: 'dashboard-view/js/dash-controllers.js'
         resource url: 'dashboard-view/js/dash-directives.js'
         resource url: 'dashboard-view/js/dash-services.js'
