@@ -38,8 +38,8 @@ grails.mime.types = [ // the first one is the default format
 grails.resources.resourceLocatorEnabled = false
 
 // What URL patterns should be processed by the resources plugin
-grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*', '/dist/*', '/dashboard-view/*']
-grails.resources.adhoc.includes = ['/images/**', '/css/**', '/js/**', '/plugins/**', '/dist/**', '/dashboard-view/**']
+grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*', '/dist/*', '/dashboard-view/*', '/signin-view/*', '/home-view/*']
+grails.resources.adhoc.includes = ['/images/**', '/css/**', '/js/**', '/plugins/**', '/dist/**', '/dashboard-view/**', '/signin-view/**', '/home-view/*']
 
 // Legacy setting for codec used to encode data with ${}
 grails.views.default.codec = "html"
