@@ -24,7 +24,7 @@ class BootStrap {
 	* también se le puede asignar la imagen del banner que tendrá, por ahora dejé esa imagen nula.
 	* Eliminé el id, es redundante, Hibernate lo crea por defecto
 	*/
-
+	println "Creando 3 categorías"
         def category = new Category(name: "Algebra", description: "Algebra is the study of mathematical symbols and the rules for manipulating these symbols.")
         assert category.save(failOnError: true, flush: true, insert: true)
 
@@ -39,6 +39,8 @@ class BootStrap {
 
     private void createRdmUsers( def number ){
 
+
+	println "Creando usuarios de prueba"
         def userName = [] as Set
         def user
         def r = new Random()
@@ -62,7 +64,6 @@ class BootStrap {
             def ban = r.nextBoolean()
 	    def val = r.nextBoolean()
             user = new User(username: name, password: password, banned: ban, validated: val, profile: new Profile(name: fullName, email: email, aboutMe: aboutMe, phone: phone, answerScore: ansScore, questionScore: qstScore, zifferCoins: zifferCoins) )
-            println user
             createRdmQuestion(r.nextInt(5),user)
             user.save( failOnError: true, flush: true, insert: true )
         }
@@ -70,6 +71,7 @@ class BootStrap {
 
     private void createRdmQuestion( def number, def user ){
 
+	println "Creando preguntas de prueba"
         def r = new Random()
         (1..number).each {
 	    //Al menos tiene 3 caracteres para pasar la validación de título
@@ -105,14 +107,13 @@ class BootStrap {
 	    def lauDate = new Date()
 	    lauDate.setTime( Date.newInstance().time + 5*r.nextInt(1000000000) + 5*1000000000L )
             def q = new Question(title: title, description: description, dateCreated: iniDate, lastUpdated: lauDate, dueDate: dueDate, category: category, asker: user )
-            println q
             user.addToQuestions(q)
         }
     }
 
     private createRdmOffers(){
 
-
+	println "Creando ofertas de prueba"
         def r = new Random()
 	def times = Question.list().size()
 	(0..times).each{
@@ -141,7 +142,7 @@ class BootStrap {
 	
     private void acceptOffers(){
 	
-
+	println "Aceptando ofertas de prueba"
 	def questions = Question.list()
 	questions.each{
 
@@ -167,18 +168,10 @@ class BootStrap {
 	/*Suponiendo que cada oferta aceptada implique crear una respuesta, pero el diagrama de
 	* clases hecho no refuerza dicha necesidad, hay que considerar en qué afecta dicha cosa
 	*/
-	println "Ingresé en createAnswers"
+	println "Creando respuestas de prueba"
 	def r = new Random()
-	/* Lo siguiente no funcionó :S arreglar por qué, mientras tanto se improvisa con otra solución
 	def offersAccepted = Offer.findAllWhere(accepted: true)
-	println offersAccepted
-	*/
-	def offers = Offer.list()
-	println offers
-	//offersAccepted.each{
-	offers.each{
-
-	    if(it.getAccepted()){
+	offersAccepted.each{
 
 	        def text = createRdmText(100)
 	        def posScore = createRndNumber(-100, 100)
@@ -188,11 +181,8 @@ class BootStrap {
 	        def answer = new Answer(text: text, posScore: posScore, negScore: negScore, accepted: r.nextBoolean(), question: question, user: user)
 	        question.setAnswer(answer)
 	        user.addToAnswers(answer)
-	        question.save()
-	        user.save()
-		//FIX-ME: Por alguna extraña razón hay que persistir explícitamente answer para que createComments reconozca los objetos o.O
-		answer.save()
-            }		
+	        question.save(flush: true, insert: true)
+	        user.save(flush: true, insert: true)
 	
 	}
 
@@ -201,9 +191,10 @@ class BootStrap {
 
     private void createComments(){
 
+	println "Creando comentarios de prueba"
 	def r = new Random()
 	def answers = Answer.list()
-	println answers
+	int a = 0
 	answers.each{
 
 	    /*Esto quizá refuerce que se deben tener presentes usuarios que preguntan y responden en las
@@ -212,14 +203,10 @@ class BootStrap {
 	    /*No está funcionando correctamente :S
 	    */
 	    def answer = it
-	    println answer
 	    def asker = it.getQuestion().getAsker()
-	    println asker
 	    def answerer = it.getAnswerer()
-	    println answerer
 	    def numComments = createRndNumber(0,5)
-  	    println numComments
-	    numComments.each{
+	    (1..numComments).each{
 
 		def text = createRdmText(20)
 		def posScore = createRndNumber(-100, 100)
@@ -227,11 +214,12 @@ class BootStrap {
 		def commentAsker = r.nextBoolean()
 		def comment = new Comment(text: text, negScore: negScore, posScore: posScore, answer: answer, poster: (commentAsker? asker : answerer))
 		commentAsker? asker.addToComments(comment) : answerer.addToComments(comment)
+		answer.addToReplies(comment)
 		commentAsker? asker.save(): answerer.save()
-		println comment
-		comment.save()
-
+		comment.save(flush: true, insert: true)
 	    }
+
+            answer.save(flush: true, insert: true)
 	}
 
     }
