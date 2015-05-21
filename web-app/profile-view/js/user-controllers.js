@@ -13,59 +13,49 @@ var userControllers = angular.module('userControllers', [])
                 }
                 return false;
             }
-    /*$scope.create=function($scope){
-        $scope.user= {
-            params: {
-                'name': $scope.name,
-                'rol': scope.rol,
-                'username': $scope.username,
-                'password': $scope.password,
-                'confirm': $scope.confirm
-            }
-        };
-    }*/
-        /***var request = $http({
-            method: "post",
-            url: "/profile-view/partials/createUser.html",
-            //transformRequest: transformRequestAsFormPost,
-            params: {
-                nombre: $scope.nombre,
-                username: $scope.username,
-                password: $scope.password
-            }
-        });***/
+
 
         $scope.user=profileRequest.queryUser();
         $scope.profile={};
+        $scope.profiles=[];
 
-        $scope.signUp=function(){
-              var u=$scope.profile;
+        $scope.signUp=function(profile){
+              /**var u=$scope.profile;
               if(typeof u!=='undefined'){
                   var newProfile = {profileId: u.id, name: u.name, email: u.email, aboutMe: u.aboutMe, avatar: u.avatar, phone: u.phone};
                   signUpRequest.signUp(newProfile, {});
-              }else{
+              }else {
                   console.log("Please register");
-              }
+              }**/
+            $scope.profiles.push({
+                name: profile.name,
+                email: profile.email,
+                aboutMe:  profile.aboutMe,
+                avatar:  profile.avatar,
+                phone:  profile.phone
+            });
         };
 
-        $scope.edit=function(){
+        /***$scope.edit=function(){
                 var u=$scope.profile;
                 editRequest=queryProfile();
-        };
-        $scope.theUser=editRequest.queryProfile();
+        };***/
+        editRequest.edit(info, {},
+            function edit(response) {
+                var id=$scope.profileId=1;//var u=$scope.profile;
+                console.log(response);
+            },
+            function error(error) {
+                console.log('There was an error in communication with the server.');
+            }
+        );
 
         $scope.save=function(){
             var u=$scope.profile;
             //editRequest=queryProfile();
         };
-        /**$scope.update=function($scope.username){
-            //$scope.user=copy($scope.user);
-            $http({
-                url: '/profile-view/js/createUser.html',
-                method: "GET",
-                params: {username: User.username}///
-            });
-        }*/
+
+
 
         /**.controller('editController', function($scope, $http) {
             $http.get("profile-view/tempData/profile.json")

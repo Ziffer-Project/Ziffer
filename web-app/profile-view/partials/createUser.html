@@ -6,48 +6,48 @@
 
         <div class="column centered">
         <div class="ui content segment center-form" style="padding-top: 100px">
-            <div class="ui form"  style="padding-top: 8px">
+            <div class="ui form"  style="padding-top: 8px" ng-controller="UserViewCtrl">
                 <div class="field">
                     <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" placeholder="Nombre" ng-model="nombre">
+                    <input type="text" id="nombre" placeholder="Nombre" ng-model="profile.nombre">
                 </div>
 
                 <div class="field">
                     <label for="email">Email: </label>
-                    <input type="text" id="email" placeholder="" ng-model="email">
+                    <input type="text" id="email" placeholder="" ng-model="profile.email">
                 </div>
 
                 <div class="field">
                     <label for="aboutMe">About Me: </label>
-                    <input type="text" id="aboutMe" placeholder="" ng-model="aboutMe">
+                    <input type="text" id="aboutMe" placeholder="" ng-model="profile.aboutMe">
                 </div>
 
                 <div class="field">
                     <label for="avatar">Avatar: </label>
-                    <input type="file" id="file" ng-model="avatar">
+                    <input type="file" id="file" ng-model="profile.avatar">
                 </div>
 
                 <div class="field">
                     <label for="phone">Phone: </label>
-                    <input type="text" id="phone" placeholder="" ng-model="phone">
+                    <input type="text" id="phone" placeholder="" ng-model="profile.phone">
                 </div>
 
                 <div class="field">
                     <label for="Username">Username: </label>
-                    <input type="text" name="password" placeholder="username" ng-model="username">
+                    <input type="text" name="password" placeholder="username" ng-model="profile.username">
                 </div>
 
                 <div class="field">
                     <label for="password">Password: </label>
-                    <input type="password" name="password" placeholder="password" ng-model="password">
+                    <input type="password" name="password" placeholder="password" ng-model="profile.password">
                 </div>
 
                 <div class="field">
                     <label for="confirm">Confirmar password: </label>
-                    <input type="password" name="confirm" ng-model="confirm">
+                    <input type="password" name="confirm" ng-model="profile.confirm">
                 </div>
 
-                <div class="ui basic button" ng-click="newUser(nombre, date, rol, username, password)">
+                <div class="ui basic button btn-success" ng-click="signUp(profile)">
                     Sign Up
                 </div>
             </div>

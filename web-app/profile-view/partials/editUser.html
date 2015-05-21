@@ -1,52 +1,60 @@
 
-    <!-- InformaciÃ³n -->
-    <div class="row info-content">
-        <div class="ui two column centered grid"><!-- Side panel --></div>
-        <div class="ui content segment center-form">
-            <div class="ui form" ng-controller="user-controllers">
-                <div class="field" ng-model="profile in theUser">
-                    <label for="nombre">Name</label>
-                    <input type="checkbox" ng-model="nombre">
-                    <input type="text" id="name" placeholder="Nombre" ng-show="nombre">
-                </div>
 
-                <div class="field">
-                    <label for="email">Email: </label>
-                    <input type="text" id="email" placeholder="" value="{{profile.email}}" ng-model="email">
-                </div>
+<div class="grid center-cont">
+    <div class="ui two column centered grid">
+        <div class="row info-content">
 
-                <div class="field">
-                    <label for="abouteMe">About Me: </label>
-                    <input type="textArea" id="aboutMe" placeholder="" value="{{profile.aboutMe}}" ng-model="email">
-                </div>
+            <div class="column centered">
+                <div class="ui content segment center-form" style="padding-top: 100px">
+                    <div class="ui form"  style="padding-top: 8px" ng-comtroller="users-controllers">
+                        <div class="field" ng-model="profile in profiles">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" value="Daniel" ng-model="profile.nombre">
+                        </div>
 
-                <div class="field">
-                    <label for="phone">Phone: </label>
-                    <input type="text" id="phone" placeholder="" value="{{profile.phone}}" ng-model="email">
-                </div>
+                        <div class="field">
+                            <label for="email">Email: </label>
+                            <input type="text" id="email" value="Manzanita" ng-model="profile.email">
+                        </div>
 
+                        <div class="field">
+                            <label for="aboutMe">About Me: </label>
+                            <input type="text" id="aboutMe" value="I like music" ng-model="profile.aboutMe">
+                        </div>
 
-                <div class="field">
-                    <label for="Username">Username: </label>
-                    <input type="text" name="password" placeholder="username" ng-model="username" vaue="{{users.username}}">
-                </div>
+                        <div class="field">
+                            <label for="avatar">Avatar: </label>
+                            <input type="file" id="file" value="" ng-model="profile.avatar">
+                        </div>
 
-                <div class="field">
-                    <label for="password">Password: </label>
-                    <input type="checkbox" ng-model="password">
-                    <input type="password" name="password" placeholder="password" ng-show="password" vaue="{{users.password}}">
-                </div>
+                        <div class="field">
+                            <label for="phone">Phone: </label>
+                            <input type="text" id="phone" value="1234567" ng-model="profile.phone">
+                        </div>
 
-                <div class="field" ng-show="password">
-                    <label for="confirm" ng-show="showPass">Confirm password: </label>
-                    <input type="password" name="confirm" ng-show="password" vaue="{{users.username}}">
-                </div>
+                        <!--div class="field">
+                            <label for="Username">Username: </label>
+                            <input type="text" name="password" value="" ng-model="profile.username">
+                        </div-->
 
-                <div class="ui basic button" ng-click="save()">
-                    Guardar cambios
+                        <!--div class="field">
+                            <label for="password">Password: </label>
+                            <input type="password" name="password" value="" ng-model="password">
+                        </div>
+
+                        <div class="field">
+                            <label for="confirm">Confirmar password: </label>
+                            <input type="password" name="confirm" ng-model="confirm">
+                        </div-->
+
+                        <div class="ui basic button" ng-click="save(profile)">
+                            Save
+                        </div>
+                    </div>
                 </div>
-                <!--script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script-->
             </div>
         </div>
     </div>
 </div>
+</body>
+</html><!---->
