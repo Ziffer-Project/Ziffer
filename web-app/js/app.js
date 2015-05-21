@@ -11,7 +11,7 @@ var app = angular.module('app', [
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'main-view/main-view.html'
+                templateUrl: 'home-view/partials/home-view.html'
             })
             .when('/signup', {
                 templateUrl: 'some/path/to/signup.html'

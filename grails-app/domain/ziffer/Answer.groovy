@@ -17,8 +17,8 @@ class Answer {
     static constraints = {
 
         text blank: false
-	replies nullable: true
-	attachedFile maxSize: 10*1024*1024, nullable: true
+        replies nullable: true
+        attachedFile maxSize: 10*1024*1024, nullable: true
 
     }
 
