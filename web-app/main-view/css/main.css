@@ -1,0 +1,204 @@
+#home {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    background-image: url(img/1.jpg);
+    text-align: center;
+    background-position: 0% 0%;
+}
+#home{
+
+    min-height: 700px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1920px;
+    background-attachment: fixed;
+    position: relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-right: auto;
+    margin-left:auto;
+
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.pattern{
+    background: url("img/pattern.png") repeat;
+    width: 100%;
+    height: 100%;
+
+    min-height: 700px;
+}
+.pattern2{
+    background: url("img/pattern.png") repeat;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+}
+article{padding: 100px;}
+.lineBig{
+    width: 170px;
+    display: inline-block;
+
+    height: 1px;
+    margin: 5px 15px;
+    background: #7C7C7C;
+}
+
+.line{
+    width: 90px;
+    display: inline-block;
+
+    height: 1px;
+    margin: 5px 15px;
+    background: #7C7C7C;
+}
+#home article div span {
+    font-size: 17px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+#home article p i {
+    color: #0098f9;
+    margin: 45px 0 50px 0;
+    font-size: 26px;
+}
+#home h1{
+    font-size: 210px;
+    line-height: 100px;
+    letter-spacing: -3px;
+    font-weight: 400;
+    margin: 100px 0;
+    text-transform: uppercase;
+}
+.logo, #aboutTitle, #imgabout{
+    position: relative;
+
+}
+#introButton{
+    padding: 50px;
+}
+#about,#plataforma,#nosotros{
+    text-align: center;
+    background-color: #ffffff;
+
+}
+
+#about article div span {
+
+    font-size: 17px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+#sectionTitle, #plataformaTitle ,#nosotrosTitle{
+    color: #7C7C7C;
+    font-size: 21px;
+}
+#sectionTitle h1{
+    font-size: 80px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: black;
+
+}
+
+.margen{
+    margin-top: 70px;
+    text-align:left;
+}
+.img-center {
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 5px 5px 5px #999;
+}
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+#sectionTitle p{
+    margin: 45px 0 0 0;
+}
+
+.media > .pull-left {
+    margin-right: 25px;
+}
+#parallaxOne{
+    background: url(img/2.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 300px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1920px;
+}
+
+#plataforma article div span {
+
+    font-size: 17px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#plataformaTitle h1{
+    font-size: 80px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: black;
+
+}
+
+#plataformaTitle p{
+    margin: 45px 0 0 0;
+}
+#labelIcon .column i{
+
+    display: block;
+    margin: 0em auto 0.25em;
+    font-size: 5em;
+    text-align: center;
+
+}
+h3{
+    text-align: center;
+}
+
+#parallaxTwo{
+    background: url(img/3.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1920px;
+}
+
+
+#nosotrosTitle h1{
+    font-size: 80px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: black;
+
+}
+
+#nosotrosTitle p{
+    margin: 45px 0 0 0;
+}
+h2{
+    text-align: center;
+}
+.lead{
+    text-align: center;
+}
+.centerColumn{
+    width: 65%;
+    margin-left: 16.666666666666664%;
+}
+
+#nosotros{
+    background-color: #ffffff;
+}
