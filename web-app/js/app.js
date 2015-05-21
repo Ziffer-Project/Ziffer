@@ -84,6 +84,7 @@ var indexControllers = angular.module('indexControllers', [])
         $scope.goSignout = function () {
             $rootScope.loggedUser = false;
             $location.path('/');
+
         };
         $scope.username = $rootScope.username;
     }]);

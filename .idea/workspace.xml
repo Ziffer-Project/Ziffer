@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1141c3f1-6e1e-4a82-b687-9a2fac9f900a" name="Default" comment="Testing git with Intellij integration.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/js/app.js" afterPath="$PROJECT_DIR$/web-app/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/dashboard-view/js/dash-directives.js" afterPath="$PROJECT_DIR$/web-app/dashboard-view/js/dash-directives.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/dashboard-view/partials/dash-view.html" afterPath="$PROJECT_DIR$/web-app/dashboard-view/partials/dash-view.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/dashboard-view/css/dashboard.css" afterPath="$PROJECT_DIR$/web-app/dashboard-view/css/dashboard.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/index.gsp" afterPath="$PROJECT_DIR$/grails-app/views/index.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/signin-view/js/signin-controllers.js" afterPath="$PROJECT_DIR$/web-app/signin-view/js/signin-controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/dashboard-view/js/dash-controllers.js" afterPath="$PROJECT_DIR$/web-app/dashboard-view/js/dash-controllers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/home-view/partials/home-view.html" afterPath="$PROJECT_DIR$/web-app/home-view/partials/home-view.html" />
     </list>
     <ignored path="Ziffer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,8 +54,8 @@
       <file leaf-file-name="dash-controllers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web-app/dashboard-view/js/dash-controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1530">
-              <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="1683">
+              <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -68,8 +64,18 @@
       <file leaf-file-name="dash-directives.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web-app/dashboard-view/js/dash-directives.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1564">
-              <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1564">
+              <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web-app/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.50163937" vertical-offset="0" max-vertical-offset="1615">
+              <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -95,11 +101,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dash-view.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="dash-view.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web-app/dashboard-view/partials/dash-view.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.74430823" vertical-offset="0" max-vertical-offset="3332">
-              <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+            <state vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="3332">
+              <caret line="18" column="76" selection-start-line="18" selection-start-column="76" selection-end-line="18" selection-end-column="76" />
               <folding />
             </state>
           </provider>
@@ -142,13 +148,14 @@
         <option value="$PROJECT_DIR$/web-app/signin-view/partials/signin-view.html" />
         <option value="$PROJECT_DIR$/grails-app/conf/ApplicationResources.groovy" />
         <option value="$PROJECT_DIR$/web-app/css/main-style.css" />
-        <option value="$PROJECT_DIR$/web-app/js/app.js" />
         <option value="$PROJECT_DIR$/grails-app/views/index.gsp" />
         <option value="$PROJECT_DIR$/web-app/dashboard-view/css/dashboard.css" />
         <option value="$PROJECT_DIR$/web-app/signin-view/js/signin-controllers.js" />
         <option value="$PROJECT_DIR$/web-app/dashboard-view/js/dash-directives.js" />
-        <option value="$PROJECT_DIR$/web-app/dashboard-view/js/dash-controllers.js" />
         <option value="$PROJECT_DIR$/web-app/dashboard-view/partials/dash-view.html" />
+        <option value="$PROJECT_DIR$/web-app/js/app.js" />
+        <option value="$PROJECT_DIR$/web-app/home-view/partials/home-view.html" />
+        <option value="$PROJECT_DIR$/web-app/dashboard-view/js/dash-controllers.js" />
       </list>
     </option>
   </component>
@@ -194,6 +201,16 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Ziffer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Problems">
           <PATH>
@@ -275,7 +292,7 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="signin-view">
+            <PATH_ELEMENT USER_OBJECT="home-view">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -297,33 +314,11 @@
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="signin-view">
+            <PATH_ELEMENT USER_OBJECT="home-view">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="js">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Ziffer">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="Ziffer">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="web-app">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="js">
+            <PATH_ELEMENT USER_OBJECT="css">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -378,16 +373,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Ziffer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Ziffer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -565,11 +550,12 @@
       <workItem from="1432157076602" duration="1497000" />
       <workItem from="1432159594243" duration="4426000" />
       <workItem from="1432164277709" duration="8718000" />
+      <workItem from="1432174102808" duration="5645000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78969000" />
+    <option name="totallyTimeSpent" value="84614000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -640,13 +626,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/BootStrap.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/ziffer/CategoryController.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
@@ -831,13 +810,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/ziffer/User.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-7.4117646" vertical-offset="0" max-vertical-offset="0">
           <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
         </state>
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web-app/dashboard-view/tempData/categories/categories.json">
@@ -848,13 +827,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/ziffer/Category.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3146853" vertical-offset="0" max-vertical-offset="0">
           <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
         </state>
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web-app/dashboard-view/tempData/categories.json">
@@ -872,13 +851,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/ziffer/Question.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web-app/dashboard-view/tempData/doubts.json">
@@ -927,7 +906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.5852459" vertical-offset="357" max-vertical-offset="2278">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -935,15 +913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.1923077" vertical-offset="45" max-vertical-offset="629">
           <caret line="6" column="64" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web-app/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="662" max-vertical-offset="1598">
-          <caret line="87" column="46" selection-start-line="87" selection-start-column="46" selection-end-line="87" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -951,9 +920,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="610">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -985,6 +951,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3065574" vertical-offset="867" max-vertical-offset="1666">
           <caret line="62" column="56" selection-start-line="62" selection-start-column="56" selection-end-line="62" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-app/home-view/partials/home-view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="610">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-app/dashboard-view/partials/dash-view.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="3332">
+          <caret line="18" column="76" selection-start-line="18" selection-start-column="76" selection-end-line="18" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-app/dashboard-view/js/dash-directives.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1564">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -997,26 +986,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web-app/dashboard-view/js/dash-directives.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1564">
-          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web-app/dashboard-view/js/dash-controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1530">
-          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="1683">
+          <caret line="28" column="47" selection-start-line="28" selection-start-column="47" selection-end-line="28" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web-app/dashboard-view/partials/dash-view.html">
+    <entry file="file://$PROJECT_DIR$/web-app/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74430823" vertical-offset="0" max-vertical-offset="3332">
-          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.50163937" vertical-offset="0" max-vertical-offset="1615">
+          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
           <folding />
         </state>
       </provider>

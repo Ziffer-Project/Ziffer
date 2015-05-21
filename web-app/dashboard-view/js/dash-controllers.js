@@ -25,11 +25,20 @@ var dashControllers = angular.module('dashControllers', [])
                 if ($scope.selectedCategory) {
                     var id = $scope.selectedCategory.id;
                     DoubtRequest.queryAllDoubts({categoryId: id}, function (response) {
-                        console.log(response);
-                    },
-                    function (errResponse) {
-                        console.log(errResponse);
-                    });
+                            $scope.doubtList = response;
+                            $scope.tagSet = [];
+                            for (var i = data.length - 1; i >= 0; i--) {
+                                for (var j = data[i].tags.length - 1; j >= 0; j--) {
+                                    var tag = data[i].tags[j];
+                                    if ($scope.tagSet.indexOf(tag) === -1) {
+                                        $scope.tagSet.push(tag);
+                                    }
+                                }
+                            }
+                        },
+                        function (errResponse) {
+                            console.log(errResponse);
+                        });
                 }
             });
 

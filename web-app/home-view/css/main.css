@@ -1,0 +1,26 @@
+#index-banner {
+	margin-top: 24px;
+	min-height: 670px;
+	background-image: url('../images/logo_background.png');
+}
+#logo {
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.ziffer-name {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300;
+	font-size: 5rem;
+	color: #fff;
+}
+.information h3 {
+	font-family: 'Economica', sans-serif;
+	font-size: 3.1rem;
+	text-align: center;
+}
+.information p {
+	font-family: 'Strait', sans-serif;
+	font-size: 1.8rem;
+	text-align: center;
+}
