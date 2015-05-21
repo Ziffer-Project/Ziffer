@@ -53,7 +53,7 @@ var dashDirectives = angular.module('dashDirectives', [])
             return {
                 restrict: 'C',
                 link: function (scope, elem) {
-                    $(elem).click(function () {
+                    elem.bind('click', function () {
                         var val = scope.extDoubt.offerAmount;
                         if (typeof val !== 'undefined' && val.length > 0 && val.match(/^\d{0,9}$/)) {
                             $('.modal').modal('toggle');
@@ -78,7 +78,20 @@ var dashDirectives = angular.module('dashDirectives', [])
                          });*/
                         scope.$parent.extDoubt.description = scope.doubt.description;
                         $timeout(function() {
-                            $('.modal').modal('show');
+                            $('.modal.full-question-modal').modal('show');
+                        }, 200);
+                    });
+                }
+            };
+        }])
+
+        .directive('postQuestion', ['$timeout', function ($timeout) {
+            return {
+                restrict: 'C',
+                link: function (scope, elem) {
+                    elem.bind('click', function () {
+                        $timeout(function () {
+                            $('.modal.post-question-modal').modal('show');
                         }, 200);
                     });
                 }
