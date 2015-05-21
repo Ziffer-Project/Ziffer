@@ -24,19 +24,19 @@ class Question {
         title blank: false, size: 3..100
         description blank: false, size: 10..10000
         dueDate validator: { return it.after(new Date()) }
-	answer nullable: true
-	offers nullable: true
-	tags nullable: true
-	//¿10 Mb estará bien?
-	attachedFile maxSize: 10*1024*1024, nullable: true
+        answer nullable: true
+        offers nullable: true
+        tags nullable: true
+        //¿10 Mb estará bien?
+        attachedFile maxSize: 10*1024*1024, nullable: true
 
     }
 
     static mapping = {
 
-	negScore defaultValue: 0
-	posScore defaultValue: 0
-	sort dateCreated: "desc"
+        negScore defaultValue: 0
+        posScore defaultValue: 0
+        sort dateCreated: "desc"
 
     }
 
