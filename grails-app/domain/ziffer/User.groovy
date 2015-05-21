@@ -1,24 +1,25 @@
 package ziffer
 
 class User {
-    String name
+
     String username
     String password
-    String email
-    String phone
-    int answerScore
-    int questionScore
-    int zifferCoins
-    boolean ban
-    static hasMany = [ questions : Question, collaborations: Question ]
-    //TODO mirar relacion entre candidatos con las preguntas!!
+    Date dateCreated
+    boolean banned
+    boolean validated
+    
+    static hasOne = [ profile : Profile ]
+
+    static hasMany = [ answers : Answer, questions : Question, offers: Offer, comments : Comment ]
+
     static constraints = {
-        name( nullable: false, blank: false )
-        username( unique: true, nullable: false, blank: false )
-        password( nullable: false, blank: false )
-        email( email: true, nullable: false, blank: false, unique: true )
-        phone( nullable: true, matches: "[0-9]+" )
-        questions( nullable: true )
-        collaborations( nullable: true )
+
+        username blank: false, size: 6..20, unique: true
+        password blank: false, size: 6..20, password: true
+        answers nullable: true
+        questions nullable: true
+        offers nullable: true
+        comments nullable: true
+
     }
 }
