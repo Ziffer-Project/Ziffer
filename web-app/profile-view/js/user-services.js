@@ -5,9 +5,9 @@
 
 var userServices = angular.module('userServices', ['ngResource'])
 
-    .factory('profileRequest', ['$resource',
+    .factory('signupRequest', ['$resource',
         function ($resource) {
-            return $resource('signup/fetchData/edit');
+            return $resource('signup/fetchData/users/${profileId}?');
         }
     ])
 
@@ -20,7 +20,7 @@ var userServices = angular.module('userServices', ['ngResource'])
         }
     ])
 
-    .factory('edit', ['$resource',
+    .factory('saveRequest', ['$resource',
         function ($resource) {
             return $resource('signup/mdData/save', {}, {
                 edit: { method: 'PUT' }
