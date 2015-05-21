@@ -85,4 +85,5 @@ var indexControllers = angular.module('indexControllers', [])
             $rootScope.loggedUser = false;
             $location.path('/');
         };
+        $scope.username = $rootScope.username;
     }]);

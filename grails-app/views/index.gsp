@@ -32,7 +32,7 @@
         <a class="item" href="#/">Ziffer</a>
         <div class="right menu">
             <a class="item ui dropdown" id="loggedMenu">
-                Username
+                {{username}}
                 <div class="menu" ng-controller="IndexCtrl">
                     <div class="item" ng-click="goDash()">Dashboard</div>
                     <div class="item" ng-click="goEdit()">Edit Profile</div>

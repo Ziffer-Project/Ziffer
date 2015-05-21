@@ -60,17 +60,20 @@ var signinServices = angular.module('signinServices', ['ngResource'])
         function ($rootScope, $location, LoginRequest) {
             return {
                 executeLogin: function (usr, pwd) {
+                    var ele = $('.login-error-message');
                     if (usr === '' || pwd === '') {
+                        if (!ele.transition('is visible')) ele.transition('fade');
                     }
                     else if (usr.replace(/ /g, '').length !== usr.length ||
                         pwd.replace(/ /g, '').length !== pwd.length) {
                         // Spaces validation
+                        if (!ele.transition('is visible')) ele.transition('fade');
                     } else {
                         var info = {username: usr, password: pwd};
                         LoginRequest.login(info, {},
                             function success(response) {
                                 $rootScope.loggedUser = response.access;
-                                var ele = $('.login-error-message');
+                                $rootScope.username = usr;
                                 if (!response.access) {
                                     if (!ele.transition('is visible')) ele.transition('fade');
                                 } else {

@@ -97,7 +97,7 @@
                                         <div class="ui form">
                                             <div class="field">
                                                 <div class="ui radio checkbox">
-                                                    <input name="criteria" type="radio" ng-model="selectedCriteria" value="createdDate" id="criteria-rb-3">
+                                                    <input name="criteria" type="radio" ng-model="selectedCriteria" value="dateCreated" id="criteria-rb-3">
                                                     <label for="criteria-rb-3"><i class="calendar outline icon"></i>Creation date</label>
                                                 </div>
                                             </div>
@@ -139,11 +139,11 @@
                                     <div class="header">{{doubt.title}}</div>
                                     <div class="meta">
                                         <a>{{doubt.username}}</a>
-                                        <span class="score"> / {{doubt.userScore}} points</span>
+                                        <span class="score"> / <i class="thumbs green outline up icon"></i> {{doubt.posScore}} <i class="thumbs red outline down icon"></i> {{doubt.negScore}}</span>
                                     </div>
                                     <div class="description">
                                         <div class="ui horizontal link list">
-                                            <div class="item">Created on: {{doubt.createdDate}}</div>
+                                            <div class="item">Created on: {{doubt.dateCreated}}</div>
                                             <div class="item">Until: {{doubt.dueDate}}</div>
                                         </div>
                                     </div>
@@ -169,7 +169,7 @@
         {{extDoubt.title}}
         <div class="meta">
             <a>{{extDoubt.username}}</a>
-            <span class="score"> / {{extDoubt.userScore}} points</span>
+            <span class="score"> / <i class="thumbs green outline up icon"></i> {{extDoubt.posScore}} <i class="thumbs red outline down icon"></i> {{extDoubt.negScore}}</span>
         </div>
         <div class="ui label" ng-repeat="tag in extDoubt.tags">{{tag}}</div>
     </div>
