@@ -13,7 +13,7 @@ var userServices = angular.module('userServices', ['ngResource'])
 
     .factory('editRequest', ['$resource',
         function ($resource) {
-            return $resource('signup/fetchData/profile/:profileId', {}, {
+            return $resource('signup/fetchData/profiles/:profileId', {}, {
                 queryUser: {method: 'GET', params: {userId: 1}, isArray: true},
                 queryProfile: {method: 'GET', params: {profileId: 1}, isArray: true}
             });

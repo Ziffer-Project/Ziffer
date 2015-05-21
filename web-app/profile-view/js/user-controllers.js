@@ -52,6 +52,7 @@ var userControllers = angular.module('userControllers', [])
                 var u=$scope.profile;
                 editRequest=queryProfile();
         };
+        $scope.theUser=editRequest.queryProfile();
 
         $scope.save=function(){
             var u=$scope.profile;

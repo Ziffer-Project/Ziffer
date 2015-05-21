@@ -3,8 +3,8 @@
     <div class="row info-content">
         <div class="ui two column centered grid"><!-- Side panel --></div>
         <div class="ui content segment center-form">
-            <div class="ui form" ng-controller="editController">
-                <div class="field">
+            <div class="ui form" ng-controller="user-controllers">
+                <div class="field" ng-model="profile in theUser">
                     <label for="nombre">Name</label>
                     <input type="checkbox" ng-model="nombre">
                     <input type="text" id="name" placeholder="Nombre" ng-show="nombre">

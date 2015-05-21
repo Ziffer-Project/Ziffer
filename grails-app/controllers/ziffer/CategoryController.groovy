@@ -2,7 +2,7 @@ package ziffer
 
 import grails.converters.JSON
 
-class CategoryController {
+class JSONCategoryController {
 
     /*
     * Action de prueba que debería retornar la lista de categorías. El JSON No está
