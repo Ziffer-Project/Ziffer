@@ -63,7 +63,7 @@ var userControllers = angular.module('userControllers', [])
             $http({
                 url: '/profile-view/js/createUser.html',
                 method: "GET",
-                params: {username: User.username}
+                params: {username: User.username}///
             });
         }*/
 
