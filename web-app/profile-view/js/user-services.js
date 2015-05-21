@@ -5,7 +5,7 @@
 
 var userServices = angular.module('userServices', ['ngResource'])
 
-    .factory('signupRequest', ['$resource',
+    .factory('signUpRequest', ['$resource',
         function ($resource) {
             return $resource('signup/fetchData/users/${profileId}?');
         }
@@ -13,9 +13,9 @@ var userServices = angular.module('userServices', ['ngResource'])
 
     .factory('editRequest', ['$resource',
         function ($resource) {
-            return $resource('signup/fetchData/profile/:userId/:profileId', {}, {
-                queryUser: {method: 'GET', params: {userId: 'name'}, isArray: true},
-                queryProfile: {method: 'GET', params: {profileId: 'name'}, isArray: true}
+            return $resource('signup/fetchData/profile/:profileId', {}, {
+                queryUser: {method: 'GET', params: {userId: 1}, isArray: true},
+                queryProfile: {method: 'GET', params: {profileId: 1}, isArray: true}
             });
         }
     ])

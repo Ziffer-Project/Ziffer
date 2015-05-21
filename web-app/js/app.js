@@ -2,7 +2,7 @@
 
 var app = angular.module('app', [
 		'ngRoute',
-		'dashControllers', 'dashDirectives', 'dashServices', 'dashAnimations', 'userControllers'
+		'dashControllers', 'dashDirectives', 'dashServices', 'dashAnimations', 'userControllers', 'userServices'
 	]
 );
 
@@ -12,11 +12,15 @@ app.config(['$routeProvider', function($routeProvider) {
 			templateUrl: 'dashboard-view/partials/dash-view.html',
 			controller: 'DashViewCtrl'
 		})
-		.when('/signup', {
+		$routeProvider.when('/signup', {
 			templateUrl: 'profile-view/partials/createUser.html',
             controller: 'UserViewCtrl'
 		})
-		.otherwise({
+    $routeProvider.when('/edit', {
+        templateUrl: 'profile-view/partials/editUser.html',
+        controller: 'UserViewCtrl'
+    })
+        .otherwise({
 			redirectTo: '/'
 		});
 }]);

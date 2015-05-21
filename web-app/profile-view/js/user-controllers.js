@@ -24,7 +24,7 @@ var userControllers = angular.module('userControllers', [])
             }
         };
     }*/
-        var request = $http({
+        /***var request = $http({
             method: "post",
             url: "/profile-view/partials/createUser.html",
             //transformRequest: transformRequestAsFormPost,
@@ -33,7 +33,7 @@ var userControllers = angular.module('userControllers', [])
                 username: $scope.username,
                 password: $scope.password
             }
-        });
+        });***/
 
         $scope.user=profileRequest.queryUser();
         $scope.profile={};
@@ -42,7 +42,7 @@ var userControllers = angular.module('userControllers', [])
               var u=$scope.profile;
               if(typeof u!=='undefined'){
                   var newProfile = {profileId: u.id, name: u.name, email: u.email, aboutMe: u.aboutMe, avatar: u.avatar, phone: u.phone};
-                  signUpRequest.setOffer(info, {});
+                  signUpRequest.signUp(newProfile, {});
               }else{
                   console.log("Please register");
               }
@@ -51,6 +51,11 @@ var userControllers = angular.module('userControllers', [])
         $scope.edit=function(){
                 var u=$scope.profile;
                 editRequest=queryProfile();
+        };
+
+        $scope.save=function(){
+            var u=$scope.profile;
+            //editRequest=queryProfile();
         };
         /**$scope.update=function($scope.username){
             //$scope.user=copy($scope.user);
