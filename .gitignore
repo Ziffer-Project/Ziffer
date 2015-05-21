@@ -18,3 +18,4 @@ stacktrace.log
 node_modules/
 tmp
 bower_components/
+/.idea
