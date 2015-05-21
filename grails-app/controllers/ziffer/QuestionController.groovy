@@ -48,7 +48,7 @@ class QuestionController {
 	//Construcción del JSON
 	def answer = [:]
 	answer["success"] = validation
-	return answer as JSON
+	render answer as JSON
     }
 
 }
