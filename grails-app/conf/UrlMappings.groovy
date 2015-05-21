@@ -67,6 +67,21 @@ class UrlMappings {
         }
 
 
+								"/signup/try"{
+										controller = "User"
+										action = "trySave"
+								}
+
+				        "/signup/mkData/signUp" {
+				            controller = "User"
+				            action = "signUp"
+				        }
+
+				        "/signup/mdData/edit" {
+				            controller = "User"
+				            action = "save"
+				        }
+
         "/$controller/$action?/$id?(.$format)?"{
             constraints {
                 // apply constraints here
