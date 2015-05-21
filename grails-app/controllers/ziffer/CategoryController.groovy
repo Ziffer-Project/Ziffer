@@ -22,11 +22,13 @@ class CategoryController {
     */
 
     def singleCat() {
+
+	println params.categoryId
         if (params.categoryId == "-1") {
             def json = Question.list() as JSON
             render json
         } else {
-            def json = Category.findById(params.categoryId) as JSON
+            def json = Category.get(params.categoryId).getQuestions() as JSON
             render json
         }
     }
