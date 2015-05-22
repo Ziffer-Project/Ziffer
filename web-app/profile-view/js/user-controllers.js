@@ -21,7 +21,7 @@ var userServices = angular.module('userServices', ['ngResource'])
         }
     ])
 
-    .factory('SgnUpAction', ['$rootScope','$location','SignUpRequest'
+    .factory('SgnUpAction', ['$rootScope','$location','SignUpRequest',
         function($rootScope, $location, SignUpRequest){
             return{
                 doSignUp: function(username, password){

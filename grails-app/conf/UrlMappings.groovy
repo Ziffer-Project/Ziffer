@@ -60,8 +60,8 @@ class UrlMappings {
             action = "setOffer"
         }
 
-        "/signup/fetchData/users/${userId}/${profileId}?" {
-            controller = "User"
+        "/signup/fetchData/users/${profleId}?" {
+            controller = "SignUp"
             action = "edit"
         }
 
