@@ -5,7 +5,7 @@ var app = angular.module('app', [
         'indexControllers', 'indexDirectives',
         'signinControllers', 'signinDirectives', 'signinServices',
         'dashControllers', 'dashDirectives', 'dashServices', 'dashAnimations',
-        'user-controllers'
+        'signUpCtrl'
     ]
 )
 
