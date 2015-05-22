@@ -1,64 +1,39 @@
-'use strict';
+'use stritc'
 
-var userControllers = angular.module('userControllers', [])
-
-.controller('UserViewCtrl', ['$scope', '$http', 'profileRequest', 'editRequest', 'signUpRequest', function($scope, $http, profileRequest, editRequest, signUpRequest) {
-            function intersect(x, y) {
-                for (var i = 0; i < x.length; i++) {
-                    for (var z = 0; z < y.length; z++) {
-                        if (x[i] === y[z]) {
-                            return true;
-                        }
-                    }
-                }
-                return false;
-            }
+var userControllers =angular.module()
+    .controller('signUpCtrl',['$scope','$location',
+        function($scope, $location){
+            $scope.user={};
+            $scope.user.username="";
+            $scope.user.password="";
+            $scope.user.confirm="";
+        }
+    ]);
 
 
-        $scope.user=profileRequest.queryUser();
-        $scope.profile={};
-        $scope.profiles=[];
+var userServices = angular.module('userServices', ['ngResource'])
 
-        $scope.signUp=function(profile){
-              /**var u=$scope.profile;
-              if(typeof u!=='undefined'){
-                  var newProfile = {profileId: u.id, name: u.name, email: u.email, aboutMe: u.aboutMe, avatar: u.avatar, phone: u.phone};
-                  signUpRequest.signUp(newProfile, {});
-              }else {
-                  console.log("Please register");
-              }**/
-            $scope.profiles.push({
-                name: profile.name,
-                email: profile.email,
-                aboutMe:  profile.aboutMe,
-                avatar:  profile.avatar,
-                phone:  profile.phone
+    .factory('signUpRequest', ['$resource',
+        function($resource){
+            return $resource('signup/mkData/signUp', {}, {
+                signUp: {method: 'POST'}
             });
-        };
+        }
+    ])
 
-        /***$scope.edit=function(){
-                var u=$scope.profile;
-                editRequest=queryProfile();
-        };***/
-        editRequest.edit(info, {},
-            function edit(response) {
-                var id=$scope.profileId=1;//var u=$scope.profile;
-                console.log(response);
-            },
-            function error(error) {
-                console.log('There was an error in communication with the server.');
+    .factory('SgnUpAction', ['$rootScope','$location','SignUpRequest'
+        function($rootScope, $location, SignUpRequest){
+            return{
+                doSignUp: function(username, password){
+                    var info={username: username, password: password};
+                    SignUpRequest.signUp(info,{},
+                        function success(response){
+                            $rootScope.usr=username;
+                            $rootScope.pwd=password;
+                        }
+                    )
+                }
             }
-        );
+        }
 
-        $scope.save=function(){
-            var u=$scope.profile;
-            //editRequest=queryProfile();
-        };
-
-
-
-        /**.controller('editController', function($scope, $http) {
-            $http.get("profile-view/tempData/profile.json")
-                .success(function(response) {$scope.profile = response.records;});
-        });**/
-}]);
+    ]);
