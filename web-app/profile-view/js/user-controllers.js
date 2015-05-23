@@ -10,7 +10,7 @@ var userControllers =angular.module('signUpControllers',[])
             $scope.profile.username="";
             $scope.profile.password="";
             $scope.profile.confirm="";
-            $location.path('/');
+            //$scope.home=function(){$location.path('/');}
         }
     ]);
 
@@ -34,7 +34,7 @@ var userServices = angular.module('signUpServices', ['ngResource'])
                         function success(){
                             $rootScope.usr=username;
                             $rootScope.pwd=password;
-                            $location.path('/');
+                            $location.path('/dashboard');
                         }
                     )
                 }
@@ -53,7 +53,7 @@ var userServices = angular.module('signUpServices', ['ngResource'])
 
 
     var signUpDirectives = angular.module('signUpDirectives',[])
-        .directive('btn-success',['signUpAction',
+        .directive('register',['signUpAction',
             function(signUpAction){
             return {
                 restrict: 'C',

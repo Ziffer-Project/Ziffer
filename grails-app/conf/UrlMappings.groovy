@@ -66,7 +66,7 @@ class UrlMappings {
             action = 'doLogin'
         }
 
-        "/signup/fetchData/users/${profleId}?" {
+        "/signup/fetchData/profile/${profleId}?" {
             controller = "SignUp"
             action = "edit"
         }

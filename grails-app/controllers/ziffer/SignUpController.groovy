@@ -5,16 +5,18 @@ class SignUpController {
 
     def index() {}
 
-    def register(){
-        def user = new User(params.username, params.password)
+    def signUp(){
+        def user = new User([params.username, params.password])
+        user.save()
         def json = user as JSON
         render json
     }
 
     def edit(){
-        if(session==true){
-
-        }
+        def me=session["username"];
+        if(me){
+            render: "Its working"
+        }else{render: "Not yet"}
     }
 
 
