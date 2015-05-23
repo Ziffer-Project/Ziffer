@@ -5,7 +5,7 @@ var app = angular.module('app', [
         'indexControllers', 'indexDirectives',
         'signinControllers', 'signinDirectives', 'signinServices',
         'dashControllers', 'dashDirectives', 'dashServices', 'dashAnimations',
-        'signUpCtrl'
+        'signUpControllers', 'signUpServices', 'signUpDirectives'
     ]
 )
 
@@ -15,7 +15,11 @@ var app = angular.module('app', [
                 templateUrl: 'main-view/main-view.html'
             })
             .when('/signup', {
-                templateUrl: 'profile-view/js/createUser.html',
+                templateUrl: 'profile-view/partials/createUser.html',
+                controller: 'signUpCtrl'
+            }).
+            when('/edit',{
+                templateUrl: 'profile-view/partials/editUser.html',
                 controller: 'signUpCtrl'
             })
             .when('/signin', {

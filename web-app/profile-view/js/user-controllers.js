@@ -3,18 +3,19 @@
  */
 'use strict'
 
-var userControllers =angular.module()
+var userControllers =angular.module('signUpControllers',[])
     .controller('signUpCtrl',['$scope','$location',
         function($scope, $location){
-            $scope.user={};
-            $scope.user.username="";
-            $scope.user.password="";
-            $scope.user.confirm="";
+            $scope.profile={};
+            $scope.profile.username="";
+            $scope.profile.password="";
+            $scope.profile.confirm="";
+            $location.path('/');
         }
     ]);
 
 
-var userServices = angular.module('userServices', ['ngResource'])
+var userServices = angular.module('signUpServices', ['ngResource'])
 
     .factory('signUpRequest', ['$resource',
         function($resource){
@@ -24,15 +25,16 @@ var userServices = angular.module('userServices', ['ngResource'])
         }
     ])
 
-    .factory('SignUpAction', ['$rootScope','$location','SignUpRequest',
-        function($rootScope, $location, SignUpRequest){
+    .factory('SignUpAction', ['$rootScope','$location','signUpRequest',
+        function($rootScope, $location, signUpRequest){
             return{
-                doSignUp: function(username, password){
+                signUp: function(username, password){
                     var info={username: username, password: password};
-                    SignUpRequest.signUp(info,{},
-                        function success(response){
+                    signUpRequest.signUp(info,{},
+                        function success(){
                             $rootScope.usr=username;
                             $rootScope.pwd=password;
+                            $location.path('/');
                         }
                     )
                 }
@@ -44,7 +46,22 @@ var userServices = angular.module('userServices', ['ngResource'])
     .factory('editRequest', ['$resource',
         function($resource){
             return $resource('/signup/fetchData/profiles:/profileId',{},{
-                queryProfile: {method:'GET', params:{profileId:1}, isArray:false}
+                queryProfile: {method:'GET', params:{profileId:'profileId'}, isArray:false}
             });
         }
     ]);
+
+
+    var signUpDirectives = angular.module('signUpDirectives',[])
+        .directive('btn-success',['signUpAction',
+            function(signUpAction){
+            return {
+                restrict: 'C',
+                link: function(scope,elem) {
+                    elem.bind('click', function (e) {
+                        signUpAction.signUp(scope.profile.username, scope.profile.password);
+                    });
+                }
+            };
+            }
+        ]);
