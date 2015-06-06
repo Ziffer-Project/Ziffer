@@ -6,7 +6,9 @@ class SignUpController {
     def index() {}
 
     def signUp(){
-        def user = new User([params.username, params.password])
+        def user = new User()//(params.username, params.password)
+        user.username=params.username
+        user.password=params.password
         user.save()
         def json = user as JSON
         render json
