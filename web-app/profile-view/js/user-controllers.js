@@ -15,7 +15,7 @@ var userControllers =angular.module('signUpControllers',[])
     ]);
 
 
-var userServices = angular.module('signUpServices', ['ngResource'])
+var signUpServices = angular.module('signUpServices', ['ngResource'])
 
     .factory('signUpRequest', ['$resource',
         function($resource){
@@ -25,7 +25,7 @@ var userServices = angular.module('signUpServices', ['ngResource'])
         }
     ])
 
-    .factory('SignUpAction', ['$rootScope','$location','signUpRequest',
+    .factory('signUpAction', ['$rootScope','$location','signUpRequest',
         function($rootScope, $location, signUpRequest){
             return{
                 signUp: function(username, password){
@@ -34,7 +34,7 @@ var userServices = angular.module('signUpServices', ['ngResource'])
                         function success(){
                             $rootScope.usr=username;
                             $rootScope.pwd=password;
-                            $location.path('/dashboard');
+                            $location.path('/');
                         }
                     )
                 }
@@ -45,7 +45,7 @@ var userServices = angular.module('signUpServices', ['ngResource'])
 
     .factory('editRequest', ['$resource',
         function($resource){
-            return $resource('/signup/fetchData/profiles:/profileId',{},{
+            return $resource('/signup/fetchData/profiles/:profileId',{},{
                 queryProfile: {method:'GET', params:{profileId:'profileId'}, isArray:false}
             });
         }

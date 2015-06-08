@@ -72,7 +72,7 @@ class UrlMappings {
         }
 
         "/signup/mkData/signUp" {
-            controller = "User"
+            controller = "SignUp"
             action = "signUp"
         }
 
