@@ -66,6 +66,21 @@ class UrlMappings {
             action = 'doLogin'
         }
 
+        "/signup/fetchData/profile/${profleId}?" {
+            controller = "SignUp"
+            action = "edit"
+        }
+
+        "/signup/mkData/signUp" {
+            controller = "User"
+            action = "signUp"
+        }
+
+        "/signup/mdData/edit" {
+            controller = "User"
+            action = "save"
+        }
+
 
         "/$controller/$action?/$id?(.$format)?"{
             constraints {
