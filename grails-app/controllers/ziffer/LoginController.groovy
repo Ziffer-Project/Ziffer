@@ -24,6 +24,13 @@ class LoginController {
             //redirect( controller: 'login' )
         }
     }
+
+    def doLogout(){
+        session.user = null
+        def json = new Response( access: false ) as JSON
+        render json
+        //redirect( url: '/#/dashboard')
+    }
 }
 
 class Response {

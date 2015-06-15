@@ -71,6 +71,10 @@ class UrlMappings {
             action = 'doLogin'
         }
 
+        "/log/mkData/logoutRequest" {
+            controller = "Login"
+            action = 'doLogout'
+        }
 
         "/$controller/$action?/$id?(.$format)?"{
             constraints {
