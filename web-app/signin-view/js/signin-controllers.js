@@ -52,7 +52,14 @@ var signinServices = angular.module('signinServices', ['ngResource'])
     .factory('LoginRequest', ['$resource',
         function($resource) {
             return $resource('signin/mkData/signinRequest', {}, {
-                login: { method: 'POST'}
+                login: { method: 'POST' }
+            });
+        }])
+
+    .factory('LogoutRequest', ['$resource',
+        function($resource) {
+            return $resource('signout/mkData/signoutRequest', {}, {
+                logout: { method: 'POST' }
             });
         }])
 

@@ -34,14 +34,14 @@
 <body style="background-color: #d8d8d8">
 <!-- Header -->
 <div class="topBar">
-    <div class="ui inverted borderless topBarNotLogged menu fixed">
+    <div class="ui inverted borderless topBarNotLogged menu fixed" ng-show="!$root.$storage.loggedUser">
         <a class="item" href="#/">Ziffer</a>
         <div class="right menu">
             <a class="item" href="#/signup">Sign up</a>
             <a class="item" href="#/signin">Sign in</a>
         </div>
     </div>
-    <div class="ui inverted borderless topBarLogged menu fixed">
+    <div class="ui inverted borderless topBarLogged menu fixed" ng-show="$root.$storage.loggedUser">
         <a class="item" href="#/">Ziffer</a>
         <div class="right menu">
             <a class="item ui dropdown" id="loggedMenu" ng-cloak>

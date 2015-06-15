@@ -1,5 +1,6 @@
 <link rel="stylesheet" type="text/css" href="dashboard-view/css/dashboard.css">
 <link rel="stylesheet" type="text/css" href="dashboard-view/css/animations.css">
+<script src="dist/semantic.min.js"></script>
 <script src="dist/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
 <script src="dashboard-view/js/texconfig.js"></script>
 <!-- Category banner -->
@@ -194,7 +195,7 @@
         </div>
     </div>
 </div>
-<!-- Offer acceptation or rejection -->
+<!-- Offer acceptation or rejection notification -->
 <div class="ui small modal accept-offer-modal">
     <div class="header">Nice!</div>
     <div class="content">
@@ -220,7 +221,6 @@
     </div>
 </div>
 <!-- Question creation -->
-<!-- Set ng-models accordingly -->
 <div class="ui modal post-question-modal" ng-cloak>
     <i class="close icon"></i>
     <div class="header">
@@ -246,7 +246,8 @@
             </div>
             <div class="required field">
                 <label>Description</label>
-                <textarea name="description" id="MathInput" class="redactor" placeholder="Body" name="content" onkeyup="Preview.Update()" ng-model="newQuestion.description" required>Type your description.</textarea>
+                <!-- Add required validation to contenteditable div (see dash-directives 'redactor') -->
+                <textarea name="description" id="MathInput" class="redactor" placeholder="Body" name="content" onkeyup="Preview.Update()" ng-model="newQuestion.description">Type your description.</textarea>
             </div>
             <div class="field">
                 <label>Preview</label>
@@ -265,6 +266,41 @@
             <i class="remove icon"></i>
             Cancel
         </div>
+    </div>
+</div>
+<!-- Missing information notification -->
+<div class="ui small modal missing-question-info-modal">
+    <div class="header"><i class="warning yellow icon"></i>Missing information</div>
+    <div class="content">
+        <div class="description">
+            Please, fill all required information.
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui button">Ok</div>
+    </div>
+</div>
+<!-- Question creation notification -->
+<div class="ui small modal created-question-modal">
+    <div class="header"><i class="checkmark green icon"></i>Nice!</div>
+    <div class="content">
+        <div class="description">
+            Your question was posted succesfully.
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui button">Ok</div>
+    </div>
+</div>
+<div class="ui small modal not-created-question-modal">
+    <div class="header"><i class="remove red icon"></i>Ooops!</div>
+    <div class="content">
+        <div class="description">
+            There was an error while publishing your question.
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui button">Ok</div>
     </div>
 </div>
 <script>

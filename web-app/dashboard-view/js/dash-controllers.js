@@ -27,9 +27,9 @@ var dashControllers = angular.module('dashControllers', [])
                     DoubtRequest.queryAllDoubts({categoryId: id}, function (response) {
                             $scope.doubtList = response;
                             $scope.tagSet = [];
-                            for (var i = data.length - 1; i >= 0; i--) {
-                                for (var j = data[i].tags.length - 1; j >= 0; j--) {
-                                    var tag = data[i].tags[j];
+                            for (var i = response.length - 1; i >= 0; i--) {
+                                for (var j = response[i].tags.length - 1; j >= 0; j--) {
+                                    var tag = response[i].tags[j];
                                     if ($scope.tagSet.indexOf(tag) === -1) {
                                         $scope.tagSet.push(tag);
                                     }

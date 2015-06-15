@@ -60,17 +60,27 @@ class UrlMappings {
             action = "setOffer"
         }
 
+        /*
+        * Mapping para creación de pregunta
+        * Se recibe el título (title), fecha límite (dueDate), los tags (tags, es un string que se debe separar
+        * por comas) y la descripción (description)
+        */
         "/dashboard/mkData/createQuestion" {
             controller = "Por_definir"
             action = "Por_definir"
         }
 
-
+        // Mapping para signin/login
         "/signin/mkData/signinRequest" {
             controller = "Login"
             action = 'doLogin'
         }
 
+        // Mapping para signout/logout
+        "/signout/mkData/signoutRequest" {
+            controller = "Por_definir"
+            action = "Por_definir"
+        }
 
         "/$controller/$action?/$id?(.$format)?"{
             constraints {

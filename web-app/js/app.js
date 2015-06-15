@@ -2,7 +2,7 @@
 
 var app = angular.module('app', [
         'ngRoute', 'ngStorage',
-        'indexControllers', 'indexDirectives',
+        'indexControllers',
         'signinControllers', 'signinDirectives', 'signinServices',
         'dashControllers', 'dashDirectives', 'dashServices', 'dashAnimations'
     ])
@@ -47,36 +47,10 @@ var app = angular.module('app', [
         });
     });
 
-// Top bar directives
-var indexDirectives = angular.module('indexDirectives', [])
-
-    .directive('topBar', ['$rootScope',
-    function ($rootScope) {
-        return {
-            restrict: 'C',
-            link: function (scope, elem) {
-                $rootScope.$watch('$storage.loggedUser', function () {
-                    var logged = $rootScope.$storage.loggedUser;
-                    if (logged) {
-                        // Bug when login first with an user, logout and then login again.
-                        jQuery('.topBarNotLogged').transition('hide');
-                        jQuery('.topBarLogged').transition('show');
-                    } else {
-                        jQuery('.topBarLogged').transition('hide');
-                        jQuery('.topBarNotLogged').transition('show');
-                        jQuery('#loggedMenu').dropdown({
-                            action: 'hide'
-                        });
-                    }
-                });
-            }
-        };
-    }]);
-
 var indexControllers = angular.module('indexControllers', [])
 
-    .controller('IndexCtrl', ['$scope', '$location', '$rootScope',
-    function ($scope, $location, $rootScope) {
+    .controller('IndexCtrl', ['$scope', '$location', '$rootScope', 'LogoutRequest',
+    function ($scope, $location, $rootScope, LogoutRequest) {
         $scope.goDash = function () {
             $location.path('/dashboard');
         };
@@ -90,6 +64,7 @@ var indexControllers = angular.module('indexControllers', [])
             $location.path('/myContributions');
         };
         $scope.goSignout = function () {
+            LogoutRequest.logout();
             $rootScope.$storage.loggedUser = false;
             $location.path('/');
         };

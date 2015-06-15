@@ -29,7 +29,7 @@ var dashDirectives = angular.module('dashDirectives', [])
         .directive('modal', function() {
             return {
                 restrict: 'C',
-                link: function(scope, elem, attrs) {
+                link: function(scope, elem) {
                     $(elem).modal({
                         allowMultiple: true
                     });
@@ -40,6 +40,11 @@ var dashDirectives = angular.module('dashDirectives', [])
                              } else {
                              return false;
                              }*/ return false;
+                        }
+                    });
+                    jQuery('.missing-question-info-modal').modal({
+                        onHidden: function() {
+                            jQuery('.post-question-modal').modal('show');
                         }
                     });
                 }
@@ -98,7 +103,7 @@ var dashDirectives = angular.module('dashDirectives', [])
                     elem.redactor();
                     var editor = jQuery('.redactor_editor');
                     editor.attr('onkeyup', 'Preview.Update()');
-                    editor.attr('required', '');
+                    //editor.attr('required', '');
                 }
             };
         })
@@ -125,17 +130,21 @@ var dashDirectives = angular.module('dashDirectives', [])
                             var title = scope.newQuestion.title;
                             var dueDate = scope.newQuestion.dueDate;
                             var tags = scope.newQuestion.tags;
-                            var description = scope.newQuestion.description;
-                            console.log(scope.newQuestion);
-                            SendQuestion.sendQuestion({title: title, dueDate: dueDate, tags: tags, description: description},{},
-                                function success(response) {
-                                    // Received successfully
-                                },
-                                function error(err) {
-                                    // Not received
-                                }
-                            );
+                            var description = jQuery('.redactor').val();
+                            if (description === '' || description.replace(/ /g, '').length !== description.length) {
+                                jQuery('.missing-question-info-modal').modal('show');
+                            } else {
+                                SendQuestion.sendQuestion({title: title, dueDate: dueDate, tags: tags, description: description}, {},
+                                    function success(response) {
+                                        jQuery('.created-question-modal').modal('show');
+                                    },
+                                    function error(err) {
+                                        jQuery('.not-created-question-modal').modal('show');
+                                    }
+                                );
+                            }
                         } else {
+                            jQuery('.missing-question-info-modal').modal('show');
                         }
                     });
                 }
