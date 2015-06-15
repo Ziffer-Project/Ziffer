@@ -38,4 +38,8 @@ class SignUpController {
         )
 
     }
+
+    def recoverPassword(){
+        
+    }
 }

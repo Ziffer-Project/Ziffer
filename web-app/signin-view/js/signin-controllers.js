@@ -90,4 +90,12 @@ var signinServices = angular.module('signinServices', ['ngResource'])
                 }
             };
         }
+    ])
+
+    .factory('recoverPass', ['$resource',
+        function($resource){
+            return $resource('',{},{
+               recover:{method: 'GET'}
+            });
+        }
     ]);
