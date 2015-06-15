@@ -60,25 +60,25 @@ var signinServices = angular.module('signinServices', ['ngResource'])
         function ($rootScope, $location, LoginRequest) {
             return {
                 executeLogin: function (usr, pwd) {
-                    var ele = $('.login-error-message');
+                    var errMsg = jQuery('.login-error-message');
                     if (usr === '' || pwd === '') {
-                        if (!ele.transition('is visible')) ele.transition('fade');
+                        if (!errMsg.transition('is visible')) errMsg.transition('fade');
                     }
                     else if (usr.replace(/ /g, '').length !== usr.length ||
                         pwd.replace(/ /g, '').length !== pwd.length) {
                         // Spaces validation
-                        if (!ele.transition('is visible')) ele.transition('fade');
+                        if (!errMsg.transition('is visible')) errMsg.transition('fade');
                     } else {
                         var info = {username: usr, password: pwd};
                         LoginRequest.login(info, {},
                             function success(response) {
-                                $rootScope.loggedUser = response.access;
-                                $rootScope.username = usr;
+                                $rootScope.$storage.loggedUser = response.access;
+                                $rootScope.$storage.username = usr;
+                                // Bug when login first with an user, logout and then login again.
                                 if (!response.access) {
-                                    if (!ele.transition('is visible')) ele.transition('fade');
+                                    if (!errMsg.transition('is visible')) errMsg.transition('fade');
                                 } else {
-                                    if (ele.transition('is visible')) ele.transition('fade');
-                                    $rootScope.user = usr;
+                                    if (errMsg.transition('is visible')) errMsg.transition('fade');
                                     $location.path('/dashboard');
                                 }
                             },

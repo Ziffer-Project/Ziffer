@@ -30,7 +30,9 @@ var dashDirectives = angular.module('dashDirectives', [])
             return {
                 restrict: 'C',
                 link: function(scope, elem, attrs) {
-                    $(elem).modal();
+                    $(elem).modal({
+                        allowMultiple: true
+                    });
                     $(elem).modal("setting", {
                         onApprove: function () {
                             /*if (typeof val !== 'undefined' && val.length > 0) {
@@ -40,28 +42,32 @@ var dashDirectives = angular.module('dashDirectives', [])
                              }*/ return false;
                         }
                     });
-                    scope.$watch('extDoubt.offerAmount', function(val) {
-                        if (typeof val !== 'undefined' && val.length > 0) {
-                            console.log(val.match(/^\d{0,9}$/));
-                        }
-                    });
                 }
             };
         })
 
-        .directive('submitOfferBtn', function () {
+        .directive('submitOfferBtn', ['SendOffer', function (SendOffer) {
             return {
                 restrict: 'C',
                 link: function (scope, elem) {
                     elem.bind('click', function () {
                         var val = scope.extDoubt.offerAmount;
+                        var questionId = scope.extDoubt.id;
                         if (typeof val !== 'undefined' && val.length > 0 && val.match(/^\d{0,9}$/)) {
-                            $('.modal').modal('toggle');
+                            SendOffer.sendOffer({questionId: questionId, amount: val}, {},
+                                function success(response) {
+                                    jQuery('.accept-offer-modal').modal('show');
+                                    scope.extDoubt.prevOffer = val;
+                                },
+                                function error(error) {
+                                    jQuery('.reject-offer-modal').modal('show');
+                                }
+                            );
                         }
                     });
                 }
             };
-        })
+        }])
 
         .directive('peek', ['$timeout', 'DoubtRequest', function($timeout, DoubtRequest) {
             return {
@@ -69,10 +75,10 @@ var dashDirectives = angular.module('dashDirectives', [])
                 link: function(scope, elem, attrs) {
                     $(elem).click(function() {
                         scope.$parent.extDoubt = scope.doubt;
-                        var desiredId = scope.doubt.id;
-                        var catId = scope.doubt.categoryId;
                         /* Commented out for future use, thi fetches the description of a particular
                          question from the server.
+                         var desiredId = scope.doubt.id;
+                         var catId = scope.doubt.categoryId;
                          var el = DoubtRequest.get({categoryId: catId, doubtId: desiredId}, function(el) {
                          scope.$parent.extDoubt.description = el.description;
                          });*/
@@ -84,8 +90,20 @@ var dashDirectives = angular.module('dashDirectives', [])
                 }
             };
         }])
+        
+        .directive('redactor', function () {
+            return {
+                restrict: 'C',
+                link: function (scope, elem) {
+                    elem.redactor();
+                    var editor = jQuery('.redactor_editor');
+                    editor.attr('onkeyup', 'Preview.Update()');
+                    editor.attr('required', '');
+                }
+            };
+        })
 
-        .directive('postQuestion', ['$timeout', function ($timeout) {
+        .directive('postQuestionShow', ['$timeout', function ($timeout) {
             return {
                 restrict: 'C',
                 link: function (scope, elem) {
@@ -93,6 +111,32 @@ var dashDirectives = angular.module('dashDirectives', [])
                         $timeout(function () {
                             $('.modal.post-question-modal').modal('show');
                         }, 200);
+                    });
+                }
+            };
+        }])
+
+        .directive('sendQuestionBtn', ['SendQuestion', function (SendQuestion) {
+            return {
+                restrict: 'C',
+                link: function (scope, elem) {
+                    elem.bind('click', function () {
+                        if (scope.newQuestionTitleForm.$valid && scope.newQuestionForm.$valid) {
+                            var title = scope.newQuestion.title;
+                            var dueDate = scope.newQuestion.dueDate;
+                            var tags = scope.newQuestion.tags;
+                            var description = scope.newQuestion.description;
+                            console.log(scope.newQuestion);
+                            SendQuestion.sendQuestion({title: title, dueDate: dueDate, tags: tags, description: description},{},
+                                function success(response) {
+                                    // Received successfully
+                                },
+                                function error(err) {
+                                    // Not received
+                                }
+                            );
+                        } else {
+                        }
                     });
                 }
             };

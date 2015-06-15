@@ -3,14 +3,14 @@
  */
 
 modules = {
-    angular {
-        resource url: 'dist/semantic.min.css'
+    resources {
+        resource url: 'dist/redactor/redactor.css'
 
-        resource url: 'dist/semantic.min.js'
-        resource url: 'dist/angular/angular.js'
         resource url: 'dist/angular-route/angular-route.min.js'
         resource url: 'dist/angular-resource/angular-resource.min.js'
         resource url: 'dist/angular-animate/angular-animate.min.js'
+        resource url: 'dist/ngStorage.min.js'
+        resource url: 'dist/redactor/redactor.min.js'
         resource url: 'js/app.js'
         resource url: 'signin-view/js/signin-controllers.js'
         resource url: 'dashboard-view/js/dash-controllers.js'

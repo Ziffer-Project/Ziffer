@@ -60,6 +60,11 @@ class UrlMappings {
             action = "setOffer"
         }
 
+        "/dashboard/mkData/createQuestion" {
+            controller = "Por_definir"
+            action = "Por_definir"
+        }
+
 
         "/signin/mkData/signinRequest" {
             controller = "Login"

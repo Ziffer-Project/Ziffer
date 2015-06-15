@@ -17,10 +17,18 @@ var dashServices = angular.module('dashServices', ['ngResource'])
         }
     ])
 
-    .factory('SetOffer', ['$resource',
+    .factory('SendOffer', ['$resource',
         function ($resource) {
             return $resource('dashboard/mdData/setOffer', {}, {
-               setOffer: { method: 'PUT' }
+               sendOffer: { method: 'PUT' }
+            });
+        }
+    ])
+
+    .factory('SendQuestion', ['$resource',
+        function ($resource) {
+            return $resource('dashboard/mkData/createQuestion', {}, {
+                sendQuestion: { method: 'POST' }
             });
         }
     ]);

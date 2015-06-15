@@ -2,8 +2,8 @@
 
 var dashControllers = angular.module('dashControllers', [])
 
-    .controller('DashViewCtrl', ['$scope', 'CategoryRequest', 'DoubtRequest', 'SetOffer',
-        function ($scope, CategoryRequest, DoubtRequest, SetOffer) {
+    .controller('DashViewCtrl', ['$scope', 'CategoryRequest', 'DoubtRequest', 'SendOffer',
+        function ($scope, CategoryRequest, DoubtRequest) {
             /* Miscellaneous functions */
             function intersect(x, y) {
                 for (var i = 0; i < x.length; i++) {
@@ -76,19 +76,11 @@ var dashControllers = angular.module('dashControllers', [])
                 return intersect(item.tags, desiredTags);
             };
 
+            // Extended question information
             $scope.extDoubt = {};
             $scope.extDoubt.offerAmount = 0;
 
-            //Fix submit offer
-            $scope.submitOffer = function () {
-                var q = $scope.extDoubt;
-                if (typeof q.amount !== 'undefined' && q.amount.length > 0 && q.amount.match(/^\d{0,9}$/)) {
-                    console.log($scope.extDoubt.offerAmount); // erase
-                    var info = {categoryId: q.categoryId, doubtId: q.id, amount: q.amount};
-                    SetOffer.setOffer(info, {});
-                } else {
-                    console.log("invalid offer");
-                }
-            };
+            // Information about question to be created
+            $scope.newQuestion = {};
         }
     ]);

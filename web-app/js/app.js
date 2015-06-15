@@ -1,12 +1,11 @@
 'use strict';
 
 var app = angular.module('app', [
-        'ngRoute',
+        'ngRoute', 'ngStorage',
         'indexControllers', 'indexDirectives',
         'signinControllers', 'signinDirectives', 'signinServices',
         'dashControllers', 'dashDirectives', 'dashServices', 'dashAnimations'
-    ]
-)
+    ])
 
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
@@ -29,21 +28,26 @@ var app = angular.module('app', [
             });
     }])
 
-    .run( function ($rootScope, $location) {
+    .run( function ($rootScope, $location, $localStorage) {
+        $rootScope.$storage = $localStorage.$default({
+            loggedUser: false,
+            username: ''
+        });
         $rootScope.$on('$locationChangeStart', function (event, next, current) {
-            console.log($rootScope.loggedUser);
-            if (!$rootScope.loggedUser) {
-                var path = $location.path();
+            var path = $location.path();
+            if (!$rootScope.$storage.loggedUser) {
                 if (path === '/' || path === '' || path === '/signin' || path === '/signup') {
                     // Home needs no security, already going to signin or signup
                 } else {
                     $location.path('/signin');
                 }
+            } else {
+                if (path === '/signin' || path === '/signup') $location.path('/dashboard');
             }
         });
     });
 
-// Top ba directives
+// Top bar directives
 var indexDirectives = angular.module('indexDirectives', [])
 
     .directive('topBar', ['$rootScope',
@@ -51,14 +55,18 @@ var indexDirectives = angular.module('indexDirectives', [])
         return {
             restrict: 'C',
             link: function (scope, elem) {
-                $rootScope.$watch('loggedUser', function () {
-                    var logged = $rootScope.loggedUser;
+                $rootScope.$watch('$storage.loggedUser', function () {
+                    var logged = $rootScope.$storage.loggedUser;
                     if (logged) {
-                        $('.topBarNotLogged').transition('hide');
-                        $('.topBarLogged').transition('show');
+                        // Bug when login first with an user, logout and then login again.
+                        jQuery('.topBarNotLogged').transition('hide');
+                        jQuery('.topBarLogged').transition('show');
                     } else {
-                        $('.topBarLogged').transition('hide');
-                        $('.topBarNotLogged').transition('show');
+                        jQuery('.topBarLogged').transition('hide');
+                        jQuery('.topBarNotLogged').transition('show');
+                        jQuery('#loggedMenu').dropdown({
+                            action: 'hide'
+                        });
                     }
                 });
             }
@@ -82,9 +90,7 @@ var indexControllers = angular.module('indexControllers', [])
             $location.path('/myContributions');
         };
         $scope.goSignout = function () {
-            $rootScope.loggedUser = false;
+            $rootScope.$storage.loggedUser = false;
             $location.path('/');
-
         };
-        $scope.username = $rootScope.username;
     }]);

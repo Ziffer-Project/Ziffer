@@ -10,11 +10,24 @@
     <!-- Change title according to section -->
     <title>Ziffer</title>
 
-    <!-- Referencias globales -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Style sheets -->
+    <link rel="stylesheet" type="text/css" href="dist/semantic.min.css">
 
-    <!-- Agregar a modules -->
-    <r:require module="angular"/>
+    <!-- Mathjax config -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        showProcessingMessages: false,
+        tex2jax: { inlineMath: [['$','$'],['\\(','\\)']] },
+        processEscapes: true
+      });
+    </script>
+
+    <script src="dist/jQuery/jquery-2.1.3.min.js"></script>
+    <script src="dist/semantic.min.js"></script>
+    <script src="dist/angular/angular.js"></script>
+
+    <!-- Resource modules -->
+    <r:require module="resources"/>
     <r:layoutResources/>
 
 </head>
@@ -31,8 +44,8 @@
     <div class="ui inverted borderless topBarLogged menu fixed">
         <a class="item" href="#/">Ziffer</a>
         <div class="right menu">
-            <a class="item ui dropdown" id="loggedMenu">
-                {{username}}
+            <a class="item ui dropdown" id="loggedMenu" ng-cloak>
+                {{$root.$storage.username}}
                 <div class="menu" ng-controller="IndexCtrl">
                     <div class="item" ng-click="goDash()">Dashboard</div>
                     <div class="item" ng-click="goEdit()">Edit Profile</div>
