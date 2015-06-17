@@ -21,8 +21,8 @@ class Question {
 
     static constraints = {
 
-        title blank: false, size: 3..100
-        description blank: false, size: 10..10000
+        title blank: false, size: 1..100
+        description blank: false, size: 1..10000
         dueDate validator: { return it.after(new Date()) }
         answer nullable: true
         offers nullable: true

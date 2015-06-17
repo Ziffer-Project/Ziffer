@@ -10,7 +10,7 @@ class Comment {
   
     static constraints = {
 
-        text blank: false, size: 6..2000
+        text blank: false, size: 1..2000
 
     }
 

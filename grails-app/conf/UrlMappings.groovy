@@ -70,6 +70,16 @@ class UrlMappings {
             action = "postUserQuestion"
         }
 
+        /*
+        * Mapping para ver las preguntas que tiene un usuario
+        * Se tiene que enviar las preguntas junto con la lista de ofertas
+        */
+        "/myQuestions/fetchData/userQuestions" {
+            controller = "Question"
+            action = "showUserQuestion"
+        }
+
+
         // Mapping para signin/login
         "/signin/mkData/signinRequest" {
             controller = "Login"

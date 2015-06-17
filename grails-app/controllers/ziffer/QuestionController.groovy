@@ -16,22 +16,25 @@ class QuestionController {
        */
     def postUserQuestion() {
         def user = session.user
-        def json = [] as JSON
+        def jsonT = ['created' : true] as JSON
+        def jsonF = ['created' : false] as JSON
+
         if( user ){
-            Category category = Category.findById(params.categoryId)
-            Question userQuestion = new Question( asker: user, category: category, title: params.title, dateCreated: new Date(),
-                                                    description: params.description, dueDate: params.dueDate, tags: params.tags )
+            def category = Category.findById(params.categoryId)
+            def lon = Long.parseLong( params.dueDate )
+            def dueDate = new Date( lon )
+            def userQuestion = new Question( asker: user, category: category, title: params.title, dateCreated: new Date(),
+                                                    description: params.description, dueDate: dueDate, tags: params.tags )
             if( userQuestion.save( failOnError: true, flush: true, insert: true ) ){
-                json.putAt( 'created', true )
+                render jsonT
             }
             else{
-                json.putAt( 'created', false )
+                render jsonF
             }
 
         }else{
-            json.putAt( 'created', false )
+            render jsonF
         }
-        render json
     }
 
     def showUserQuestions() {

@@ -33,6 +33,7 @@ class BootStrap {
 			json['tags'] = it.tags
 			json['username'] = it.getAsker().username
 			json['categoryId'] = it.getCategory().id
+			json['offers'] = it.getOffers()
 			//json['userScore'] = ¿A cuál campo hace referencia? ¿Los coins? ¿El puntaje de aceptación?
 			return json
 		}
