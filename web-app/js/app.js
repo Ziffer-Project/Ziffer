@@ -5,7 +5,8 @@ var app = angular.module('app', [
         'indexControllers',
         'signinControllers', 'signinDirectives', 'signinServices',
         'dashControllers', 'dashDirectives', 'dashServices', 'dashAnimations',
-        'myQuestionsController', 'myQuestionsServices', 'myQuestionsDirectives'
+        'myQuestionsController', 'myQuestionsServices', 'myQuestionsDirectives',
+        'signUpControllers', 'signUpServices', 'signUpDirectives'
     ])
 
     .config(['$routeProvider', function ($routeProvider) {
@@ -14,8 +15,10 @@ var app = angular.module('app', [
                 templateUrl: 'main-view/main-view.html'
             })
             .when('/signup', {
-                templateUrl: 'some/path/to/signup.html'
+                templateUrl: 'profile-view/partials/createUser.html',
+                controller: 'signUpCtrl'
             })
+
             .when('/signin', {
                 templateUrl: 'signin-view/partials/signin-view.html',
                 controller: 'SigninViewCtrl'
