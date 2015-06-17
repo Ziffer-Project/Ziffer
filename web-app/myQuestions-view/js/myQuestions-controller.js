@@ -2,8 +2,8 @@
 
 var myQuestionsController = angular.module('myQuestionsController', [])
 
-    .controller('MyQuestionsCtrl', ['$scope', '$rootScope', 'UserQuestionsRequest',
-        function ($scope, $rootScope, UserQuestionsRequest) {
+    .controller('MyQuestionsCtrl', ['$scope', '$rootScope', 'UserQuestionsRequest', '$location',
+        function ($scope, $rootScope, UserQuestionsRequest, $location) {
             /* Miscellaneous functions */
             function intersect(x, y) {
                 for (var i = 0; i < x.length; i++) {
@@ -53,6 +53,11 @@ var myQuestionsController = angular.module('myQuestionsController', [])
             };
 
             $scope.extDoubt = {};
+            $scope.chatInfo = {};
+
+            $scope.goToClassroom = function() {
+                $location.path('/classroom');
+            };
         }
     ])
 ;
@@ -83,17 +88,31 @@ var myQuestionsDirectives = angular.module('myQuestionsDirectives', [])
         };
     }])
 
+    .directive('acceptOfferBtn', ['$rootScope', function($rootScope) {
+        return {
+            restrict: 'C',
+            link: function(scope, elem) {
+                elem.bind('click', function() {
+                    var question = scope.extDoubt;
+                    delete question.offers;
+                    question.offer = scope.offer;
+                    $rootScope.$storage.question = question;
+                });
+            }
+        }
+    }])
+
 ;
 
 var myQuestionsServices = angular.module('myQuestionsServices', ['ngResource'])
 
-        .factory('UserQuestionsRequest', ['$resource',
-            function ($resource) {
-                return $resource('myQuestions/fetchData/userQuestions', {}, {
-                        getQuestions: { method: 'GET', isArray: true }
-                    }
-                );
-            }
-        ])
+    .factory('UserQuestionsRequest', ['$resource',
+        function ($resource) {
+            return $resource('myQuestions/fetchData/userQuestions', {}, {
+                    getQuestions: { method: 'GET', isArray: true }
+                }
+            );
+        }
+    ])
 
 ;

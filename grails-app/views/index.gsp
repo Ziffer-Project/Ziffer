@@ -25,6 +25,7 @@
     <script src="dist/jQuery/jquery-2.1.3.min.js"></script>
     <script src="dist/semantic.min.js"></script>
     <script src="dist/angular/angular.js"></script>
+    <script src="dist/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
 
     <!-- Resource modules -->
     <r:require module="resources"/>

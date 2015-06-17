@@ -1,0 +1,102 @@
+<link rel="stylesheet" type="text/css" href="chat-view/css/chat.css">
+<script src="dist/semantic.min.js"></script>
+<div id="chat-container">
+    <div class="ui vertical teal inverted banner segment">
+        <div class="ui centered page grid">
+            <div class="fourteen wide column">
+                <div class="ui centered grid">
+                    <div class="twelve wide column">
+                        <h1 class="ui inverted header">Classroom</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui basic segment">
+        <div class="ui centered page grid">
+            <div class="fourteen wide column">
+                <div class="ui segment">
+                    <div class="column" ng-cloak>
+                        <div class="row"><h1>{{question.title}}</h1></div>
+                        <div class="row"><h4>Tutor: <a>{{question.offer.offerer}}</a></h4></div>
+                        <div class="row"><h4>Ziffer coins: {{question.offer.zifferCoins}} <i class="money orange icon"></i></h4></div>
+                        <div class="ui divider"></div>
+                        <div class="row"><p>{{question.description}}</p></div>
+                    </div>
+                </div>
+                <div class="ui segment">
+                    <div class="ui comments">
+                        <h3 class="ui dividing header">Answers</h3>
+                        <div class="comment">
+                            <a class="avatar">
+                                <i class="idea icon"></i>
+                            </a>
+                            <div class="content">
+                                <a class="author">{{question.offer.offerer}}</a>
+                                <div class="metadata">
+                                    <span class="date">Today at 5:42PM</span>
+                                </div>
+                                <div class="text">
+                                    Anything else I could help?
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <a class="avatar">
+                                <i class="idea icon"></i>
+                            </a>
+                            <div class="content">
+                                <a class="author">{{question.offer.offerer}}</a>
+                                <div class="metadata">
+                                    <span class="date">Yesterday at 12:30AM</span>
+                                </div>
+                                <div class="text">
+                                    <p>Also don't forget signs.</p>
+                                </div>
+                            </div>
+                            <div class="comments">
+                                <div class="comment">
+                                    <a class="avatar">
+                                        <i class="student icon"></i>
+                                    </a>
+                                    <div class="content">
+                                        <a class="author">You</a>
+                                        <div class="metadata">
+                                            <span class="date">Just now</span>
+                                        </div>
+                                        <div class="text">
+                                            You're right.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <a class="avatar">
+                                <i class="idea icon"></i>
+                            </a>
+                            <div class="content">
+                                <a class="author">{{question.offer.offerer}}</a>
+                                <div class="metadata">
+                                    <span class="date">5 days ago</span>
+                                </div>
+                                <div class="text">
+                                    You just need to add 2 to the solution.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui divider"></div>
+                        <form class="ui reply form">
+                            <div class="field">
+                                <textarea></textarea>
+                            </div>
+                            <div class="ui blue labeled submit icon button">
+                                <i class="icon edit"></i> Add Reply
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

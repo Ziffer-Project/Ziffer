@@ -5,7 +5,8 @@ var app = angular.module('app', [
         'indexControllers',
         'signinControllers', 'signinDirectives', 'signinServices',
         'dashControllers', 'dashDirectives', 'dashServices', 'dashAnimations',
-        'myQuestionsController', 'myQuestionsServices', 'myQuestionsDirectives'
+        'myQuestionsController', 'myQuestionsServices', 'myQuestionsDirectives',
+        'chatController', 'chatDirectives'
     ])
 
     .config(['$routeProvider', function ($routeProvider) {
@@ -27,6 +28,10 @@ var app = angular.module('app', [
             .when('/dashboard', {
                 templateUrl: 'dashboard-view/partials/dash-view.html',
                 controller: 'DashViewCtrl'
+            })
+            .when('/classroom', {
+                templateUrl: 'chat-view/partials/chat-view.html',
+                controller: 'ChatCtrl'
             })
             .otherwise({
                 redirectTo: '/'

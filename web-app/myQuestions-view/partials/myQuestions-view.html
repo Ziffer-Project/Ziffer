@@ -3,7 +3,6 @@
 <script src="dist/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
 <div id="myQuestions-container">
     <!-- Banner -->
-    <!-- User's Question list -->
     <div class="ui vertical inverted banner segment">
         <div class="ui centered page grid">
             <div class="fourteen wide column">
@@ -133,7 +132,7 @@
                 <div class="row" ng-cloak>
                     <div class="ui celled list">
                         <div class="item" ng-repeat="offer in extDoubt.offers | filter:!offer.accepted">
-                            <div class="right floated ui animated inverted orange button accept-offer">
+                            <div class="right floated ui animated inverted orange button accept-offer-btn" ng-click="goToClassroom()">
                                 <div class="hidden content">{{offer.zifferCoins}} <i class="money icon"></i></div>
                                 <div class="visible content">Accept</div>
                             </div>
