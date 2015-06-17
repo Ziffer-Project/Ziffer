@@ -15,7 +15,7 @@ class QuestionController {
        * por comas) y la descripción (description)
        */
     def postUserQuestion() {
-        User user = session.user
+        def user = session.user
         def json = [] as JSON
         if( user ){
             Category category = Category.findById(params.categoryId)
