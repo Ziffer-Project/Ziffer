@@ -23,8 +23,9 @@ class QuestionController {
             def category = Category.findById(params.categoryId)
             def lon = Long.parseLong( params.dueDate )
             def dueDate = new Date( lon )
+            def description = request.JSON['description']
             def userQuestion = new Question( asker: user, category: category, title: params.title, dateCreated: new Date(),
-                                                    description: params.description, dueDate: dueDate, tags: params.tags )
+                                                    description: description, dueDate: dueDate, tags: params.tags )
             if( userQuestion.save( failOnError: true, flush: true, insert: true ) ){
                 render jsonT
             }
@@ -39,11 +40,11 @@ class QuestionController {
 
     def showUserQuestions() {
         def user = session.user
-        def json = [] as JSON
+        def json
         if(user){
             json = user.questions as JSON
         }
-        render json
+        render ([] as JSON)
     }
 
 }

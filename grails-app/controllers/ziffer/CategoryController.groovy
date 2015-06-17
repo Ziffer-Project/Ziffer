@@ -40,7 +40,13 @@ class CategoryController {
      * front-end es enviado una respuesta de error
      */
     def setOffer() {
-        println "Setting offer to question: " + params.questionId + " in category " + params.categoryId + " with an amount of " + params.amount
+        if( session.user ){
+            println "Setting offer to question: " + params.questionId + " in category " + params.categoryId + " with an amount of " + params.amount
+            def id = Long.parseLong( params.questionId )
+            def amount = Long.parseLong( params.amount )
+            def offer = new Offer(zifferCoins: amount, offerDate: new Date(), question: Question.findById( id ), offerer: session.user)
+            offer.save(failOnError: true, flush: true, insert: true)
+        }
         render status: 200
     }
 
