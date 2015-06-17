@@ -76,7 +76,7 @@ class UrlMappings {
         */
         "/myQuestions/fetchData/userQuestions" {
             controller = "Question"
-            action = "showUserQuestion"
+            action = "showUserQuestions"
         }
 
 

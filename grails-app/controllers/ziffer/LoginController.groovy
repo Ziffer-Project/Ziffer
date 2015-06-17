@@ -27,6 +27,7 @@ class LoginController {
 
     def doLogout(){
         session.user = null
+        render status: 200
     }
 }
 
