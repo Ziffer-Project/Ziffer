@@ -30,25 +30,26 @@ var dashDirectives = angular.module('dashDirectives', [])
             return {
                 restrict: 'C',
                 link: function(scope, elem) {
-                    $(elem).modal({
-                        allowMultiple: true
-                    });
-                    $(elem).modal("setting", {
-                        onApprove: function () {
-                            /*if (typeof val !== 'undefined' && val.length > 0) {
-                             return scope.extDoubt.offerAmount.match(/^\d{0,9}$/);
-                             } else {
-                             return false;
-                             }*/ return false;
+                    jQuery(elem).modal();
+                    jQuery('.full-question-modal').modal({
+                        onApprove: function() {
+                            return false;
                         }
                     });
-                    jQuery('.missing-question-info-modal').modal({
-                        onHidden: function() {
-                            jQuery('.post-question-modal').modal('show');
-                        }
-                    });
+                    console.log('modal initialization');
                 }
             };
+        })
+
+        .directive('closeMissingInfoBtn', function() {
+            return {
+                restrict: 'C',
+                link: function(scope, elem) {
+                    elem.bind('click', function() {
+                        jQuery('.post-question-modal').modal('show');
+                    });
+                }
+            }
         })
 
         .directive('submitOfferBtn', ['SendOffer', function (SendOffer) {

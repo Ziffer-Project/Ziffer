@@ -1,28 +1,28 @@
 /** {
 	border: 1px solid red !important;
 }*/
-#main-body .banner {
+#myQuestions-container .banner {
     background-image: url(images/bg.jpg);
     margin-top: 24px;
     min-height: 200px;
     border-radius: 0px;
 }
 
-#main-body .banner .header {
+#myQuestions-container .banner .header {
     margin-top: 50px;
     text-align: center;
     font-size: 3rem;
 }
 
-#main-body .segment.stackable.grid {
+#myQuestions-container .segment.stackable.grid {
     position: relative;
 }
 
-#search-field {
+#myQuestions-container #search-field {
     width: 100%;
 }
 
-#doubt-list > .doubt-items {
+#myQuestions-container #doubt-list > .doubt-items {
     margin-top: 0.3rem;
     margin-bottom: 0.5rem;
     border-radius: 0.2857rem;
@@ -39,19 +39,19 @@
     box-shadow: inset 0 0 0 1px #e1e1e1, 0 0 1px rgba(0, 0, 0, 0);
 }
 
-#doubt-list > .doubt-items:hover, #doubt-list > .doubt-items:focus, #doubt-list > .doubt-items:active {
+#myQuestions-container #doubt-list > .doubt-items:hover, #doubt-list > .doubt-items:focus, #doubt-list > .doubt-items:active {
     box-shadow: inset 0 0 0 1px #2098d1, 0 0 1px rgba(0, 0, 0, 0);
 }
 
-#doubt-list > p {
+#myQuestions-container #doubt-list > p {
     font-size: 1.2rem;
     text-align: center;
 }
 
-.score {
+#myQuestions-container .score {
     color: rgba(0, 0, 0, 0.4);
 }
 
-.ui.modal .header > .meta {
+#myQuestions-container .ui.modal .header > .meta {
     font-size: 1rem;
 }

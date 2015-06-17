@@ -69,6 +69,7 @@
 }
 
 .post-question-modal .title-input-container,
+.title-input-container input,
 .post-question-modal .tags-input {
     width: 100%;
 }

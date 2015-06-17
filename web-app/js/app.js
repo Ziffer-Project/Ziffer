@@ -39,6 +39,7 @@ var app = angular.module('app', [
             username: ''
         });
         $rootScope.$on('$locationChangeStart', function (event, next, current) {
+            jQuery('#main-body').nextAll('div').remove();
             var path = $location.path();
             if (!$rootScope.$storage.loggedUser) {
                 if (path === '/' || path === '' || path === '/signin' || path === '/signup') {

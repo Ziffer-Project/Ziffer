@@ -1,133 +1,135 @@
 <link rel="stylesheet" type="text/css" href="myQuestions-view/css/myQuestions.css">
 <script src="dist/semantic.min.js"></script>
 <script src="dist/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
-<!-- Banner -->
-<!-- User's Question list -->
-<div class="ui vertical inverted banner segment">
-    <div class="ui centered page grid">
-        <div class="fourteen wide column">
-            <div class="ui centered grid">
-                <div class="twelve wide column">
-                    <h1 class="ui inverted header">My questions</h1>
+<div id="myQuestions-container">
+    <!-- Banner -->
+    <!-- User's Question list -->
+    <div class="ui vertical inverted banner segment">
+        <div class="ui centered page grid">
+            <div class="fourteen wide column">
+                <div class="ui centered grid">
+                    <div class="twelve wide column">
+                        <h1 class="ui inverted header">My questions</h1>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- Main section, user's questions -->
-<div class="ui basic segment">
-    <div class="ui centered page grid">
-        <!-- Search bar and doubts section -->
-        <div class="fourteen wide column">
-            <div class="ui segment">
-                <div class="column">
-                    <div class="row">
-                        <div class="ui fluid left action icon input">
-                            <div class="ui floating dropdown icon button">
-                                <i class="filter icon"></i>
-                                <div class="menu">
-                                    <div class="header"><i class="list icon"></i>Order by</div>
-                                    <div class="item">
-                                        <div class="ui form">
-                                            <div class="field">
-                                                <div class="ui radio checkbox">
-                                                    <input name="orders" type="radio" ng-model="selectedOrder" data-ng-value="0" id="order-rb-1">
-                                                    <label for="order-rb-1"><i class="sort content ascending icon"></i>Ascending</label>
+    <!-- Main section, user's questions -->
+    <div class="ui basic segment">
+        <div class="ui centered page grid">
+            <!-- Search bar and doubts section -->
+            <div class="fourteen wide column">
+                <div class="ui segment">
+                    <div class="column">
+                        <div class="row">
+                            <div class="ui fluid left action icon input">
+                                <div class="ui floating dropdown icon button">
+                                    <i class="filter icon"></i>
+                                    <div class="menu">
+                                        <div class="header"><i class="list icon"></i>Order by</div>
+                                        <div class="item">
+                                            <div class="ui form">
+                                                <div class="field">
+                                                    <div class="ui radio checkbox">
+                                                        <input name="orders" type="radio" ng-model="selectedOrder" data-ng-value="0" id="order-rb-1">
+                                                        <label for="order-rb-1"><i class="sort content ascending icon"></i>Ascending</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="ui form">
-                                            <div class="field">
-                                                <div class="ui radio checkbox">
-                                                    <input name="orders" type="radio" ng-model="selectedOrder" data-ng-value="1" id="order-rb-2">
-                                                    <label for="order-rb-2"><i class="sort content descending icon"></i>Descending</label>
+                                        <div class="item">
+                                            <div class="ui form">
+                                                <div class="field">
+                                                    <div class="ui radio checkbox">
+                                                        <input name="orders" type="radio" ng-model="selectedOrder" data-ng-value="1" id="order-rb-2">
+                                                        <label for="order-rb-2"><i class="sort content descending icon"></i>Descending</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="divider"></div>
-                                    <div class="item">
-                                        <div class="ui form">
-                                            <div class="field">
-                                                <div class="ui radio checkbox">
-                                                    <input name="criteria" type="radio" ng-model="selectedCriteria" value="title" id="criteria-rb-1">
-                                                    <label for="criteria-rb-1"><i class="text height icon"></i>Title</label>
+                                        <div class="divider"></div>
+                                        <div class="item">
+                                            <div class="ui form">
+                                                <div class="field">
+                                                    <div class="ui radio checkbox">
+                                                        <input name="criteria" type="radio" ng-model="selectedCriteria" value="title" id="criteria-rb-1">
+                                                        <label for="criteria-rb-1"><i class="text height icon"></i>Title</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="ui form">
-                                            <div class="field">
-                                                <div class="ui radio checkbox">
-                                                    <input name="criteria" type="radio" ng-model="selectedCriteria" value="dueDate" id="criteria-rb-2">
-                                                    <label for="criteria-rb-2"><i class="calendar icon"></i>Due date</label>
+                                        <div class="item">
+                                            <div class="ui form">
+                                                <div class="field">
+                                                    <div class="ui radio checkbox">
+                                                        <input name="criteria" type="radio" ng-model="selectedCriteria" value="dueDate" id="criteria-rb-2">
+                                                        <label for="criteria-rb-2"><i class="calendar icon"></i>Due date</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="ui form">
-                                            <div class="field">
-                                                <div class="ui radio checkbox">
-                                                    <input name="criteria" type="radio" ng-model="selectedCriteria" value="dateCreated" id="criteria-rb-3">
-                                                    <label for="criteria-rb-3"><i class="calendar outline icon"></i>Creation date</label>
+                                        <div class="item">
+                                            <div class="ui form">
+                                                <div class="field">
+                                                    <div class="ui radio checkbox">
+                                                        <input name="criteria" type="radio" ng-model="selectedCriteria" value="dateCreated" id="criteria-rb-3">
+                                                        <label for="criteria-rb-3"><i class="calendar outline icon"></i>Creation date</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="ui form">
-                                            <div class="field">
-                                                <div class="ui radio checkbox">
-                                                    <input name="criteria" type="radio" ng-model="selectedCriteria" value="userScore" id="criteria-rb-4">
-                                                    <label for="criteria-rb-4"><i class="star icon"></i>Score</label>
+                                        <div class="item">
+                                            <div class="ui form">
+                                                <div class="field">
+                                                    <div class="ui radio checkbox">
+                                                        <input name="criteria" type="radio" ng-model="selectedCriteria" value="userScore" id="criteria-rb-4">
+                                                        <label for="criteria-rb-4"><i class="star icon"></i>Score</label>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="divider"></div>
-                                    <div class="header"><i class="user icon"></i>Filter by user</div>
-                                    <div class="header">
-                                        <input placeholder="Type username..." type="text" ng-model="searchTerm.username" id="username-search-field">
-                                    </div>
-                                    <div class="header"><i class="tags icon"></i>Filter by tags</div>
-                                    <div class="header">
-                                        <input placeholder="Type tags..." type="text" ng-model="enteredTags" id="tags-search-field">
+                                        <div class="divider"></div>
+                                        <div class="header"><i class="user icon"></i>Filter by user</div>
+                                        <div class="header">
+                                            <input placeholder="Type username..." type="text" ng-model="searchTerm.username" id="username-search-field">
+                                        </div>
+                                        <div class="header"><i class="tags icon"></i>Filter by tags</div>
+                                        <div class="header">
+                                            <input placeholder="Type tags..." type="text" ng-model="enteredTags" id="tags-search-field">
+                                        </div>
                                     </div>
                                 </div>
+                                <input placeholder="Search..." type="text" id="search-field" ng-model="searchTerm.$">
+                                <!-- Add ng-show attribute to search icon -->
+                                <i class="search icon"></i>
                             </div>
-                            <input placeholder="Search..." type="text" id="search-field" ng-model="searchTerm.$">
-                            <!-- Add ng-show attribute to search icon -->
-                            <i class="search icon"></i>
                         </div>
-                    </div>
-                    <div class="ui hidden divider"></div>
-                    <div class="row" ng-cloak>
-                        <div class="ui celled list" id="doubt-list">
-                            <div class="item doubt-items" ng-repeat="doubt in filteredList = (doubtList | filter:searchTerm | filter:tagFilter | orderBy:selectedCriteria:selectedOrder)">
-                                <!-- Add ng-click to button for modal -->
-                                <div class="right floated ui peek button">Peek</div>
-                                <div class="content">
-                                    <div class="header">{{doubt.title}}</div>
-                                    <div class="meta">
-                                        <a>{{doubt.username}}</a>
-                                        <span class="score"> / <i class="thumbs green outline up icon"></i> {{doubt.posScore}} <i class="thumbs red outline down icon"></i> {{doubt.negScore}}</span>
-                                    </div>
-                                    <div class="description">
-                                        <div class="ui horizontal link list">
-                                            <div class="item">Created on: {{doubt.dateCreated}}</div>
-                                            <div class="item">Until: {{doubt.dueDate}}</div>
+                        <div class="ui hidden divider"></div>
+                        <div class="row" ng-cloak>
+                            <div class="ui celled list" id="doubt-list">
+                                <div class="item doubt-items" ng-repeat="doubt in filteredList = (doubtList | filter:searchTerm | filter:tagFilter | orderBy:selectedCriteria:selectedOrder)">
+                                    <!-- Add ng-click to button for modal -->
+                                    <div class="right floated ui peek button">Peek</div>
+                                    <div class="content">
+                                        <div class="header">{{doubt.title}}</div>
+                                        <div class="meta">
+                                            <a>{{doubt.username}}</a>
+                                            <span class="score"> / <i class="thumbs green outline up icon"></i> {{doubt.posScore}} <i class="thumbs red outline down icon"></i> {{doubt.negScore}}</span>
+                                        </div>
+                                        <div class="description">
+                                            <div class="ui horizontal link list">
+                                                <div class="item">Created on: {{doubt.dateCreated}}</div>
+                                                <div class="item">Until: {{doubt.dueDate}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="extra">
+                                            <div class="ui label" ng-repeat="tag in doubt.tags">{{tag}}</div>
                                         </div>
                                     </div>
-                                    <div class="extra">
-                                        <div class="ui label" ng-repeat="tag in doubt.tags">{{tag}}</div>
-                                    </div>
                                 </div>
+                                <p ng-show="!filteredList.length">Sorry, we couldn't find any matching question.</p>
                             </div>
-                            <p ng-show="!filteredList.length">Sorry, we couldn't find any matching question.</p>
                         </div>
                     </div>
                 </div>
