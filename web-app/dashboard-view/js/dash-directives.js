@@ -36,7 +36,6 @@ var dashDirectives = angular.module('dashDirectives', [])
                             return false;
                         }
                     });
-                    console.log('modal initialization');
                 }
             };
         })
@@ -132,11 +131,12 @@ var dashDirectives = angular.module('dashDirectives', [])
                             var dueDate = scope.newQuestion.dueDate;
                             var tags = scope.newQuestion.tags;
                             var description = jQuery('.redactor').val();
+                            var pseudoDescription = jQuery('.redactor_redactor').text();
                             var categoryId = scope.newQuestion.categoryId;
-                            if (description === '' || description.replace(/ /g, '').length !== description.length || !categoryId) {
+                            if (description === '' || pseudoDescription === '' || !categoryId) {
                                 jQuery('.missing-question-info-modal').modal('show');
                             } else {
-                                SendQuestion.sendQuestion({title: title, dueDate: dueDate, tags: tags, description: description, categoryId: categoryId}, {},
+                                SendQuestion.sendQuestion({title: title, dueDate: dueDate, tags: tags, categoryId: categoryId}, {description: description},
                                     function success(response) {
                                         if (response.created) {
                                             jQuery('.created-question-modal').modal('show');

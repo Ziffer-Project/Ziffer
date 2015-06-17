@@ -5,7 +5,7 @@ var app = angular.module('app', [
         'indexControllers',
         'signinControllers', 'signinDirectives', 'signinServices',
         'dashControllers', 'dashDirectives', 'dashServices', 'dashAnimations',
-        'myQuestionsController'
+        'myQuestionsController', 'myQuestionsServices'
     ])
 
     .config(['$routeProvider', function ($routeProvider) {
@@ -72,6 +72,7 @@ var indexControllers = angular.module('indexControllers', [])
         $scope.goSignout = function () {
             LogoutRequest.logout();
             $rootScope.$storage.loggedUser = false;
+            $rootScope.$storage.username = '';
             $location.path('/');
         };
     }]);
