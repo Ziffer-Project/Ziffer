@@ -34,7 +34,7 @@ var signUpServices = angular.module('signUpServices', ['ngResource'])
                         function success(){
                             $rootScope.usr=username;
                             $rootScope.pwd=password;
-                            $location.path('/');
+                            $location.path('/dashboard');
                         }
                     )
                 }
@@ -49,6 +49,22 @@ var signUpServices = angular.module('signUpServices', ['ngResource'])
                 queryProfile: {method:'GET', params:{profileId:'profileId'}, isArray:false}
             });
         }
+    ])
+
+    .factory('recoverPass', ['$resource',
+        function($resource){
+            return $resource('/signup/fetchData/recoverPass',{},{
+                recover:{method: 'GET', params:{profileId:'profileId'}, isArray:false}
+            });
+        }
+    ])
+
+    .factory('recoverPass', [
+       function($resource){
+           return $resource('/signup/fetchData/recoverPass', {}, {
+               recoverPassword: { method: 'POST'}
+           });
+       }
     ]);
 
 
@@ -63,5 +79,32 @@ var signUpServices = angular.module('signUpServices', ['ngResource'])
                     });
                 }
             };
+            }
+        ])
+//DELETE THIS
+        .directive('btnSuccess', ['signUpAction',
+            function (signUpAction) {
+                return {
+                    restrict: 'C',
+                    link: function (scope, elem) {
+                        elem.bind('click', function (e) {
+                            signUpAction.signUp(scope.profile.username, scope.profile.password);
+                        });
+                    }
+                };
+            }
+        ])
+        .directive('doReg', ['signUpAction',
+            function (signUpAction) {
+                return {
+                    restrict: 'C',
+                    link: function (scope, elem) {
+                        elem.bind('keypress', function (event) {
+                            if (event.which === 13) {
+                                signUpAction.signUp(scope.profile.username, scope.profile.password);
+                            }
+                        });
+                    }
+                };
             }
         ]);
