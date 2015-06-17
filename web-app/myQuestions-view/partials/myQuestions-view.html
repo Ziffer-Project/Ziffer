@@ -79,21 +79,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="item">
-                                            <div class="ui form">
-                                                <div class="field">
-                                                    <div class="ui radio checkbox">
-                                                        <input name="criteria" type="radio" ng-model="selectedCriteria" value="userScore" id="criteria-rb-4">
-                                                        <label for="criteria-rb-4"><i class="star icon"></i>Score</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <div class="divider"></div>
-                                        <div class="header"><i class="user icon"></i>Filter by user</div>
-                                        <div class="header">
-                                            <input placeholder="Type username..." type="text" ng-model="searchTerm.username" id="username-search-field">
-                                        </div>
                                         <div class="header"><i class="tags icon"></i>Filter by tags</div>
                                         <div class="header">
                                             <input placeholder="Type tags..." type="text" ng-model="enteredTags" id="tags-search-field">
@@ -113,10 +99,6 @@
                                     <div class="right floated ui peek button">Peek</div>
                                     <div class="content">
                                         <div class="header">{{doubt.title}}</div>
-                                        <div class="meta">
-                                            <a>{{doubt.username}}</a>
-                                            <span class="score"> / <i class="thumbs green outline up icon"></i> {{doubt.posScore}} <i class="thumbs red outline down icon"></i> {{doubt.negScore}}</span>
-                                        </div>
                                         <div class="description">
                                             <div class="ui horizontal link list">
                                                 <div class="item">Created on: {{doubt.dateCreated}}</div>

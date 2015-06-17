@@ -2,8 +2,8 @@
 
 var myQuestionsController = angular.module('myQuestionsController', [])
 
-    .controller('MyQuestionsCtrl', ['$scope',
-        function ($scope) {
+    .controller('MyQuestionsCtrl', ['$scope', '$rootScope', 'UserQuestionsRequest',
+        function ($scope, $rootScope, UserQuestionsRequest) {
             /* Miscellaneous functions */
             function intersect(x, y) {
                 for (var i = 0; i < x.length; i++) {
@@ -18,22 +18,24 @@ var myQuestionsController = angular.module('myQuestionsController', [])
 
             //Search controller
             //Data query
-            /*$scope.tagSet = [];
-            $scope.doubtList = DoubtRequest.queryStartupDoubts();
-            $scope.doubtList.$promise.then(function (data) {
-                for (var i = data.length - 1; i >= 0; i--) {
-                    for (var j = data[i].tags.length - 1; j >= 0; j--) {
-                        var tag = data[i].tags[j];
-                        if ($scope.tagSet.indexOf(tag) === -1) {
-                            $scope.tagSet.push(tag);
+            $scope.tagSet = [];
+            $scope.doubtList = UserQuestionsRequest.getQuestions({username: $rootScope.$storage.username},
+                function success(data) {
+                    for (var i = data.length - 1; i >= 0; i--) {
+                        for (var j = data[i].tags.length - 1; j >= 0; j--) {
+                            var tag = data[i].tags[j];
+                            if ($scope.tagSet.indexOf(tag) === -1) {
+                                $scope.tagSet.push(tag);
+                            }
                         }
                     }
-                }
-            });*/
+                },
+                function error(err) {}
+            );
 
 
             //Filtering and ordering
-            /*$scope.selectedOrder = 0;
+            $scope.selectedOrder = 0;
             $scope.selectedCriteria = 'title';
             $scope.enteredTags = '';
             $scope.searchTerm = "";
@@ -48,7 +50,20 @@ var myQuestionsController = angular.module('myQuestionsController', [])
                     return true;
                 }
                 return intersect(item.tags, desiredTags);
-            };*/
+            };
         }
     ])
+;
+
+var myQuestionsServices = angular.module('myQuestionsServices', ['ngResource'])
+
+        .factory('UserQuestionsRequest', ['$resource',
+            function ($resource) {
+                return $resource('myQuestions/fetchData/userQuestions', {}, {
+                        getQuestions: { method: 'GET', isArray: true }
+                    }
+                );
+            }
+        ])
+
 ;
