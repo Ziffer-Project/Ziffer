@@ -12,6 +12,14 @@ class BootStrap {
 		acceptOffers()
 		createAnswers()
 		createComments()
+		JSON.registerObjectMarshaller(Offer){
+			def json = [:]
+			json['zifferCoins'] = it.zifferCoins
+			json['offerDate'] = it.offerDate
+			json['accepted'] = it.accepted
+			json['offerer'] = it.getOfferer().username
+			return json
+		}
 		JSON.registerObjectMarshaller(Category){
 			def json = [:]
 			json['id'] = it.id
