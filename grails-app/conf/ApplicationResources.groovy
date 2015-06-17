@@ -1,7 +1,3 @@
-/**
- * Created by Oscar on 04-May-15.
- */
-
 modules = {
     resources {
         resource url: 'dist/redactor/redactor.css'
@@ -19,6 +15,7 @@ modules = {
         resource url: 'dashboard-view/js/dash-animations.js'
         resource url: 'myQuestions-view/js/myQuestions-controller.js'
         resource url: 'chat-view/js/chat-controller.js'
+        resource url: 'profile-view/js/user-controllers.js'
 
         resource url: 'css/main-style.css'
     }
