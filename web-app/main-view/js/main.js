@@ -11,8 +11,8 @@ $(document).ready(function(){
         animationSpeed : 600
     });
 
-    TweenMax.from(".logo",4,{opacity:0});
-    TweenMax.from(".logo",4,{left:-250,ease:Elastic.easeOut});
+    TweenMax.from(".logo",6,{opacity:0});
+
     var controller = $.superscrollorama();
     controller.addTween("#aboutTitle",TweenMax.from("#aboutTitle",1,{left:50,opacity:0}));
     controller.addTween("#imgabout",TweenMax.from(".aleft",2,{left:-50,opacity:0}));
