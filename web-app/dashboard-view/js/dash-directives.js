@@ -89,7 +89,7 @@ var dashDirectives = angular.module('dashDirectives', [])
                          });*/
                         scope.$parent.extDoubt.description = scope.doubt.description;
                         $timeout(function() {
-                            $('.modal.full-question-modal').modal('show');
+                            $('.full-question-modal').modal('show');
                         }, 200);
                     });
                 }
@@ -114,7 +114,7 @@ var dashDirectives = angular.module('dashDirectives', [])
                 link: function (scope, elem) {
                     elem.bind('click', function () {
                         $timeout(function () {
-                            $('.modal.post-question-modal').modal('show');
+                            $('.post-question-modal').modal('show');
                         }, 200);
                     });
                 }
@@ -131,12 +131,17 @@ var dashDirectives = angular.module('dashDirectives', [])
                             var dueDate = scope.newQuestion.dueDate;
                             var tags = scope.newQuestion.tags;
                             var description = jQuery('.redactor').val();
-                            if (description === '' || description.replace(/ /g, '').length !== description.length) {
+                            var categoryId = scope.newQuestion.categoryId;
+                            if (description === '' || description.replace(/ /g, '').length !== description.length || !categoryId) {
                                 jQuery('.missing-question-info-modal').modal('show');
                             } else {
-                                SendQuestion.sendQuestion({title: title, dueDate: dueDate, tags: tags, description: description}, {},
+                                SendQuestion.sendQuestion({title: title, dueDate: dueDate, tags: tags, description: description, categoryId: categoryId}, {},
                                     function success(response) {
-                                        jQuery('.created-question-modal').modal('show');
+                                        if (response.created) {
+                                            jQuery('.created-question-modal').modal('show');
+                                        } else {
+                                            jQuery('.not-created-question-modal').modal('show');
+                                        }
                                     },
                                     function error(err) {
                                         jQuery('.not-created-question-modal').modal('show');

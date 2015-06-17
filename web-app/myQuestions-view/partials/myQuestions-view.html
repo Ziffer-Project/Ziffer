@@ -1,48 +1,20 @@
-<link rel="stylesheet" type="text/css" href="dashboard-view/css/dashboard.css">
-<link rel="stylesheet" type="text/css" href="dashboard-view/css/animations.css">
+<link rel="stylesheet" type="text/css" href="myQuestions-view/css/myQuestions.css">
 <script src="dist/semantic.min.js"></script>
 <script src="dist/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
-<script src="dashboard-view/js/texconfig.js"></script>
-<!-- Category banner -->
+<!-- Banner -->
+<!-- User's Question list -->
 <div class="ui vertical inverted banner segment">
     <div class="ui centered page grid">
         <div class="fourteen wide column">
-            <div class="ui grid">
-                <div class="twelve wide column hidden transition category-info">
-                    <h1 class="ui inverted header" ng-cloak>{{selectedCategory.name || "Welcome"}}</h1>
-                </div>
-                <div class="four wide column">
-                    <div class="ui form">
-                        <div class="field">
-                            <div class="ui selection dropdown" id="change-cat-dropdown">
-                                <input name="cat-dropdown" type="hidden">
-                                <div class="default text">Change category</div>
-                                <i class="dropdown inverted icon"></i>
-                                <div class="menu">
-                                    <div class="item" ng-cloak ng-repeat="category in categories | orderBy: orderCategory" data-value="{{category}}" ng-click="$parent.selectedCategory=category">{{category.name}}</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Ask button -->
-    <div class="ui centered page grid" id="ask-container">
-        <div class="fourteen wide column">
-            <div class="grid">
-                <div class="left floated five wide column">
-                    <div class="ui animated inverted fluid white button post-question-show">
-                        <div class="hidden content">Ask</div>
-                        <div class="visible content"><i class="help icon"></i></div>
-                    </div>
+            <div class="ui centered grid">
+                <div class="twelve wide column">
+                    <h1 class="ui inverted header">My questions</h1>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Main section -->
+<!-- Main section, user's questions -->
 <div class="ui basic segment">
     <div class="ui centered page grid">
         <!-- Search bar and doubts section -->
@@ -163,157 +135,3 @@
         </div>
     </div>
 </div>
-<!-- Doubt extended information modal -->
-<div class="ui modal full-question-modal" ng-cloak>
-    <i class="close icon"></i>
-    <div class="header">
-        {{extDoubt.title}}
-        <div class="meta">
-            <a>{{extDoubt.username}}</a>
-            <span class="score"> / <i class="thumbs green outline up icon"></i> {{extDoubt.posScore}} <i class="thumbs red outline down icon"></i> {{extDoubt.negScore}}</span>
-        </div>
-        <div class="ui label" ng-repeat="tag in extDoubt.tags">{{tag}}</div>
-    </div>
-    <div class="content">
-        <div class="description">
-            {{extDoubt.description}}
-            <div class="ui divider"></div>
-            <b>You have already offered:</b> {{extDoubt.prevOffer || "Nothing"}}.
-        </div>
-    </div>
-    <div class="actions">
-        <div class="ui left action input">
-            <button class="ui positive labeled icon button submitOfferBtn" ng-click="submitOffer()">
-                <i class="dollar icon"></i>
-                Offer
-            </button>
-            <input class="offer-input" name="offer" placeholder="Amount..." type="text" ng-model="extDoubt.offerAmount">
-        </div>
-        <div class="ui negative labeled icon button">
-            <i class="remove icon"></i>
-            Cancel
-        </div>
-    </div>
-</div>
-<!-- Offer acceptation or rejection notification -->
-<div class="ui small modal accept-offer-modal">
-    <div class="header">Nice!</div>
-    <div class="content">
-        <div class="description">
-            <i class="checkmark green icon"></i>
-            Your offer was received succesfully.
-        </div>
-    </div>
-    <div class="actions">
-        <div class="ui button">Ok</div>
-    </div>
-</div>
-<div class="ui small modal reject-offer-modal">
-    <div class="header">Ooops!</div>
-    <div class="content">
-        <div class="description">
-            <i class="remove red icon"></i>
-            Your offer was not received.
-        </div>
-    </div>
-    <div class="actions">
-        <div class="ui button">Ok</div>
-    </div>
-</div>
-<!-- Question creation -->
-<div class="ui modal post-question-modal" ng-cloak>
-    <i class="close icon"></i>
-    <div class="header">
-        <div class="ui huge fluid transparent input focus title-input-container" ng-form name="newQuestionTitleForm">
-            <input name="title" placeholder="Type your question" type="text" ng-model="newQuestion.title" required>
-        </div>
-    </div>
-    <div class="content">
-        <div ng-form name="newQuestionForm" class="ui form">
-            <div class="required field">
-                <label>Due date</label>
-                <div class="ui icon input">
-                    <input name="dueDate" placeholder="Type the question deadline" type="text" class="due-date-input" ng-model="newQuestion.dueDate" required>
-                    <i class="ui calendar icon"></i>
-                </div>
-            </div>
-            <div class="required field">
-                <label>Tags</label>
-                <div class="ui icon input">
-                    <input name="tags" placeholder="Type related tags separated by commas" type="text" class="tags-input" ng-model="newQuestion.tags" required>
-                    <i class="ui tags icon"></i>
-                </div>
-            </div>
-            <div class="required field">
-                <label>Category</label>
-                <div class="ui selection dropdown" id="choose-cat-dropdown">
-                    <input name="choose-cat-dropdown" type="hidden">
-                    <div class="default text">Choose a category</div>
-                    <i class="dropdown icon"></i>
-                    <div class="menu">
-                        <div class="item" ng-cloak ng-repeat="category in categories | orderBy: orderCategory" data-value="{{category}}" ng-click="$parent.newQuestion.categoryId=category.id">{{category.name}}</div>
-                    </div>
-                </div>
-            </div>
-            <div class="required field">
-                <label>Description</label>
-                <!-- Add required validation to contenteditable div (see dash-directives 'redactor') -->
-                <textarea name="description" id="MathInput" class="redactor" placeholder="Body" name="content" onkeyup="Preview.Update()" ng-model="newQuestion.description">Type your description.</textarea>
-            </div>
-            <div class="field">
-                <label>Preview</label>
-                <div id="MathPreview" class="ui basic segment"></div>
-                <div id="MathBuffer" class="ui basic segment"></div>
-            </div>
-        </div>
-    </div>
-    <div class="actions">
-        <!-- Add ng-click to post the question -->
-        <div class="ui positive labeled icon button send-question-btn">
-            <i class="checkmark icon"></i>
-            Ask!
-        </div>
-        <div class="ui negative labeled icon button">
-            <i class="remove icon"></i>
-            Cancel
-        </div>
-    </div>
-</div>
-<!-- Missing information notification -->
-<div class="ui small modal missing-question-info-modal">
-    <div class="header"><i class="warning yellow icon"></i>Missing information</div>
-    <div class="content">
-        <div class="description">
-            Please, fill all required information.
-        </div>
-    </div>
-    <div class="actions">
-        <div class="ui button">Ok</div>
-    </div>
-</div>
-<!-- Question creation notification -->
-<div class="ui small modal created-question-modal">
-    <div class="header"><i class="checkmark green icon"></i>Nice!</div>
-    <div class="content">
-        <div class="description">
-            Your question was posted succesfully.
-        </div>
-    </div>
-    <div class="actions">
-        <div class="ui button">Ok</div>
-    </div>
-</div>
-<div class="ui small modal not-created-question-modal">
-    <div class="header"><i class="remove red icon"></i>Ooops!</div>
-    <div class="content">
-        <div class="description">
-            There was an error while publishing your question.
-        </div>
-    </div>
-    <div class="actions">
-        <div class="ui button">Ok</div>
-    </div>
-</div>
-<script>
-    Preview.Init();
-</script>

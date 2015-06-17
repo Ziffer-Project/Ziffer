@@ -4,7 +4,8 @@ var app = angular.module('app', [
         'ngRoute', 'ngStorage',
         'indexControllers',
         'signinControllers', 'signinDirectives', 'signinServices',
-        'dashControllers', 'dashDirectives', 'dashServices', 'dashAnimations'
+        'dashControllers', 'dashDirectives', 'dashServices', 'dashAnimations',
+        'myQuestionsController'
     ])
 
     .config(['$routeProvider', function ($routeProvider) {
@@ -18,6 +19,10 @@ var app = angular.module('app', [
             .when('/signin', {
                 templateUrl: 'signin-view/partials/signin-view.html',
                 controller: 'SigninViewCtrl'
+            })
+            .when('/myQuestions', {
+                templateUrl: 'myQuestions-view/partials/myQuestions-view.html',
+                controller: 'MyQuestionsCtrl'
             })
             .when('/dashboard', {
                 templateUrl: 'dashboard-view/partials/dash-view.html',
@@ -57,7 +62,7 @@ var indexControllers = angular.module('indexControllers', [])
         $scope.goEdit = function () {
             $location.path('/editProfile');
         };
-        $scope.goMyQuestion = function () {
+        $scope.goMyQuestions = function () {
             $location.path('/myQuestions');
         };
         $scope.goMyContributions = function () {

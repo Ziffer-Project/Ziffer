@@ -17,6 +17,7 @@ modules = {
         resource url: 'dashboard-view/js/dash-directives.js'
         resource url: 'dashboard-view/js/dash-services.js'
         resource url: 'dashboard-view/js/dash-animations.js'
+        resource url: 'myQuestions-view/js/myQuestions-controller.js'
 
         resource url: 'css/main-style.css'
     }
