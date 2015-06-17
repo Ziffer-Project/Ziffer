@@ -5,7 +5,7 @@ var app = angular.module('app', [
         'indexControllers',
         'signinControllers', 'signinDirectives', 'signinServices',
         'dashControllers', 'dashDirectives', 'dashServices', 'dashAnimations',
-        'myQuestionsController', 'myQuestionsServices'
+        'myQuestionsController', 'myQuestionsServices', 'myQuestionsDirectives'
     ])
 
     .config(['$routeProvider', function ($routeProvider) {

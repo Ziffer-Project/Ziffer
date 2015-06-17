@@ -48,10 +48,6 @@
     text-align: center;
 }
 
-#myQuestions-container .score {
-    color: rgba(0, 0, 0, 0.4);
-}
-
 #myQuestions-container .ui.modal .header > .meta {
     font-size: 1rem;
 }

@@ -51,8 +51,38 @@ var myQuestionsController = angular.module('myQuestionsController', [])
                 }
                 return intersect(item.tags, desiredTags);
             };
+
+            $scope.extDoubt = {};
         }
     ])
+;
+
+var myQuestionsDirectives = angular.module('myQuestionsDirectives', [])
+
+    .directive('modal', function() {
+        return {
+            restrict: 'C',
+            link: function (scope, elem) {
+                jQuery(elem).modal();
+            }
+        }
+    })
+
+    .directive('peek', ['$timeout', function($timeout) {
+        return {
+            restrict: 'C',
+            link: function(scope, elem) {
+                elem.bind('click', function() {
+                    scope.$parent.extDoubt = scope.doubt;
+                    scope.$parent.extDoubt.description = scope.doubt.description;
+                    $timeout(function() {
+                        $('.full-question-modal').modal('show');
+                    }, 200);
+                });
+            }
+        };
+    }])
+
 ;
 
 var myQuestionsServices = angular.module('myQuestionsServices', ['ngResource'])
