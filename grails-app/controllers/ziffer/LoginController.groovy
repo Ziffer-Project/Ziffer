@@ -24,6 +24,10 @@ class LoginController {
             //redirect( controller: 'login' )
         }
     }
+
+    def doLogout(){
+        session.user = null
+    }
 }
 
 class Response {

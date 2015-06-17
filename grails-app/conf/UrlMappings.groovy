@@ -66,8 +66,8 @@ class UrlMappings {
         * por comas) y la descripción (description)
         */
         "/dashboard/mkData/createQuestion" {
-            controller = "Por_definir"
-            action = "Por_definir"
+            controller = "Question"
+            action = "postUserQuestion"
         }
 
         // Mapping para signin/login
@@ -78,8 +78,8 @@ class UrlMappings {
 
         // Mapping para signout/logout
         "/signout/mkData/signoutRequest" {
-            controller = "Por_definir"
-            action = "Por_definir"
+            controller = "Login"
+            action = "doLogout"
         }
 
         "/$controller/$action?/$id?(.$format)?"{

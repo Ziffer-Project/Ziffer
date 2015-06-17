@@ -42,7 +42,7 @@ class Question {
 
     int score(){
 
-	posScore-negScore
+	    posScore - negScore
 
     }
 }
