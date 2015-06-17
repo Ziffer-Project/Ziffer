@@ -38,7 +38,7 @@ class QuestionController {
     }
 
     def showUserQuestions() {
-        User user = session.user
+        def user = session.user
         def json = [] as JSON
         if(user){
             json = user.questions as JSON
