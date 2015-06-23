@@ -96,7 +96,7 @@ class UrlMappings {
             controller = "SignUp"
             action = "edit"
         }
-
+				// Mapping para SignUp
         "/signup/mkData/signUp" {
             controller = "SignUp"
             action = "signUp"
@@ -111,7 +111,6 @@ class UrlMappings {
             controller = "SignUp"
             action = "recoverPassword"
         }
-
 
         "/$controller/$action?/$id?(.$format)?"{
             constraints {

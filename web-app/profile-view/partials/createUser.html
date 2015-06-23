@@ -24,9 +24,14 @@
                         <input type="password" name="confirm" ng-model="profile.confirm" class="register">
                     </div>
 
-                    <div class="ui basic button btn-success positive font-menu-button">
-                        Sign Up
+                    <div class="positive ui button signin-btn">
+                        Sign up
                     </div>
+
+                    <div class="negative ui button cancelSigninBtn" ng-click="goHome()">
+                      Go home
+                    </div>
+
                 </form>
             </div>{{profile.username}}
         </div>

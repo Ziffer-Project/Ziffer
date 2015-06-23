@@ -10,7 +10,9 @@ var userControllers =angular.module('signUpControllers',[])
             $scope.profile.username="";
             $scope.profile.password="";
             $scope.profile.confirm="";
-            //$scope.home=function(){$location.path('/');}
+            $scope.goHome = function () {
+                $location.path('/');
+            };
         }
     ]);
 
