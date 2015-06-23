@@ -92,6 +92,27 @@ class UrlMappings {
             action = "doLogout"
         }
 
+        "/signup/fetchData/profile/${profleId}?" {
+            controller = "SignUp"
+            action = "edit"
+        }
+
+        "/signup/mkData/signUp" {
+            controller = "SignUp"
+            action = "signUp"
+        }
+
+        "/signup/mdData/edit" {
+            controller = "User"
+            action = "save"
+        }
+
+        "/signup/fetchData/recoverPass"{
+            controller = "SignUp"
+            action = "recoverPassword"
+        }
+
+
         "/$controller/$action?/$id?(.$format)?"{
             constraints {
                 // apply constraints here
