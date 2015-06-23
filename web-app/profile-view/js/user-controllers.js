@@ -28,8 +28,8 @@ var signUpServices = angular.module('signUpServices', ['ngResource'])
     .factory('signUpAction', ['$rootScope','$location','signUpRequest',
         function($rootScope, $location, signUpRequest){
             return{
-                signUp: function(username, password){
-                    var info={username: username, password: password,confirm:confirm};
+                signUp: function(username, password,confirm){
+                    var info={username: username, password: password,confirm: confirm};
                     if(password!=confirm){
                         alert("Las contraseñas no coinciden");
                     }else{
