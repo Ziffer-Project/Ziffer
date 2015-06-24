@@ -8,10 +8,15 @@ class SignUpController {
     def signUp(){
         def newUser = params.username
         def pwd = params.password
-        def user = createUser(newUser, pwd)//(params.username, params.password)
+        /*def user=new User()//def user = createUser(newUser, pwd)//(params.username, params.password)
+        user.username=params.username
+        user.password=params.password*/
+        def user= createUser(newUser,pwd)
         user.save( failOnError: true, flush: true, insert: true )
-        print user.username
+
         def json = user as JSON
+        print user.username
+        print user.password
         render json
     }
 
