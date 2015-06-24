@@ -30,15 +30,16 @@ var signUpServices = angular.module('signUpServices', ['ngResource'])
     .factory('signUpAction', ['$rootScope','$location','signUpRequest',
         function($rootScope, $location, signUpRequest){
             return{
-                signUp: function(username, password,confirm){
-                    var info={username: username, password: password,confirm: confirm};
-                    if(password!=confirm){
+                signUp: function(username, password,confirme){
+                    var info={username: username, password: password,confirme: confirme};
+                    if(password!=confirme){
                         alert("Las contraseñas no coinciden");
                     }else{
                         signUpRequest.signUp(info,{},
                             function success(){
                                 $rootScope.username=username;
                                 $rootScope.password=password;
+                                $rootScope.confirme=confirme;
                                 $location.path('/dashboard');
                             }
                         )
@@ -81,7 +82,7 @@ var signUpDirectives = angular.module('signUpDirectives',[])
                 restrict: 'C',
                 link: function(scope,elem) {
                     elem.bind('click', function (e) {
-                        signUpAction.signUp(scope.profile.username, scope.profile.password);
+                        signUpAction.signUp(scope.profile.username, scope.profile.password,scope.profile.confirme);
                     });
                 }
             };
@@ -94,7 +95,7 @@ var signUpDirectives = angular.module('signUpDirectives',[])
                 restrict: 'C',
                 link: function (scope, elem) {
                     elem.bind('click', function (e) {
-                        signUpAction.signUp(scope.profile.username, scope.profile.password);
+                        signUpAction.signUp(scope.profile.username, scope.profile.password,scope.profile.confirme);
                     });
                 }
             };
@@ -107,7 +108,7 @@ var signUpDirectives = angular.module('signUpDirectives',[])
                 link: function (scope, elem) {
                     elem.bind('keypress', function (event) {
                         if (event.which === 13) {
-                            signUpAction.signUp(scope.profile.username, scope.profile.password);
+                            signUpAction.signUp(scope.profile.username, scope.profile.password,scope.profile.confirme);
                         }
                     });
                 }
